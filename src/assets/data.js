@@ -7,6 +7,23 @@ import SecondActiveProject from "./second-active-image.png"; // Image for the se
 import thirdActiveProject from "./third-active-image.png"; // Image for the third active project
 import emptyProjectImage from "./empty-project-image.png"; // Placeholder image for projects not yet announced
 
+import activeProjectWhite from "./active-project-white.png";
+import activeProjectNormal from "./active-project-normal.png";
+import fundedProjectNormal from "./funded-projects-normal.png";
+import fundedProjectWhite from "./funded-projects-white.png";
+import investmentNormal from "./investment-normal.png";
+import investmentWhite from "./investment-white.png";
+import contractsNormal from "./contracts-normal.png";
+import contractsWhite from "./contracts-white.png";
+import walletNormal from "./wallet-normal.png";
+import walletWhite from "./wallet-white.png";
+import settingsNormal from "./settings-normal.png";
+import settingsWhite from "./settings-white.png";
+import newsNormal from "./news-normal.png";
+import newsWhite from "./news-white.png";
+import supportNormal from "./support-normal.png";
+import supportWhite from "./support-white.png";
+
 // Exporting an array of platform updates with version number and update name
 export const platformUpdates = [
   {
@@ -247,3 +264,54 @@ export const investmentPortfolio = {
   roi: "8.4%",
   carbonTonsoffset: "5t",
 };
+
+export const sidebarItems = [
+  {
+    title: "Active Project",
+    white: activeProjectWhite,
+    normal: activeProjectNormal,
+    path: ".",
+  },
+  {
+    title: "Funded Project",
+    white: fundedProjectWhite,
+    normal: fundedProjectNormal,
+    path: "funded-projects",
+  },
+  {
+    title: "Investment Portfolio",
+    white: investmentWhite,
+    normal: investmentNormal,
+    path: "investment-portfolio",
+  },
+  {
+    title: "Contracts",
+    white: contractsWhite,
+    normal: contractsNormal,
+    path: "contracts",
+  },
+  {
+    title: "Wallet Management",
+    white: walletWhite,
+    normal: walletNormal,
+    path: "wallet-management",
+  },
+  {
+    title: "Settings",
+    white: settingsWhite,
+    normal: settingsNormal,
+    path: "settings",
+  },
+  {
+    title: "News & Updates",
+    white: newsWhite,
+    normal: newsNormal,
+    path: "news",
+  },
+  {
+    title: "Support",
+    white: supportWhite,
+    normal: supportNormal,
+    path: "support",
+  },
+];
