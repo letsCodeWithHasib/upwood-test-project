@@ -1,8 +1,39 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { useState } from "react";
+import { login } from "../../redux/features/authSlice";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
-  console.log(logo);
+  const dispatch = useDispatch();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [loginFailed, setLoginFailed] = useState(false);
+
+  const onChangeHandler = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
+    if (
+      formData.email === "mohdhasib2001@gmail.com" &&
+      formData.password === "12345"
+    ) {
+      dispatch(login(formData));
+    } else {
+      setLoginFailed(true);
+    }
+    setFormData({
+      email: "",
+      password: "",
+    });
+  };
+
   return (
     <div>
       <div className="w-[450px] font-[Lexend Deca] flex flex-col items-center">
@@ -14,28 +45,43 @@ const Login = () => {
           <h2 className="text-2xl font-[Lexend Deca] font-bold mt-7">
             User login
           </h2>
-          <form className="flex flex-col gap-3 mt-7">
+          <form onSubmit={onSubmitHandler} className="flex flex-col gap-3 mt-7">
             {/* Email input field */}
             <label>
               <input
-                className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
+                className={`shadow-sm py-2 px-3 border-[1px] ${
+                  loginFailed ? "border-[#ff0000]" : "border-black"
+                } focus:outline-[#0FB404] focus:outline-[2px] rounded w-full`}
                 type="email"
                 placeholder="Email"
                 required
+                value={formData.email}
+                name="email"
+                onChange={onChangeHandler}
               />
             </label>
             {/* Password input field */}
             <label>
               <input
-                className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
+                className={`shadow-sm py-2 px-3 border-[1px] ${
+                  loginFailed ? "border-[#ff0000]" : "border-black"
+                } focus:outline-[#0FB404] focus:outline-[2px] rounded w-full`}
                 type="password"
                 placeholder="Password"
                 required
+                value={formData.password}
+                name="password"
+                onChange={onChangeHandler}
               />
             </label>
+            {loginFailed && (
+              <p className="text-[#ff0000] text-[14px]">
+                Login details are not recognized!
+              </p>
+            )}
 
             {/* Button for login and link for forgotten details */}
-            <div className="flex items-end mb-5">
+            <div className="flex items-center my-5">
               <button className="bg-[#0FB404] rounded-lg p-2 px-5 text-white">
                 Login
               </button>

@@ -24,6 +24,9 @@ import SingleContract from "./components/user/contracts/SingleContract";
 import ViewProjectDetails from "./components/user/common/ViewProjectDetails";
 import Popup from "./components/user/common/Popup";
 
+import AuthRouteWrapper from "./routes/AuthRouteWrapper";
+import UserRouteWrapper from "./routes/UserRouteWrapper";
+
 /**
  * App Component
  * The main application component that defines the routing structure for the application.
@@ -36,7 +39,14 @@ const App = () => {
     <div>
       <Routes>
         {/* Authentication routes */}
-        <Route path="auth" element={<LoginPage />}>
+        <Route
+          path="auth"
+          element={
+            <AuthRouteWrapper>
+              <LoginPage />
+            </AuthRouteWrapper>
+          }
+        >
           <Route index element={<LoginComponent />} />
           {/* Default login component */}
           <Route
@@ -53,7 +63,14 @@ const App = () => {
         </Route>
 
         {/* User routes */}
-        <Route path="user" element={<UserPage />}>
+        <Route
+          path="user"
+          element={
+            <UserRouteWrapper>
+              <UserPage />
+            </UserRouteWrapper>
+          }
+        >
           <Route index element={<ActiveProjects />} />
           <Route path="active-project/:id" element={<ViewProjectDetails />} />
           {/* Default user dashboard component */}

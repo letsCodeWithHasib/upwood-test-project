@@ -315,3 +315,9 @@ export const sidebarItems = [
     path: "support",
   },
 ];
+
+export const userCredentials = {
+  email: "mohdhasib",
+  password: "12345",
+  username: "Mohd Hasib",
+};

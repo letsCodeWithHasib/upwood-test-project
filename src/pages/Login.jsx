@@ -1,6 +1,6 @@
 import logo from "../assets/logo.png";
 import preview from "../assets/preview.png";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const Login = () => {
   return (
