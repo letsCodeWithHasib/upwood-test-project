@@ -1,4 +1,4 @@
-import ProjectItem from "../common/ProjectItem"; // Importing the ProjectItem component to display individual projects
+import FundedProject from "./FundedProject"; // Importing the ProjectItem component to display individual projects
 import { fundedProjects } from "../../../assets/data";
 
 /**
@@ -18,7 +18,7 @@ const FundedProjects = () => {
         {" "}
         {/* Grid layout for project items */}
         {fundedProjects.map((fundedProject, index) => (
-          <ProjectItem key={index} item={fundedProject} />
+          <FundedProject key={index} item={fundedProject} />
         ))}
       </div>
     </div>

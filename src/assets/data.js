@@ -125,6 +125,7 @@ export const fundedProjects = [
     roi: 63,
     carbonCredits: 3509,
     image: FirstActiveProject,
+    id: 0,
   },
   {
     heading: "Preserve",
@@ -134,6 +135,7 @@ export const fundedProjects = [
     roi: 61,
     carbonCredits: 509,
     image: SecondActiveProject,
+    id: 1,
   },
   {
     heading: "TBA",
@@ -143,6 +145,7 @@ export const fundedProjects = [
     roi: "TBA",
     carbonCredits: "TBA",
     image: emptyProjectImage,
+    id: 2,
   },
   {
     heading: "TBA",
@@ -152,6 +155,7 @@ export const fundedProjects = [
     roi: "TBA",
     carbonCredits: "TBA",
     image: emptyProjectImage,
+    id: 3,
   },
 ];
 

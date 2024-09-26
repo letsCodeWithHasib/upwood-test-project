@@ -23,6 +23,7 @@ import WalletManagement from "./components/user/wallet-management/WalletManageme
 import SingleContract from "./components/user/contracts/SingleContract";
 import ViewProjectDetails from "./components/user/common/ViewProjectDetails";
 import Popup from "./components/user/common/Popup";
+import ViewFundedProject from "./components/user/funded-projects/ViewFundedProject";
 
 import AuthRouteWrapper from "./routes/AuthRouteWrapper";
 import UserRouteWrapper from "./routes/UserRouteWrapper";
@@ -74,7 +75,8 @@ const App = () => {
           <Route index element={<ActiveProjects />} />
           <Route path="active-project/:id" element={<ViewProjectDetails />} />
           {/* Default user dashboard component */}
-          <Route path="funded-projects" element={<FundedProjects />} />{" "}
+          <Route path="funded-projects" element={<FundedProjects />} />
+          <Route path="funded-projects/:id" element={<ViewFundedProject />} />
           {/* Route for funded projects */}
           <Route
             path="investment-portfolio"
