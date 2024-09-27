@@ -126,6 +126,9 @@ export const fundedProjects = [
     carbonCredits: 3509,
     image: FirstActiveProject,
     id: 0,
+    reserved: 20,
+    available: 200,
+    price: 108,
   },
   {
     heading: "Preserve",
@@ -136,6 +139,9 @@ export const fundedProjects = [
     carbonCredits: 509,
     image: SecondActiveProject,
     id: 1,
+    reserved: 20,
+    available: 200,
+    price: 108,
   },
   {
     heading: "TBA",
@@ -146,6 +152,9 @@ export const fundedProjects = [
     carbonCredits: "TBA",
     image: emptyProjectImage,
     id: 2,
+    reserved: 20,
+    available: 200,
+    price: 108,
   },
   {
     heading: "TBA",
@@ -156,6 +165,9 @@ export const fundedProjects = [
     carbonCredits: "TBA",
     image: emptyProjectImage,
     id: 3,
+    reserved: "TBA",
+    available: "TBA",
+    price: "TBA",
   },
 ];
 
