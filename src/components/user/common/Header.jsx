@@ -26,7 +26,7 @@ const Header = () => {
   };
   return (
     // Header with flex layout, fixed positioning, and padding for spacing
-    <header className="flex bg-white justify-between items-center p-5 fixed w-full top-0">
+    <header className="flex z-[-1] bg-white justify-between items-center p-5 fixed w-full top-0">
       {/* Logo section */}
       <section className="logo">
         {/* Logo image with a defined width */}
@@ -36,7 +36,7 @@ const Header = () => {
       {/* User profile and logout button section */}
       <section className="flex gap-10">
         {/* Profile button with image and username */}
-        <button className="flex items-center gap-5">
+        <button className="items-center gap-5 hidden md:flex">
           {/* Profile image with a specified height and width */}
           <label htmlFor="fileInput">
             <img

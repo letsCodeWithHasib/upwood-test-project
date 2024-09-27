@@ -24,7 +24,7 @@ const ActiveProjects = () => {
   };
 
   return (
-    <div className="mx-5 mt-[-20px]">
+    <div className="mx-5 mt-[-25px]">
       {isOpen && (
         <Popup closePopup={closePopup} selectedProject={selectedProject} />
       )}
@@ -32,7 +32,7 @@ const ActiveProjects = () => {
       <h2 className="text-center font-lexend text-2xl text-[#333333] font-bold">
         Active Projects {/* Section heading */}
       </h2>
-      <div className="grid grid-cols-2 gap-5 my-5">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 my-5">
         {/* Grid layout for project items */}
         {activeProjects.map((activeProject, index) => (
           <ProjectItem openPopup={openPopup} key={index} item={activeProject} />

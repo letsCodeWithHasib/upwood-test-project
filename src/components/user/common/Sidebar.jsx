@@ -4,7 +4,7 @@ import { sidebarItems } from "../../../assets/data";
 import { Link, useMatch, useLocation } from "react-router-dom"; // Importing routing components
 import { style } from "../../../assets/style"; // Importing custom styles
 
-const Sidebar = () => {
+const Sidebar = ({ showSideBar }) => {
   const location = useLocation();
   const contains = (route) => {
     return location.pathname.includes(route);
@@ -12,7 +12,11 @@ const Sidebar = () => {
 
   return (
     // Sidebar container with fixed positioning and custom width
-    <aside className="w-[250px] fixed mx-5 top-[100px]">
+    <aside
+      className={`w-[250px] fixed mx-5 top-[100px] ${
+        showSideBar ? "block" : "hidden"
+      } md:block bg-white rounded-t-lg`}
+    >
       {/* Navigation container with vertical layout and spacing */}
       <nav className="flex flex-col gap-1">
         {/* Link to Active Projects */}
