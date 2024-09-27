@@ -4,10 +4,26 @@ import logo from "../../../assets/logo.png";
 import logoutImage from "../../../assets/logout.png";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../../redux/features/authSlice";
+import { useState } from "react";
 
 const Header = () => {
   const username = useSelector((state) => state.username);
   const dispatch = useDispatch();
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (e) => {
+    // Check if the user has selected a file
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+
+      // Set the selected image URL for preview
+      setSelectedImage(imageUrl);
+
+      // Optionally, clean up the URL when the component unmounts or the image changes
+      return () => URL.revokeObjectURL(imageUrl);
+    }
+  };
   return (
     // Header with flex layout, fixed positioning, and padding for spacing
     <header className="flex bg-white justify-between items-center px-5 fixed w-full top-0">
@@ -22,7 +38,20 @@ const Header = () => {
         {/* Profile button with image and username */}
         <button className="flex items-center gap-2">
           {/* Profile image with a specified height and width */}
-          <img className="h-[50px] w-[50px] mt-2" src={profile} alt="Profile" />
+          <label htmlFor="fileInput">
+            <img
+              className="h-[50px] w-[50px] mt-2 cursor-pointer"
+              src={selectedImage || profile}
+              alt="Profile"
+            />
+          </label>
+          <input
+            type="file"
+            id="fileInput"
+            className="hidden"
+            accept="image/*"
+            onChange={handleImageChange}
+          />
           {/* Username with styling and slight negative margin for alignment */}
           <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] -ml-3">
             {username}

@@ -4,9 +4,9 @@ const NewsArticle = ({ article }) => {
 
   return (
     // Main article container with shadow and rounded corners
-    <div className="shadow-another rounded-lg">
+    <div className="shadow-custom rounded-lg">
       {/* Article heading section, centered with bold uppercase text */}
-      <p className="text-center font-bold uppercase text-[#333333] p-2">
+      <p className="text-center text-xs font-[Roboto] font-bold uppercase text-[#333333] p-2">
         {heading}
       </p>
 
@@ -20,15 +20,17 @@ const NewsArticle = ({ article }) => {
       <div className="p-5">
         <div className="space-y-5">
           {/* Title of the article with specific font and size */}
-          <h3 className="font-lexend text-[20px] font-bold">{title}</h3>
+          <h3 className="font-lexend text-lg font-bold">{title}</h3>
 
           {/* Article description with specific text color and font */}
-          <p className="text-[#333333] font-[Roboto]">{description}</p>
+          <p className="text-[#333333] font-[Roboto] text-[15px]">
+            {description}
+          </p>
         </div>
 
         {/* Read full article button, aligned to the right */}
         <div className="flex justify-end mt-5">
-          <button className="font-[Roboto] text-[#0FB404] font-bold">
+          <button className="font-[Roboto] text-sm text-[#0FB404] font-bold">
             Read full article
           </button>
         </div>

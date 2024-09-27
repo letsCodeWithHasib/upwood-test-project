@@ -5,9 +5,9 @@ import PortfolioProjects from "./PortfolioProjects";
 const WalletManagement = () => {
   return (
     // Main container with margin applied to the sides and bottom
-    <div className="mx-10 mb-10">
+    <div className="mx-5 mt-[-20px] mb-10">
       <div className="">
-        <h2 className="text-center font-lexend text-[32px] text-[#333333] font-bold justify-items-center">
+        <h2 className="text-center font-lexend text-2xl text-[#333333] font-bold justify-items-center">
           News & updates
         </h2>
         <div className="flex justify-end mt-[-20px]">

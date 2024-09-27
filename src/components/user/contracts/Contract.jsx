@@ -9,7 +9,7 @@ const Contract = ({ contract }) => {
     // Main container for each contract with rounded corners and shadow
     <div className="rounded-lg shadow-custom">
       {/* Header displaying the contract name and signed date */}
-      <p className="bg-[#EBEBEB] rounded-t-lg text-[#6B6B6B] font-[Roboto] font-bold p-2 text-center">
+      <p className="bg-[#EBEBEB] text-sm rounded-t-lg text-[#6B6B6B] font-[Roboto] font-bold p-2 text-center">
         Subscription agreement {contractName} {signedDate}
       </p>
 
@@ -33,22 +33,22 @@ const Contract = ({ contract }) => {
       <div>
         <div className="p-5 space-y-2">
           {/* Contract title and registration number */}
-          <h3 className="text-[#333333] text-[20px] font-bold">
+          <h3 className="text-[#333333] text-lg font-bold">
             "{contractName}" cadastar NR: {nr}
           </h3>
-          <p>Subscription agreement</p>
+          <p className="text-sm font-[Roboto]">Subscription agreement</p>
 
           {/* Tokens and signed date display */}
-          <div className="flex gap-5">
+          <div className="flex gap-4">
             <p className="font-[Roboto] font-bold text-[#333333] flex gap-2 items-center">
               Tokens
-              <span className="text-[#0FB404] font-[Roboto] text-[20px]">
+              <span className="text-[#0FB404] font-[Roboto] text-lg">
                 {tokens}
               </span>
             </p>
             <p className="font-[Roboto] font-bold text-[#333333] flex gap-2 items-center">
               Signed date
-              <span className="text-[#0FB404] font-[Roboto] text-[20px]">
+              <span className="text-[#0FB404] font-[Roboto] text-lg">
                 {signedDate}
               </span>
             </p>

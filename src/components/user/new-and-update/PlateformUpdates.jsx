@@ -5,7 +5,7 @@ import { platformUpdates } from "../../../assets/data";
 const PlateformUpdates = () => {
   return (
     // Grid layout with 3 columns, gap between items, and custom shadow and padding
-    <div className="grid grid-cols-3 gap-x-5 gap-y-7 mt-7 shadow-another rounded-lg p-10">
+    <div className="grid grid-cols-3 gap-x-10 gap-y-7 mt-7 shadow-custom rounded-lg p-10">
       {/* Mapping through plateformUpdates array to render each update */}
       {platformUpdates.map((plateformUpdate, index) => {
         const { updateNum, updateName } = plateformUpdate; // Destructuring update object

@@ -7,9 +7,9 @@ import InvestmentGraph from "./InvestmentGraph"; // Importing InvestmentGraph co
 const InvestmentPortfolio = () => {
   return (
     // Main container for the investment portfolio with margin for spacing
-    <div className="mx-10 mb-10">
+    <div className="mx-5 mb-10 mt-[-20px]">
       {/* Section heading for the investment portfolio */}
-      <h2 className="text-center font-lexend text-[32px] text-[#333333] font-bold">
+      <h2 className="text-center font-lexend text-2xl text-[#333333] font-bold">
         Investment Portfolio
       </h2>
 

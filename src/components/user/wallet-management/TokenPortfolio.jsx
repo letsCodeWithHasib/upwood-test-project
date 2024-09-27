@@ -9,16 +9,16 @@ const TokenPortfolio = () => {
     <div className="p-7 shadow-custom mt-7 space-y-5 rounded-2xl">
       {/* Header section with title and export buttons */}
       <div className="flex justify-between">
-        <h3 className="font-lexend font-bold text-2xl text-[#333333]">
+        <h3 className="font-lexend font-bold text-[20px] text-[#333333]">
           Token portfolio list
         </h3>
         <div className="flex gap-5">
           {/* Button to export transaction history */}
-          <button className="text-[#0FB404] font-bold font-[Roboto]">
+          <button className="text-[#0FB404] text-sm font-bold font-[Roboto]">
             Export transaction history
           </button>
           {/* Button to export token portfolio list */}
-          <button className="text-[#0FB404] font-bold font-[Roboto]">
+          <button className="text-[#0FB404] text-sm font-bold font-[Roboto]">
             Export token portfolio list
           </button>
         </div>
@@ -54,13 +54,13 @@ const TokenPortfolio = () => {
             return (
               <tr key={index} className="border-t-[1px] border-[#333333]">
                 {/* Render token details in table cells */}
-                <td className="py-2">{symbol}</td>
-                <td>{assetName}</td>
-                <td>{smartContractAddress}</td>
-                <td className="text-center">{shareAmount}</td>
-                <td className="text-center">{shareValue}</td>
-                <td className="text-center">{carbonCredits}</td>
-                <td className="text-center">{dividentEarned}</td>
+                <td className="py-2 text-sm">{symbol}</td>
+                <td className="py-2 text-sm">{assetName}</td>
+                <td className="py-2 text-sm">{smartContractAddress}</td>
+                <td className="text-center py-2 text-sm">{shareAmount}</td>
+                <td className="text-center py-2 text-sm">{shareValue}</td>
+                <td className="text-center py-2 text-sm">{carbonCredits}</td>
+                <td className="text-center py-2 text-sm">{dividentEarned}</td>
               </tr>
             );
           })}

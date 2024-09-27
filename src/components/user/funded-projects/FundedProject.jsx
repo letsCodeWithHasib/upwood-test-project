@@ -64,12 +64,12 @@ const FundedProject = ({ item, openPopup }) => {
           {/* Action buttons container */}
           <button
             onClick={() => openPopup(item)}
-            className="text-[15px] font-bold  text-[#0FB404] flex gap-2 items-center"
+            className="text-[15px] font-bold text-sm  text-[#0FB404] flex gap-2 items-center"
           >
             <img src={notifyImage} alt="" /> notify
           </button>
           <Link to={`${id}`}>
-            <button className="text-[15px] font-bold  text-[#0FB404]">
+            <button className="text-[15px] font-bold  text-sm text-[#0FB404]">
               View details {/* Button to view project details */}
             </button>
           </Link>

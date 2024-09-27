@@ -14,7 +14,7 @@ const PortfolioDetails = ({ investmentPortfolio }) => {
           <h4 className="text-[#333333] font-[Roboto] font-bold">
             Portfolio Value
           </h4>
-          <p className="text-[#0FB404] font-bold text-[20px]">
+          <p className="text-[#0FB404] font-bold text-[18px]">
             {portfolioValue}
           </p>
         </div>
@@ -24,7 +24,7 @@ const PortfolioDetails = ({ investmentPortfolio }) => {
           <h4 className="text-[#333333] font-[Roboto] font-bold">
             Yearly Portfolio Growth
           </h4>
-          <p className="text-[#0FB404] font-bold text-[20px]">{yearlyProfit}</p>
+          <p className="text-[#0FB404] font-bold text-[18px]">{yearlyProfit}</p>
         </div>
 
         {/* Return on Investment */}
@@ -32,7 +32,7 @@ const PortfolioDetails = ({ investmentPortfolio }) => {
           <h4 className="text-[#333333] font-[Roboto] font-bold">
             Return on Investment
           </h4>
-          <p className="text-[#0FB404] font-bold text-[20px]">{roi}</p>
+          <p className="text-[#0FB404] font-bold text-[18px]">{roi}</p>
         </div>
 
         {/* Carbon Tons Offset */}

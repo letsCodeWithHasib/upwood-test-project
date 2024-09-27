@@ -63,13 +63,13 @@ const ProjectItem = ({ item, openPopup }) => {
           {" "}
           {/* Action buttons container */}
           <Link to={`active-project/${id}`}>
-            <button className="py-3 px-5 text-[15px] font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px] ">
+            <button className="py-3 px-5 text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px] ">
               View details {/* Button to view project details */}
             </button>
           </Link>
           <button
             onClick={() => openPopup(item)}
-            className="py-3 px-5 text-[15px] font-bold rounded-lg bg-[#0FB404] text-white"
+            className="py-3 px-5 text-sm font-bold rounded-lg bg-[#0FB404] text-white"
           >
             Invest {/* Button to initiate investment */}
           </button>

@@ -7,12 +7,12 @@ const ProfileSettings = () => {
     <div className="mt-5 p-7  shadow-2xl rounded-2xl">
       <div className="flex justify-evenly">
         <div className="flex flex-col items-center w-[300px]">
-          <h3 className="font-lexend font-bold text-2xl text-center">
+          <h3 className="font-lexend font-bold text-lg text-center">
             Profile Settings
           </h3>
           <img className="" src={profile} alt="" />
           <Link>
-            <button className="text-[#0FB404] text-lg font-bold font-[Roboto]">
+            <button className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
               Change Profile Picture
             </button>
           </Link>
@@ -25,24 +25,24 @@ const ProfileSettings = () => {
             </button>
           </div>
           <div className="flex flex-col items-center mt-10 gap-2">
-            <Link className="font-[Roboto] font-bold text-[16px]">
+            <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
               Change email address
             </Link>
-            <Link className="font-[Roboto] font-bold text-[16px]">
+            <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
               Change profile password
             </Link>
-            <Link className="font-[Roboto] font-bold text-[16px]">
+            <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
               Account second with 2FA
             </Link>
           </div>
         </div>
         <div className="flex flex-col items-center w-[300px]">
-          <h3 className="font-lexend font-bold text-2xl text-center">
+          <h3 className="font-lexend font-bold text-lg text-center">
             Legal entity
           </h3>
           <img src={profile} alt="" />
           <Link className="">
-            <button className="text-[#0FB404] text-lg font-bold font-[Roboto]">
+            <button className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
               Change company logo
             </button>
           </Link>
@@ -51,17 +51,17 @@ const ProfileSettings = () => {
               SIA Upwood
             </button>
             <button className="font-[Roboto] font-bold text-[16px]">
-              Reg. nr. 12345678
+              Reg. no. 12345678
             </button>
           </div>
           <div className="flex flex-col items-center mt-10 gap-2">
-            <Link className="font-[Roboto] font-bold text-[16px]">
+            <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
               Change email address
             </Link>
-            <Link className="font-[Roboto] font-bold text-[16px]">
+            <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
               Add another entity members{" "}
             </Link>
-            <Link className="font-[Roboto] font-bold text-[16px]">
+            <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
               Download account settings
             </Link>
           </div>

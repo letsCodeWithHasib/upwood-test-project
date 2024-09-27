@@ -6,7 +6,7 @@ const InvestmentGraph = () => {
     // Main container for the investment graph with shadow and padding
     <div className="shadow-custom rounded-lg p-10 py-5 space-y-5 mt-5">
       {/* Section heading for the graph */}
-      <h3 className="text-[20px] font-bold font-lexend">
+      <h3 className="text-[18px] font-bold font-lexend">
         Platform How-To Guides
       </h3>
 
@@ -21,7 +21,7 @@ const InvestmentGraph = () => {
           {/* Indicator for the monthly performance */}
           <span className="text-[100px] text-[#0FB404] font-normal">.</span>
           This month
-          <span className="text-[#0FB404] text-[20px] ml-2 mt-2">+104€</span>
+          <span className="text-[#0FB404] text-[18px] ml-2 mt-2">+104€</span>
         </p>
       </div>
     </div>
