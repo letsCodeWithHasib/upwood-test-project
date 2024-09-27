@@ -313,12 +313,6 @@ export const sidebarItems = [
     path: "wallet-management",
   },
   {
-    title: "Settings",
-    white: settingsWhite,
-    normal: settingsNormal,
-    path: "settings",
-  },
-  {
     title: "News & Updates",
     white: newsWhite,
     normal: newsNormal,
@@ -329,6 +323,12 @@ export const sidebarItems = [
     white: supportWhite,
     normal: supportNormal,
     path: "support",
+  },
+  {
+    title: "Settings",
+    white: settingsWhite,
+    normal: settingsNormal,
+    path: "settings",
   },
 ];
 

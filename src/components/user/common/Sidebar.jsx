@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     // Sidebar container with fixed positioning and custom width
-    <aside className="w-[300px] fixed mx-10 top-[150px]">
+    <aside className="w-[300px] fixed mx-5 top-[150px]">
       {/* Navigation container with vertical layout and spacing */}
       <nav className="flex flex-col gap-1">
         {/* Link to Active Projects */}

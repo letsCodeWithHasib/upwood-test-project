@@ -37,7 +37,7 @@ import UserRouteWrapper from "./routes/UserRouteWrapper";
  */
 const App = () => {
   return (
-    <div>
+    <div className="">
       <Routes>
         {/* Authentication routes */}
         <Route
