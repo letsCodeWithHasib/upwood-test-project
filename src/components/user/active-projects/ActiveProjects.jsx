@@ -18,18 +18,18 @@ const ActiveProjects = () => {
     setSelectedProject(item);
   };
 
-  const closePopup = (item) => {
+  const closePopup = () => {
     setIsOpen(false);
     setSelectedProject(null);
   };
 
   return (
-    <div className="mx-10">
+    <div className="mx-5 mt-[-20px]">
       {isOpen && (
         <Popup closePopup={closePopup} selectedProject={selectedProject} />
-      )}{" "}
+      )}
       {/* Container for the active projects section */}
-      <h2 className="text-center font-lexend text-[32px] text-[#333333] font-bold">
+      <h2 className="text-center font-lexend text-2xl text-[#333333] font-bold">
         Active Projects {/* Section heading */}
       </h2>
       <div className="grid grid-cols-2 gap-5 my-5">

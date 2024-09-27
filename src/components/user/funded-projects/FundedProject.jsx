@@ -28,33 +28,33 @@ const FundedProject = ({ item, openPopup }) => {
       </p>
       <div className="p-5">
         {/* Main content area */}
-        <h3 className="text-[#333333] font-bold text-2xl font-lexend ">
+        <h3 className="text-[#333333] font-bold text-[20px] font-lexend ">
           {title} {/* Project title */}
         </h3>
         <p className="text-[#333333] text-[16px] text-[Roboto] pt-2">
           {description}
           {/* Project description */}
         </p>
-        <div className="flex gap-3">
+        <div className="flex gap-3 items-center">
           {/* Stats container */}
           <p className="text-[#6B6B6B] flex items-center gap-2">
             Area :
-            <span className="text-[#333333] text-2xl font-semibold">
+            <span className="text-[#333333] text-lg font-semibold">
               {area}
               {area === "TBA" ? "" : "ha"}
             </span>{" "}
             {/* Area statistic */}
           </p>
-          <p className="text-[#6B6B6B]">
+          <p className="text-[#6B6B6B] flex items-center gap-2">
             ROI :
-            <span className="text-[#333333] text-2xl font-semibold">
+            <span className="text-[#333333] text-lg font-semibold">
               {roi}
               {roi === "TBA" ? "" : "%"}
             </span>
           </p>
-          <p className="text-[#6B6B6B]">
+          <p className="text-[#6B6B6B] flex items-center gap-2">
             Carbon Credit :
-            <span className="text-[#333333] text-2xl font-semibold">
+            <span className="text-[#333333] text-lg font-semibold">
               {carbonCredits}
             </span>
             {/* Carbon credits statistic */}

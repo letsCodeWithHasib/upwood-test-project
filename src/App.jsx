@@ -37,7 +37,7 @@ import UserRouteWrapper from "./routes/UserRouteWrapper";
  */
 const App = () => {
   return (
-    <div className="">
+    <div>
       <Routes>
         {/* Authentication routes */}
         <Route
@@ -50,10 +50,7 @@ const App = () => {
         >
           <Route index element={<LoginComponent />} />
           {/* Default login component */}
-          <Route
-            path="forgot-password"
-            element={<ForgotPasswordComponent />}
-          />{" "}
+          <Route path="forgot-password" element={<ForgotPasswordComponent />} />
           {/* Route for password recovery */}
           <Route path="mail-sent" element={<MailSentComponent />} />{" "}
           {/* Route for mail sent confirmation */}
@@ -74,6 +71,10 @@ const App = () => {
         >
           <Route index element={<ActiveProjects />} />
           <Route path="active-project/:id" element={<ViewProjectDetails />} />
+          <Route
+            path="testing"
+            element={<h1 className="bg-orange-300">Helo</h1>}
+          />
           {/* Default user dashboard component */}
           <Route path="funded-projects" element={<FundedProjects />} />
           <Route path="funded-projects/:id" element={<ViewFundedProject />} />
@@ -96,7 +97,6 @@ const App = () => {
           {/* Route for user support */}
         </Route>
         <Route path="/" element={<Navigate to="/auth" />} />
-        <Route path="/testing" element={<Popup />} />
       </Routes>
     </div>
   );
