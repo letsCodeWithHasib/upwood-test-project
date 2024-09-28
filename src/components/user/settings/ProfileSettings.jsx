@@ -4,19 +4,20 @@ import QueryBox from "../common/QueryBox";
 
 const ProfileSettings = () => {
   return (
-    <div className="mt-5 p-7  shadow-2xl rounded-2xl">
-      <div className="flex justify-evenly">
-        <div className="flex flex-col items-center w-[300px]">
+    <div className="mt-5 p-5 sm:p-7 shadow-2xl rounded-2xl">
+      <div className="flex flex-col sm:flex-row justify-evenly">
+        {/* Profile Settings Section */}
+        <div className="flex flex-col items-center w-full sm:w-[300px] mb-5 sm:mb-0">
           <h3 className="font-lexend font-bold text-lg text-center">
             Profile Settings
           </h3>
-          <img className="" src={profile} alt="" />
+          <img className="rounded-full mb-4" src={profile} alt="Profile" />
           <Link>
             <button className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
               Change Profile Picture
             </button>
           </Link>
-          <div className="gap-2 mt-5 flex flex-col">
+          <div className="gap-2 mt-5 flex flex-col items-center">
             <button className="font-[Roboto] font-bold text-[16px]">
               John Carter
             </button>
@@ -26,27 +27,29 @@ const ProfileSettings = () => {
           </div>
           <div className="flex flex-col items-center mt-10 gap-2">
             <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
-              Change email address
+              Change Email Address
             </Link>
             <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
-              Change profile password
+              Change Profile Password
             </Link>
             <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
-              Account second with 2FA
+              Account Security with 2FA
             </Link>
           </div>
         </div>
-        <div className="flex flex-col items-center w-[300px]">
+
+        {/* Legal Entity Section */}
+        <div className="flex flex-col items-center w-full sm:w-[300px]">
           <h3 className="font-lexend font-bold text-lg text-center">
-            Legal entity
+            Legal Entity
           </h3>
-          <img src={profile} alt="" />
-          <Link className="">
+          <img className="rounded-full mb-4" src={profile} alt="Legal Entity" />
+          <Link>
             <button className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
-              Change company logo
+              Change Company Logo
             </button>
           </Link>
-          <div className="gap-2 mt-5 flex flex-col">
+          <div className="gap-2 mt-5 flex flex-col items-center">
             <button className="font-[Roboto] font-bold text-[16px]">
               SIA Upwood
             </button>
@@ -56,18 +59,20 @@ const ProfileSettings = () => {
           </div>
           <div className="flex flex-col items-center mt-10 gap-2">
             <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
-              Change email address
+              Change Email Address
             </Link>
             <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
-              Add another entity members{" "}
+              Add Another Entity Member
             </Link>
             <Link className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
-              Download account settings
+              Download Account Settings
             </Link>
           </div>
         </div>
       </div>
-      <div className="mt-[60px] flex gap-7 justify-center">
+
+      {/* Query Boxes Section */}
+      <div className="mt-10 flex flex-col sm:flex-row gap-7 justify-center">
         <QueryBox
           boxData={{
             heading: "Account",
@@ -91,4 +96,4 @@ const ProfileSettings = () => {
   );
 };
 
-export default ProfileSettings;
+export default ProfileSettings; // Exporting the component for use in other parts of the application

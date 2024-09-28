@@ -2,13 +2,13 @@
 import QueryBox from "../common/QueryBox";
 import { platformUpdates } from "../../../assets/data";
 
-const PlateformUpdates = () => {
+const PlatformUpdates = () => {
   return (
-    // Grid layout with 3 columns, gap between items, and custom shadow and padding
-    <div className="grid grid-cols-3 gap-x-10 gap-y-7 mt-7 shadow-custom rounded-lg p-10">
-      {/* Mapping through plateformUpdates array to render each update */}
-      {platformUpdates.map((plateformUpdate, index) => {
-        const { updateNum, updateName } = plateformUpdate; // Destructuring update object
+    // Grid layout with responsive column settings and custom shadow and padding
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-7 shadow-custom rounded-lg p-5 sm:p-10">
+      {/* Mapping through platformUpdates array to render each update */}
+      {platformUpdates.map((platformUpdate, index) => {
+        const { updateNum, updateName } = platformUpdate; // Destructuring update object
 
         // Rendering QueryBox for each update, passing data as props
         return (
@@ -22,4 +22,4 @@ const PlateformUpdates = () => {
   );
 };
 
-export default PlateformUpdates;
+export default PlatformUpdates;

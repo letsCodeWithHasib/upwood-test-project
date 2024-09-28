@@ -1,28 +1,21 @@
 import { Outlet } from "react-router-dom"; // Importing Outlet for nested routes
 import Header from "../components/user/common/Header"; // Importing the Header component
 import Sidebar from "../components/user/common/Sidebar"; // Importing the Sidebar component
-import { useState } from "react";
-import menu from "../assets/menu.png";
-import close from "../assets/close.png";
+import { useEffect, useState } from "react";
 
 const User = () => {
   const [showSideBar, setShowSideBar] = useState(false);
   return (
     <div>
       {/* Render the Header component for user navigation */}
-      <Header />
-      <div className="fixed top-18 left-5 md:hidden">
-        <button
-          onClick={() => setShowSideBar(!showSideBar)}
-          className="p-2 rounded-full bg-orange-300"
-        >
-          <img className="w-8" src={showSideBar ? menu : close} alt="" />
-        </button>
-      </div>
+      <Header showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
       {/* Main content area with Sidebar and Outlet for nested routes */}
       <div className="mt-[80px]">
         {/* Margin to ensure content is below the header */}
-        <Sidebar showSideBar={showSideBar} />{" "}
+        <Sidebar
+          showSideBar={showSideBar}
+          setShowSideBar={setShowSideBar}
+        />{" "}
         {/* Render the Sidebar for navigation links */}
         {/* Outlet to render child routes, positioned beside the Sidebar */}
       </div>

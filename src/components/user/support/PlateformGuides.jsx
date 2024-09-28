@@ -1,10 +1,12 @@
 import QueryBox from "../common/QueryBox";
 
-const PlateformGuides = () => {
+const PlatformGuides = () => {
   return (
-    <div className="shadow-2xl rounded-2xl p-7">
-      <h3 className="text-lg font-bold font-lexend ">Platform how to guides</h3>
-      <div className="grid grid-cols-3 gap-x-5 gap-y-7 mt-5 ">
+    <div className="shadow-2xl rounded-2xl p-5 sm:p-7">
+      <h3 className="text-lg font-bold font-lexend text-center sm:text-left">
+        Platform How-To Guides
+      </h3>
+      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
         <QueryBox
           boxData={{
             heading: "Portfolio",
@@ -25,28 +27,30 @@ const PlateformGuides = () => {
         />
         <QueryBox
           boxData={{
-            heading: "Contracts",
-            query: "How to manage your contracts?",
+            heading: "Security",
+            query: "How to ensure your account security?",
           }}
         />
         <QueryBox
           boxData={{
-            heading: "Portfolio",
-            query: "How to manage your investments portfolio?",
+            heading: "Investments",
+            query: "How to invest in new projects?",
           }}
         />
         <QueryBox
           boxData={{
-            heading: "Wallet",
-            query: "How to manage your wallet?",
+            heading: "Support",
+            query: "How to contact support?",
           }}
         />
       </div>
-      <button className="text-[#0FB404] font-bold text-[15px] w-full text-right my-5">
-        See all
-      </button>
+      <div className="flex justify-end mt-5">
+        <button className="text-[#0FB404] font-bold text-[15px]">
+          See All
+        </button>
+      </div>
     </div>
   );
 };
 
-export default PlateformGuides;
+export default PlatformGuides;

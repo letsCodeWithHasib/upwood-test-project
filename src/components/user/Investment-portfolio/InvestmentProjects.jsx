@@ -4,12 +4,12 @@ import InvestmentProject from "./InvestmentProject"; // Importing the Investment
 // InvestmentProjects component to display a grid of individual investment projects
 const InvestmentProjects = () => {
   return (
-    // Main container for the investment projects with grid layout
-    <div className="shadow-custom rounded-lg p-10 grid grid-cols-2 gap-5 my-5">
+    // Main container for the investment projects with responsive grid layout
+    <div className="shadow-custom rounded-lg p-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 my-5">
       {/* Mapping through usersPortfolio to render each InvestmentProject */}
-      {usersPortfolio.map((portfolioProject, index) => (
+      {usersPortfolio.map((portfolioProject) => (
         // Providing a unique key for each item to help React identify changes
-        <InvestmentProject key={index} item={portfolioProject} />
+        <InvestmentProject key={portfolioProject.id} item={portfolioProject} />
       ))}
     </div>
   );

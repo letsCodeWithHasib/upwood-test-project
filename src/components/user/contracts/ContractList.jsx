@@ -6,15 +6,21 @@ const ContractList = () => {
     // Main container with margin applied to the sides and bottom
     <div className="mx-5 mt-[-20px] mb-10">
       {/* Section heading */}
-      <h2 className="text-center font-lexend text-2xl text-[#333333] font-bold">
+      <h2 className="text-center md:relative md:z-30 font-lexend text-2xl text-[#333333] font-bold">
         Contracts
       </h2>
 
       {/* Platform how-to guides section */}
-      <div className="mt-5 grid grid-cols-2 gap-5 my-5">
-        {contractsList.map((contract, index) => {
-          return <Contract key={index} contract={contract} />;
-        })}
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {contractsList.length > 0 ? (
+          contractsList.map((contract) => (
+            <Contract key={contract.id} contract={contract} />
+          ))
+        ) : (
+          <p className="text-center col-span-full text-gray-500">
+            No contracts available.
+          </p>
+        )}
       </div>
     </div>
   );

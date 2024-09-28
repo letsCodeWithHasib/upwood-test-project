@@ -6,10 +6,10 @@ import InvestmentGraph from "./InvestmentGraph"; // Importing InvestmentGraph co
 // InvestmentPortfolio component to display the user's investment portfolio overview
 const InvestmentPortfolio = () => {
   return (
-    // Main container for the investment portfolio with margin for spacing
-    <div className="mx-5 mb-10 mt-[-20px]">
+    // Main container for the investment portfolio with responsive margin for spacing
+    <div className="mx-4 md:mx-5 mb-10 mt-[-20px]">
       {/* Section heading for the investment portfolio */}
-      <h2 className="text-center font-lexend text-2xl text-[#333333] font-bold">
+      <h2 className="text-center font-lexend text-xl md:text-2xl text-[#333333] font-bold">
         Investment Portfolio
       </h2>
 

@@ -6,71 +6,75 @@ import { tokenPortfolioList } from "../../../assets/data"; // Importing token po
  */
 const TokenPortfolio = () => {
   return (
-    <div className="p-7 shadow-custom mt-7 space-y-5 rounded-2xl">
+    <div className="p-5 sm:p-7 shadow-custom mt-7 space-y-5 rounded-2xl">
       {/* Header section with title and export buttons */}
-      <div className="flex justify-between">
-        <h3 className="font-lexend font-bold text-[20px] text-[#333333]">
-          Token portfolio list
+      <div className="flex flex-col sm:flex-row justify-between items-center">
+        <h3 className="font-lexend font-bold text-[20px] text-[#333333] mb-2 sm:mb-0">
+          Token Portfolio List
         </h3>
-        <div className="flex gap-5">
+        <div className="flex gap-3">
           {/* Button to export transaction history */}
           <button className="text-[#0FB404] text-sm font-bold font-[Roboto]">
-            Export transaction history
+            Export Transaction History
           </button>
           {/* Button to export token portfolio list */}
           <button className="text-[#0FB404] text-sm font-bold font-[Roboto]">
-            Export token portfolio list
+            Export Token Portfolio List
           </button>
         </div>
       </div>
 
       {/* Table to display the token portfolio data */}
-      <table className="w-full text-left">
-        <thead>
-          <tr className="border-t-[1px] border-[#808080] my-5">
-            {/* Table headers */}
-            <th className="py-2">Token Symbol</th>
-            <th>Asset name</th>
-            <th>Smart contract address</th>
-            <th>Share amount</th>
-            <th>Share value</th>
-            <th>Carbon credits</th>
-            <th>Dividends earned</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* Mapping through tokenPortfolioList to create a row for each token */}
-          {tokenPortfolioList.map((token, index) => {
-            const {
-              symbol,
-              assetName,
-              smartContractAddress,
-              shareAmount,
-              shareValue,
-              carbonCredits,
-              dividentEarned,
-            } = token; // Destructure token properties
+      <div className="overflow-x-auto">
+        <table className="w-full text-left table-auto">
+          <thead>
+            <tr className="border-t-[1px] border-[#808080] my-5">
+              {/* Table headers */}
+              <th className="py-2">Token Symbol</th>
+              <th>Asset Name</th>
+              <th>Smart Contract Address</th>
+              <th>Share Amount</th>
+              <th>Share Value</th>
+              <th>Carbon Credits</th>
+              <th>Dividends Earned</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Mapping through tokenPortfolioList to create a row for each token */}
+            {tokenPortfolioList.map((token, index) => {
+              const {
+                symbol,
+                assetName,
+                smartContractAddress,
+                shareAmount,
+                shareValue,
+                carbonCredits,
+                dividentEarned,
+              } = token; // Destructure token properties
 
-            return (
-              <tr key={index} className="border-t-[1px] border-[#333333]">
-                {/* Render token details in table cells */}
-                <td className="py-2 text-sm">{symbol}</td>
-                <td className="py-2 text-sm">{assetName}</td>
-                <td className="py-2 text-sm">{smartContractAddress}</td>
-                <td className="text-center py-2 text-sm">{shareAmount}</td>
-                <td className="text-center py-2 text-sm">{shareValue}</td>
-                <td className="text-center py-2 text-sm">{carbonCredits}</td>
-                <td className="text-center py-2 text-sm">{dividentEarned}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+              return (
+                <tr key={index} className="border-t-[1px] border-[#333333]">
+                  {/* Render token details in table cells */}
+                  <td className="py-2 text-sm">{symbol}</td>
+                  <td className="py-2 text-sm">{assetName}</td>
+                  <td className="py-2 text-sm break-all">
+                    {smartContractAddress}
+                  </td>
+                  <td className="text-center py-2 text-sm">{shareAmount}</td>
+                  <td className="text-center py-2 text-sm">{shareValue}</td>
+                  <td className="text-center py-2 text-sm">{carbonCredits}</td>
+                  <td className="text-center py-2 text-sm">{dividentEarned}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
 
       {/* Button to view all tokens, positioned to the right */}
-      <div className="flex justify-end ">
+      <div className="flex justify-end">
         <button className="text-[rgb(15,180,4)] font-[Roboto] font-bold">
-          See all tokens
+          See All Tokens
         </button>
       </div>
     </div>

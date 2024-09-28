@@ -31,7 +31,7 @@ const FundedProjects = () => {
         />
       )}
       {/* Container for the active projects section */}
-      <h2 className="text-center font-lexend text-2xl text-[#333333] font-bold">
+      <h2 className="text-center md:relative md:z-30 font-lexend text-2xl text-[#333333] font-bold">
         Funded Projects {/* Section heading */}
       </h2>
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 my-5">

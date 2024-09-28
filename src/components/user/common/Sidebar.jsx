@@ -1,21 +1,29 @@
 // Importing necessary assets and components for routing and styling
+import logoutImage from "../../../assets/logout.png";
 import { sidebarItems } from "../../../assets/data";
-
 import { Link, useMatch, useLocation } from "react-router-dom"; // Importing routing components
 import { style } from "../../../assets/style"; // Importing custom styles
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../../redux/features/authSlice";
 
-const Sidebar = ({ showSideBar }) => {
+const Sidebar = ({ showSideBar, setShowSideBar }) => {
   const location = useLocation();
+  const dispatch = useDispatch();
   const contains = (route) => {
     return location.pathname.includes(route);
   };
 
+  useEffect(() => {
+    setShowSideBar(false);
+  }, [location]);
+
   return (
     // Sidebar container with fixed positioning and custom width
     <aside
-      className={`w-[250px] fixed mx-5 top-[100px] ${
+      className={`md:w-[250px] fixed px-5 md:top-[100px] ${
         showSideBar ? "block" : "hidden"
-      } md:block bg-white rounded-t-lg`}
+      } md:block md:z-0 rounded-t-lg bg-white  h-screen top-0 flex flex-col items-center z-40 justify-center w-full`}
     >
       {/* Navigation container with vertical layout and spacing */}
       <nav className="flex flex-col gap-1">
@@ -46,6 +54,20 @@ const Sidebar = ({ showSideBar }) => {
             </Link>
           );
         })}
+
+        <button
+          className={`${style.sideLink} md:hidden`}
+          onClick={() => dispatch(logout())}
+        >
+          <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] ">
+            logout
+          </span>
+          <img
+            className="w-[20px] h-[20px]"
+            src={logoutImage}
+            alt="Logout Icon"
+          />
+        </button>
       </nav>
     </aside>
   );

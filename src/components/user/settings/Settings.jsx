@@ -4,14 +4,16 @@ import AffiliateSettings from "./AffiliateSettings";
 
 const Settings = () => {
   return (
-    <div className="mx-5 mt-[-20px] mb-10">
-      {/* Container for the active projects section */}
-      <h2 className="text-center font-lexend text-2xl text-[#333333] font-bold">
+    <div className="mx-5 mt-5 mb-10">
+      {/* Container for the settings section */}
+      <h2 className="text-center font-lexend text-2xl text-[#333333] font-bold mb-5">
         Settings {/* Section heading */}
       </h2>
-      <ProfileSettings />
-      <TransactionHistory />
-      <AffiliateSettings />
+      <div className="space-y-5">
+        <ProfileSettings />
+        <TransactionHistory />
+        <AffiliateSettings />
+      </div>
     </div>
   );
 };

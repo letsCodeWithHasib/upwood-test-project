@@ -4,12 +4,14 @@ import NewsArticle from "./NewsArticle";
 
 const NewsArticles = () => {
   return (
-    // Container div with flex layout, margin-top, and gap between items
-    <div className="flex justify-between mt-7 gap-7">
+    // Container div with responsive flex layout and gap between items
+    <div className="flex flex-col sm:flex-row sm:justify-between mt-7 gap-5">
       {/* Mapping through the articles array and rendering each NewsArticle component */}
       {articles.map((article, index) => (
-        // Using index as key for simplicity; it's better to use a unique identifier like article.id in a production environment
-        <NewsArticle key={index} article={article} />
+        // Using index as key for simplicity; ideally use a unique identifier like article.id
+        <div key={index} className="flex-1">
+          <NewsArticle article={article} />
+        </div>
       ))}
     </div>
   );

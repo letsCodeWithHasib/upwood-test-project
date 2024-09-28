@@ -1,24 +1,26 @@
 const AffiliateSettings = () => {
   return (
-    <div className="p-7 shadow-2xl mt-7 space-y-5 rounded-2xl">
-      <div className="flex justify-between">
+    <div className="p-5 sm:p-7 shadow-2xl mt-7 space-y-5 rounded-2xl">
+      <div className="flex justify-between items-center">
         <h3 className="font-lexend font-bold text-[20px] text-[#333333]">
           Affiliate Settings
         </h3>
         <button className="text-[#0FB404] text-sm font-bold">
-          Affiliate Terms and Condition
+          Affiliate Terms and Conditions
         </button>
       </div>
+
       <p className="text-[#333333] text-sm text-[Roboto] text-[16px]">
-        Your unique link :{" "}
+        Your unique link:{" "}
         <span className="text-[#0FB404] text-lg font-bold">
           upwood.io/jsdhdsjsdhc1234
         </span>
       </p>
-      <table className="w-full text-center">
+
+      <table className="w-full text-center border-collapse">
         <thead>
           <tr className="border-t-[1px] border-[#333333] my-5">
-            <th className="py-2">Transaction hash</th>
+            <th className="py-2">Transaction Hash</th>
             <th>Type</th>
             <th>Sender</th>
             <th>Amount</th>
@@ -26,39 +28,30 @@ const AffiliateSettings = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className="border-t-[1px] border-[#333333]">
-            <td className="py-2">765192</td>
-            <td>Share purchase</td>
-            <td>350JPZ</td>
-            <td>500euroE</td>
-            <td>Successful</td>
-          </tr>
-          <tr className="border-t-[1px] border-[#333333]">
-            <td className="py-2">765192</td>
-            <td>Share purchase</td>
-            <td>350JPZ</td>
-            <td>500euroE</td>
-            <td>Successful</td>
-          </tr>
-          <tr className="border-t-[1px] border-[#333333]">
-            <td className="py-2">765192</td>
-            <td>Share purchase</td>
-            <td>350JPZ</td>
-            <td>500euroE</td>
-            <td>Successful</td>
-          </tr>
+          {Array(3)
+            .fill()
+            .map((_, index) => (
+              <tr key={index} className="border-t-[1px] border-[#333333]">
+                <td className="py-2">765192</td>
+                <td>Share Purchase</td>
+                <td>350JPZ</td>
+                <td>500 Euro</td>
+                <td>Successful</td>
+              </tr>
+            ))}
         </tbody>
       </table>
-      <div className="flex justify-end gap-7">
-        <button className=" text-[rgb(15,180,4)] font-bold text-sm font-[Roboto]">
-          Export affiliate earning table
+
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-5">
+        <button className="text-[rgb(15,180,4)] font-bold text-sm font-[Roboto]">
+          Export Affiliate Earning Table
         </button>
         <button className="bg-[#0FB404] text-sm font-bold rounded-2xl font-[Roboto] text-white py-[14px] px-[24px]">
-          CLAIN EARNINGS
+          Claim Earnings
         </button>
       </div>
     </div>
   );
 };
 
-export default AffiliateSettings;
+export default AffiliateSettings; // Exporting the component for use in other parts of the application

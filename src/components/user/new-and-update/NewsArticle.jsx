@@ -4,15 +4,15 @@ const NewsArticle = ({ article }) => {
 
   return (
     // Main article container with shadow and rounded corners
-    <div className="shadow-custom rounded-lg">
+    <div className="shadow-custom rounded-lg overflow-hidden">
       {/* Article heading section, centered with bold uppercase text */}
       <p className="text-center text-xs font-[Roboto] font-bold uppercase text-[#333333] p-2">
         {heading}
       </p>
 
-      {/* Image container with full width, centered inside a div */}
+      {/* Image container with full width */}
       <div className="flex justify-center w-full">
-        <img className="w-full" src={image} alt={title} />{" "}
+        <img className="w-full h-auto" src={image} alt={title} />
         {/* Alt text updated with title for better accessibility */}
       </div>
 

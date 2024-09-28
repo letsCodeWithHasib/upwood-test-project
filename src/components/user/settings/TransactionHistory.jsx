@@ -2,16 +2,16 @@ const TransactionHistory = () => {
   return (
     <div className="p-7 shadow-2xl mt-7 space-y-5 rounded-2xl">
       <h3 className="font-lexend font-bold text-[20px] text-[#333333]">
-        Your transaction history
+        Your Transaction History
       </h3>
-      <p className="text-[#333333] text-[Roboto] text-[16px]">
-        Earn up to 5% by sharing Upwood to your network! In this section you
-        will find your unique referral link and see your affiliate earnings.{" "}
+      <p className="text-[#333333] font-[Roboto] text-[16px]">
+        Earn up to 5% by sharing Upwood with your network! In this section, you
+        will find your unique referral link and see your affiliate earnings.
       </p>
       <table className="w-full text-left">
         <thead>
           <tr className="border-t-[1px] border-[#333333] my-5">
-            <th className="py-2">Transaction hash</th>
+            <th className="py-2">Transaction Hash</th>
             <th>Type</th>
             <th>Sender</th>
             <th>Amount</th>
@@ -19,32 +19,20 @@ const TransactionHistory = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className="border-t-[1px] border-[#333333]">
-            <td className="py-2">765192</td>
-            <td>Share purchase</td>
-            <td>350JPZ</td>
-            <td>500euroE</td>
-            <td>Successful</td>
-          </tr>
-          <tr className="border-t-[1px] border-[#333333]">
-            <td className="py-2">765192</td>
-            <td>Share purchase</td>
-            <td>350JPZ</td>
-            <td>500euroE</td>
-            <td>Successful</td>
-          </tr>
-          <tr className="border-t-[1px] border-[#333333]">
-            <td className="py-2">765192</td>
-            <td>Share purchase</td>
-            <td>350JPZ</td>
-            <td>500euroE</td>
-            <td>Successful</td>
-          </tr>
+          {[1, 2, 3].map((_, index) => (
+            <tr key={index} className="border-t-[1px] border-[#333333]">
+              <td className="py-2">765192</td>
+              <td>Share Purchase</td>
+              <td>350JPZ</td>
+              <td>500 EuroE</td>
+              <td>Successful</td>
+            </tr>
+          ))}
         </tbody>
       </table>
-      <div className="flex justify-end gap-7">
-        <button className=" text-[rgb(15,180,4)] text-sm font-bold font-[Roboto]">
-          See full transactions
+      <div className="flex justify-end">
+        <button className="text-[rgb(15,180,4)] text-sm font-bold font-[Roboto]">
+          See Full Transactions
         </button>
       </div>
     </div>

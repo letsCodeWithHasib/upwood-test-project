@@ -6,41 +6,45 @@ const PortfolioDetails = ({ investmentPortfolio }) => {
 
   return (
     // Main container with shadow and padding for styling
-    <div className="shadow-custom rounded-lg p-10 space-y-5 mt-5">
-      {/* Flex container to arrange the metrics evenly */}
-      <div className="flex justify-around">
+    <div className="shadow-custom rounded-lg p-5 md:p-10 space-y-5 mt-5">
+      {/* Flex container to arrange the metrics evenly and wrap on smaller screens */}
+      <div className="flex flex-wrap justify-around">
         {/* Portfolio Value */}
-        <div className="text-center">
-          <h4 className="text-[#333333] font-[Roboto] font-bold">
+        <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
+          <h4 className="text-[#333333] font-[Roboto] font-bold text-lg sm:text-xl">
             Portfolio Value
           </h4>
-          <p className="text-[#0FB404] font-bold text-[18px]">
+          <p className="text-[#0FB404] font-bold text-[18px] sm:text-[20px]">
             {portfolioValue}
           </p>
         </div>
 
         {/* Yearly Portfolio Growth */}
-        <div className="text-center">
-          <h4 className="text-[#333333] font-[Roboto] font-bold">
+        <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
+          <h4 className="text-[#333333] font-[Roboto] font-bold text-lg sm:text-xl">
             Yearly Portfolio Growth
           </h4>
-          <p className="text-[#0FB404] font-bold text-[18px]">{yearlyProfit}</p>
+          <p className="text-[#0FB404] font-bold text-[18px] sm:text-[20px]">
+            {yearlyProfit}
+          </p>
         </div>
 
         {/* Return on Investment */}
-        <div className="text-center">
-          <h4 className="text-[#333333] font-[Roboto] font-bold">
+        <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
+          <h4 className="text-[#333333] font-[Roboto] font-bold text-lg sm:text-xl">
             Return on Investment
           </h4>
-          <p className="text-[#0FB404] font-bold text-[18px]">{roi}</p>
+          <p className="text-[#0FB404] font-bold text-[18px] sm:text-[20px]">
+            {roi}
+          </p>
         </div>
 
         {/* Carbon Tons Offset */}
-        <div className="text-center">
-          <h4 className="text-[#333333] font-[Roboto] font-bold">
+        <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
+          <h4 className="text-[#333333] font-[Roboto] font-bold text-lg sm:text-xl">
             Carbon Tons Offset
           </h4>
-          <p className="text-[#0FB404] font-bold text-[20px]">
+          <p className="text-[#0FB404] font-bold text-[20px] sm:text-[22px]">
             {carbonTonsoffset}
           </p>
         </div>
