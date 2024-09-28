@@ -7,7 +7,7 @@ const MailSent = () => {
   return (
     <div>
       {/* Main container for the notification with fixed width and flex layout */}
-      <div className="w-[450px] font-[Lexend Deca] flex flex-col items-center">
+      <div className="md:w-[450px] w-[300px]  font-[Lexend Deca] flex flex-col items-center">
         {/* Logo displayed at the top of the notification */}
         <img className="md:w-[200px] w-[150px]" src={logo} alt="Logo" />
 

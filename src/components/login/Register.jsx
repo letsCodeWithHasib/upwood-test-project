@@ -27,9 +27,9 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center  min-h-screen">
+    <div className="flex justify-center min-h-screen">
       {/* Container for the registration form */}
-      <div className="md:w-[450px] w-[350px] font-[Lexend Deca] flex flex-col items-center">
+      <div className="md:w-[450px] w-[300px] font-[Lexend Deca] flex flex-col items-center">
         {/* Displaying the logo at the top of the form */}
         <img className="md:w-[200px] w-[150px]" src={logo} alt="Logo" />
 

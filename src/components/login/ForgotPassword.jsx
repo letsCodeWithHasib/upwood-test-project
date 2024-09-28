@@ -13,7 +13,7 @@ const ForgotPassword = () => {
   return (
     <div>
       <div>
-        <div className="w-[350px] lg:w-[450px] font-[Lexend Deca] flex flex-col items-center">
+        <div className="w-[300px] lg:w-[450px] font-[Lexend Deca] flex flex-col items-center">
           {/* Logo at the top of the login form */}
           <img className="md:w-[200px] w-[150px]" src={logo} alt="Logo" />
 

@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <div className="">
-      <div className="lg:w-[450px] min-w-[350px] font-[Lexend Deca] flex flex-col items-center">
+      <div className="lg:w-[450px] w-[300px] font-[Lexend Deca] flex flex-col items-center">
         {/* Logo at the top of the login form */}
         <img className="w-[150px] lg:w-[200px]" src={logo} alt="Logo" />
 

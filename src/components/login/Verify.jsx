@@ -7,7 +7,7 @@ const Verify = () => {
   return (
     <div>
       {/* Main container for the notification with fixed width and flex layout */}
-      <div className="w-[450px] flex flex-col items-center">
+      <div className="md:w-[450px] w-[350px] flex flex-col items-center">
         {/* Logo displayed at the top of the notification */}
         <img className="w-[200px]" src={logo} alt="Logo" />
 
