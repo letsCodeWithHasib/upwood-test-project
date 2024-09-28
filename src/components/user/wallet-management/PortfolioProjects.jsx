@@ -1,5 +1,5 @@
 import { usersPortfolio } from "../../../assets/data"; // Importing user portfolio data
-import ProjectItem from "../common/ProjectItem"; // Importing ProjectItem component
+import PortfolioProject from "./PortfolioProject"; // Importing ProjectItem component
 
 /**
  * PortfolioProjects Component
@@ -11,7 +11,7 @@ const PortfolioProjects = () => {
       {/* Mapping through usersPortfolio to render each ProjectItem */}
       {usersPortfolio.map((portfolioProject, index) => (
         // Providing a unique key for each item to help React identify changes
-        <ProjectItem key={index} item={portfolioProject} />
+        <PortfolioProject key={index} item={portfolioProject} />
       ))}
     </div>
   );

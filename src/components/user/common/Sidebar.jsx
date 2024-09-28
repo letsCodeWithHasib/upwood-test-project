@@ -26,50 +26,51 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
       } md:block md:z-0 rounded-t-lg bg-white h-screen top-0 flex flex-col items-center z-40 md:justify-between w-full justify-center`}
     >
       {/* Navigation container with vertical layout and spacing */}
-      <nav className="flex flex-col gap-1">
-        {/* Link to Active Projects */}
-        {sidebarItems.map((sidebarItem, index) => {
-          const { title, white, normal, path } = sidebarItem;
-          const isActive = useMatch("user");
-          return (
-            <Link key={index} to={path} className="flex items-center">
-              <button
-                className={`${style.sideLink} ${
-                  (contains(path) ||
-                    (isActive && title === "Active Project")) &&
-                  style.sideLinkSelected
-                }`}
-              >
-                <img
-                  className="w-[22px]"
-                  src={
-                    contains(path) || (isActive && title === "Active Project")
-                      ? white
-                      : normal
-                  }
-                  alt={title}
-                />
-                {title}
-              </button>
-            </Link>
-          );
-        })}
+      <nav className="flex justify-center items-center">
+        <div className="flex flex-col gap-1">
+          {/* Link to Active Projects */}
+          {sidebarItems.map((sidebarItem, index) => {
+            const { title, white, normal, path } = sidebarItem;
+            const isActive = useMatch("user");
+            return (
+              <Link key={index} to={path} className="flex items-center">
+                <button
+                  className={`${style.sideLink} ${
+                    (contains(path) ||
+                      (isActive && title === "Active Project")) &&
+                    style.sideLinkSelected
+                  }`}
+                >
+                  <img
+                    className="w-[22px]"
+                    src={
+                      contains(path) || (isActive && title === "Active Project")
+                        ? white
+                        : normal
+                    }
+                    alt={title}
+                  />
+                  {title}
+                </button>
+              </Link>
+            );
+          })}
+          {/* Logout button with responsiveness */}
+          <button
+            className={`${style.sideLink} md:hidden flex items-center gap-2`}
+            onClick={() => dispatch(logout())}
+          >
+            <img
+              className="w-[20px] h-[20px]"
+              src={logoutImage}
+              alt="Logout Icon"
+            />
+            <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B]">
+              Logout
+            </span>
+          </button>
+        </div>
       </nav>
-
-      {/* Logout button with responsiveness */}
-      <button
-        className={`${style.sideLink} md:hidden flex items-center gap-2`}
-        onClick={() => dispatch(logout())}
-      >
-        <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B]">
-          Logout
-        </span>
-        <img
-          className="w-[20px] h-[20px]"
-          src={logoutImage}
-          alt="Logout Icon"
-        />
-      </button>
     </aside>
   );
 };

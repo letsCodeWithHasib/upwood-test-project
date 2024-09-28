@@ -46,7 +46,7 @@ const AffiliateSettings = () => {
         <button className="text-[rgb(15,180,4)] font-bold text-sm font-[Roboto]">
           Export Affiliate Earning Table
         </button>
-        <button className="bg-[#0FB404] text-sm font-bold rounded-2xl font-[Roboto] text-white py-[14px] px-[24px]">
+        <button className="bg-[#0FB404] uppercase text-sm font-bold rounded-2xl font-[Roboto] text-white py-[14px] px-[24px]">
           Claim Earnings
         </button>
       </div>

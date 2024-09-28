@@ -1,4 +1,4 @@
-import ProjectItem from "../common/ProjectItem"; // Importing the ProjectItem component to display individual projects
+import ProjectItem from "./ProjectItem"; // Importing the ProjectItem component to display individual projects
 import { activeProjects } from "../../../assets/data";
 import { useState } from "react";
 import Popup from "../common/Popup";
