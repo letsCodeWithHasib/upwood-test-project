@@ -5,7 +5,7 @@ import logoutImage from "../../../assets/logout.png";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../../redux/features/authSlice";
 import { useState } from "react";
-import menu from "../../../assets/menu.png";
+import menu from "../../../assets/menu-right.png";
 import close from "../../../assets/close.png";
 
 const Header = ({ showSideBar, setShowSideBar }) => {
@@ -102,7 +102,7 @@ const Header = ({ showSideBar, setShowSideBar }) => {
           onClick={() => setShowSideBar(!showSideBar)}
           className="p-2 w-[40px] rounded-full bg-green-300"
         >
-          <img className="w-6" src={showSideBar ? menu : close} alt="" />
+          <img className="w-6" src={showSideBar ? close : menu} alt="" />
         </button>
       </div>
     </header>
