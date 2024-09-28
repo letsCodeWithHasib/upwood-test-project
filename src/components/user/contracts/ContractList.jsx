@@ -11,7 +11,7 @@ const ContractList = () => {
       </h2>
 
       {/* Platform how-to guides section */}
-      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2  gap-5">
         {contractsList.length > 0 ? (
           contractsList.map((contract) => (
             <Contract key={contract.id} contract={contract} />

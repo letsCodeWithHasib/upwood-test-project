@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const Popup = ({ selectedProject, closePopup }) => {
   const [price, setPrice] = useState(0);
-  const { available } = selectedProject;
+  const { available, price: itemPrice } = selectedProject;
   return (
     <div className="fixed inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
       <div className="bg-white rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
@@ -17,7 +17,7 @@ const Popup = ({ selectedProject, closePopup }) => {
           <p className="text-[Roboto] font-bold">
             Price per share :
             <span className="text-[#0FB404] text-[20px] ml-2">
-              {price || 0}€
+              {itemPrice}€
             </span>
           </p>
           <p className="text-[Roboto] pt-2">Type the amount</p>

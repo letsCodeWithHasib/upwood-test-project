@@ -6,7 +6,7 @@ const Popup = ({ selectedProject, closePopup }) => {
   const [price, setPrice] = useState(0);
   const [invested, setInvested] = useState(false);
   const [failed, setFailed] = useState(false);
-  const { available } = selectedProject;
+  const { available, price: itemPrice } = selectedProject;
   const [agreementSigned, setAgreementSigned] = useState(false);
 
   const investNow = () => {
@@ -58,7 +58,9 @@ const Popup = ({ selectedProject, closePopup }) => {
             </p>
             <p className="text-[Roboto] font-bold">
               Price per share :{" "}
-              <span className="text-[#0FB404] text-[20px]">{price || 0}€</span>
+              <span className="text-[#0FB404] text-[20px]">
+                {itemPrice || 0}€
+              </span>
             </p>
             <input
               className={`p-4 border-[1px] rounded-md ${
@@ -78,11 +80,13 @@ const Popup = ({ selectedProject, closePopup }) => {
             )}
             <p className="text-[Roboto] font-bold">
               Total payment :{" "}
-              <span className="text-[#0FB404] text-[20px]">5000€</span>
+              <span className="text-[#0FB404] text-[20px]">
+                {itemPrice * price || 0}
+              </span>
             </p>
             <div className="flex flex-col items-center py-7 gap-3">
               {agreementSigned ? (
-                ""
+                "accepted"
               ) : (
                 <button
                   onClick={() => setAgreementSigned(true)}
