@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useState } from "react";
 import { login } from "../../redux/features/authSlice";
@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -15,30 +16,39 @@ const Login = () => {
 
   const onChangeHandler = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+    if (loginFailed) setLoginFailed(false); // Reset the error state on input change
   };
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
+    // Replace this with an actual API call later
     if (
       formData.email === "mohdhasib2001@gmail.com" &&
       formData.password === "12345"
     ) {
       dispatch(login(formData));
+      // Optionally, navigate to a different page on successful login
     } else {
       setLoginFailed(true);
     }
+
     setFormData({
       email: "",
       password: "",
     });
   };
 
+  const onRequestHandler = (event) => {
+    event.preventDefault();
+    navigate("/auth/mail-sent");
+  };
+
   return (
-    <div>
-      <div className="w-[450px] font-[Lexend Deca] flex flex-col items-center">
+    <div className="">
+      <div className="lg:w-[450px] min-w-[350px] font-[Lexend Deca] flex flex-col items-center">
         {/* Logo at the top of the login form */}
-        <img className="w-[200px]" src={logo} alt="Logo" />
+        <img className="w-[150px] lg:w-[200px]" src={logo} alt="Logo" />
 
         {/* User login form section */}
         <section className="w-full mt-7 border-y-[1px] border-[#999999]">
@@ -82,7 +92,7 @@ const Login = () => {
 
             {/* Button for login and link for forgotten details */}
             <div className="flex items-center my-5">
-              <button className="bg-[#0FB404] rounded-lg p-2 px-5 text-white">
+              <button className="bg-[#0FB404] cursor-pointer font-[Roboto] font-bold text-sm rounded-lg p-2 px-5 text-white">
                 Login
               </button>
               <Link
@@ -97,7 +107,7 @@ const Login = () => {
 
         {/* Invitation request section */}
         <section className="w-full mt-5">
-          <h2 className="text-2xl font-[Lexend Deca] font-bold">
+          <h2 className="text-lg font-[Lexend Deca] font-bold">
             Not a user? Request Invitation
           </h2>
           <form className="mt-5">
@@ -112,17 +122,24 @@ const Login = () => {
             </label>
 
             {/* Checkbox for agreeing to marketing communications */}
-            <label className="flex items-start gap-5 mt-5">
-              <input type="checkbox" />
-              <span className="ml-2 font-[Roboto] text-[14px]">
+            <label className="flex items-start gap-3 mt-5">
+              <input type="checkbox" className="text-[20px]" required />
+              <p className="font-[Roboto] text-[14px] text-sm max-w-[300px]">
                 By entering your email you agree to receive marketing
                 communications from SIA Upwood. You can unsubscribe at any time.
-                For more information, see our Privacy Policy.
-              </span>
+                For more information, see our{" "}
+                <span className="text-[#0FB404] text-[16px]">
+                  Privacy Policy
+                </span>
+                .
+              </p>
             </label>
 
             {/* Button to submit the invitation request */}
-            <button className="bg-[#0FB404] rounded-lg p-2 px-5 text-white mt-5">
+            <button
+              onClick={onRequestHandler}
+              className="bg-[#0FB404] cursor-pointer text-sm font-[Roboto] font-bold rounded-lg p-2 px-5 text-white mt-5"
+            >
               Request Invitation
             </button>
           </form>

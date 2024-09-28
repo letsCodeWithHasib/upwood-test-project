@@ -6,9 +6,9 @@ const Login = () => {
   return (
     <main className="bg-[#F8FBF8] min-h-screen p-[1px]">
       {/* Main container for the login pagh-sreene */}
-      <div className="flex mt-[100px] flex-wrap px-[100px] justify-between">
+      <div className="flex mt-[70px] px-[100px] flex-wrap justify-center xl:justify-between ">
         {/* Left preview section with an image */}
-        <div className="w-[692px]">
+        <div className="w-[692px] xl:block hidden">
           <img className="w-full" src={preview} alt="Preview" />
         </div>
 
