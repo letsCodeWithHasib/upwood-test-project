@@ -23,7 +23,7 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
     <aside
       className={`md:w-[250px] fixed px-5 md:top-[100px] ${
         showSideBar ? "block" : "hidden"
-      } md:block md:z-0 rounded-t-lg bg-white  h-screen top-0 flex flex-col items-center z-40 justify-center w-full`}
+      } md:block md:z-0 rounded-t-lg bg-white h-screen top-0 flex flex-col items-center z-40 md:justify-between w-full justify-center`}
     >
       {/* Navigation container with vertical layout and spacing */}
       <nav className="flex flex-col gap-1">
@@ -47,28 +47,29 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
                       ? white
                       : normal
                   }
-                  alt="Contracts"
-                />{" "}
+                  alt={title}
+                />
                 {title}
               </button>
             </Link>
           );
         })}
-
-        <button
-          className={`${style.sideLink} md:hidden`}
-          onClick={() => dispatch(logout())}
-        >
-          <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] ">
-            logout
-          </span>
-          <img
-            className="w-[20px] h-[20px]"
-            src={logoutImage}
-            alt="Logout Icon"
-          />
-        </button>
       </nav>
+
+      {/* Logout button with responsiveness */}
+      <button
+        className={`${style.sideLink} md:hidden flex items-center gap-2`}
+        onClick={() => dispatch(logout())}
+      >
+        <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B]">
+          Logout
+        </span>
+        <img
+          className="w-[20px] h-[20px]"
+          src={logoutImage}
+          alt="Logout Icon"
+        />
+      </button>
     </aside>
   );
 };
