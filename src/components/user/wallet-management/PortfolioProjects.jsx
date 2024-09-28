@@ -7,7 +7,7 @@ import ProjectItem from "../common/ProjectItem"; // Importing ProjectItem compon
  */
 const PortfolioProjects = () => {
   return (
-    <div className="shadow-custom rounded-lg p-5 sm:p-10 grid grid-cols-1 sm:grid-cols-2 gap-5 my-5">
+    <div className="rounded-lg  grid grid-cols-1 sm:grid-cols-2 gap-5 my-5">
       {/* Mapping through usersPortfolio to render each ProjectItem */}
       {usersPortfolio.map((portfolioProject, index) => (
         // Providing a unique key for each item to help React identify changes

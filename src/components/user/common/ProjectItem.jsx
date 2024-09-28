@@ -12,7 +12,7 @@ const ProjectItem = ({ item, openPopup }) => {
     item;
 
   return (
-    <div className="shadow-lg rounded-xl overflow-hidden">
+    <div className="shadow-custom rounded-xl overflow-hidden">
       {/* Container for the project item */}
       <div className="h-[200px] md:h-[250px] bg-gray-50 flex justify-center">
         {/* Project image */}

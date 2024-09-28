@@ -124,14 +124,13 @@ const Login = () => {
             {/* Checkbox for agreeing to marketing communications */}
             <label className="flex items-start gap-3 mt-5">
               <input type="checkbox" className="text-[20px]" required />
-              <p className="font-[Roboto] text-[14px] text-sm max-w-[300px]">
+              <p className="font-[Roboto] text-[16px] text-sm flex-1">
                 By entering your email you agree to receive marketing
                 communications from SIA Upwood. You can unsubscribe at any time.
-                For more information, see our{" "}
+                For more information, please see our{" "}
                 <span className="text-[#0FB404] text-[16px]">
                   Privacy Policy
                 </span>
-                .
               </p>
             </label>
 
