@@ -20,72 +20,72 @@ const ViewProjectDetail = ({ item }) => {
     image,
     area,
     reserved,
-  } = fundedProjects[id];
+  } = fundedProjects[id] || {}; // Added fallback to handle invalid IDs
+
   return (
-    <div className="shadow-custom rounded-xl m-10 mt-[120px]">
+    <div className="shadow-custom rounded-xl m-4 sm:m-6 lg:m-10 mt-[120px]">
       {/* Container for the project item */}
       <div className="bg-gray-50 flex justify-center">
         {/* Image container */}
         <img
-          className="rounded-t-lg w-full"
+          className="rounded-t-lg w-full sm:w-3/4 lg:w-1/2 object-cover"
           src={image}
           alt="Project Illustration"
         />
-        {/* Project image */}
       </div>
       <p className="bg-[#EBEBEB] text-xs uppercase text-center font-bold text-[#6B6B6B]">
         {heading} {/* Label for the project type */}
       </p>
-      <div className="p-5">
+      <div className="p-4 sm:p-5 lg:p-8">
         {/* Main content area */}
-        <h3 className="text-[#333333] font-bold text-2xl font-lexend ">
+        <h3 className="text-[#333333] font-bold text-xl sm:text-2xl lg:text-3xl font-lexend">
           {title} {/* Project title */}
         </h3>
-        <p className="text-[#333333] text-[16px] text-[Roboto] pt-2">
+        <p className="text-[#333333] text-[14px] sm:text-[16px] lg:text-[18px] font-[Roboto] pt-2">
           {description}
           {/* Project description */}
         </p>
-        <div className="flex gap-3 items-center">
+        <div className="flex flex-wrap gap-3 items-center mt-3">
           {/* Stats container */}
           <p className="text-[#6B6B6B] flex items-center gap-2">
-            Area :
-            <span className="text-[#333333] text-2xl font-semibold">
+            Area:
+            <span className="text-[#333333] text-lg sm:text-2xl font-semibold">
               {area}
-              {area === "TBA" ? "" : "ha"}
-            </span>{" "}
-            {/* Area statistic */}
+              {area === "TBA" ? "" : " ha"}
+            </span>
           </p>
           <p className="text-[#6B6B6B]">
-            ROI :
-            <span className="text-[#333333] text-2xl font-semibold">
+            ROI:
+            <span className="text-[#333333] text-lg sm:text-2xl font-semibold">
               {roi}
               {roi === "TBA" ? "" : "%"}
             </span>
           </p>
           <p className="text-[#6B6B6B]">
-            Carbon Credit :
-            <span className="text-[#333333] text-2xl font-semibold">
+            Carbon Credits:
+            <span className="text-[#333333] text-lg sm:text-2xl font-semibold">
               {carbonCredits}
             </span>
-            {/* Carbon credits statistic */}
           </p>
           <p className="text-[#6B6B6B]">
-            Shares Reserved :
-            <span className="text-[#333333] text-2xl font-semibold">
+            Shares Reserved:
+            <span className="text-[#333333] text-lg sm:text-2xl font-semibold">
               {reserved}
             </span>
-            {/* Carbon credits statistic */}
           </p>
         </div>
-        <div className="flex justify-between mt-5">
-          <button className="text-[15px] gap-2 flex items-center font-bold rounded-lg  text-[#0FB404] uppercase">
-            <img src={notifyImage} alt="" /> notify
+
+        <div className="flex flex-wrap justify-between items-center gap-3 mt-5">
+          {/* Notify and Back to Projects buttons */}
+          <button className="text-[13px] sm:text-[15px] gap-2 flex items-center font-bold rounded-lg text-[#0FB404] uppercase">
+            <img src={notifyImage} alt="notify icon" className="w-5 h-5" />{" "}
+            Notify
           </button>
           <Link
             to="/user/funded-projects"
-            className="text-[15px] gap-2 flex items-center font-bold rounded-lg  text-[#6B6B6B] uppercase"
+            className="text-[13px] sm:text-[15px] gap-2 flex items-center font-bold rounded-lg text-[#6B6B6B] uppercase"
           >
-            Back to projects
+            Back to Projects
           </Link>
         </div>
       </div>
@@ -93,4 +93,4 @@ const ViewProjectDetail = ({ item }) => {
   );
 };
 
-export default ViewProjectDetail; // Exporting the component for use in other parts of the application
+export default ViewProjectDetail;

@@ -73,7 +73,7 @@ const Popup = ({ selectedProject, closePopup }) => {
             <p className="text-[Roboto] font-bold">
               Total payment :{" "}
               <span className="text-[#0FB404] text-[20px]">
-                {itemPrice * price || 0}
+                {itemPrice * price || 0} EUROe
               </span>
             </p>
             <div className="flex flex-col items-center py-7 gap-3">

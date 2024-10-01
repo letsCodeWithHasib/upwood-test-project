@@ -25,18 +25,18 @@ const TokenPortfolio = () => {
       </div>
 
       {/* Table to display the token portfolio data */}
-      <div className="overflow-x-scroll">
+      <div className="overflow-x-auto">
         <table className="w-full text-left table-auto">
           <thead>
             <tr className="border-t-[1px] border-[#808080] my-5">
               {/* Table headers */}
-              <th className="py-2">Token Symbol</th>
-              <th>Asset Name</th>
-              <th>Smart Contract Address</th>
-              <th>Share Amount</th>
-              <th>Share Value</th>
-              <th>Carbon Credits</th>
-              <th>Dividends Earned</th>
+              <th className="py-3 px-4">Token Symbol</th>
+              <th className="px-4">Asset Name</th>
+              <th className="px-4">Smart Contract Address</th>
+              <th className="px-4 text-center">Share Amount</th>
+              <th className="px-4 text-center">Share Value</th>
+              <th className="px-4 text-center">Carbon Credits</th>
+              <th className="px-4 text-center">Dividends Earned</th>
             </tr>
           </thead>
           <tbody>
@@ -55,15 +55,23 @@ const TokenPortfolio = () => {
               return (
                 <tr key={index} className="border-t-[1px] border-[#333333]">
                   {/* Render token details in table cells */}
-                  <td className="py-2 text-sm">{symbol}</td>
-                  <td className="py-2 text-sm">{assetName}</td>
-                  <td className="py-2 text-sm break-all">
+                  <td className="py-3 px-4 text-sm">{symbol}</td>
+                  <td className="py-3 px-4 text-sm">{assetName}</td>
+                  <td className="py-3 px-4 text-sm break-all">
                     {smartContractAddress}
                   </td>
-                  <td className="text-center py-2 text-sm">{shareAmount}</td>
-                  <td className="text-center py-2 text-sm">{shareValue}</td>
-                  <td className="text-center py-2 text-sm">{carbonCredits}</td>
-                  <td className="text-center py-2 text-sm">{dividentEarned}</td>
+                  <td className="py-3 px-4 text-center text-sm">
+                    {shareAmount}
+                  </td>
+                  <td className="py-3 px-4 text-center text-sm">
+                    {shareValue}
+                  </td>
+                  <td className="py-3 px-4 text-center text-sm">
+                    {carbonCredits}
+                  </td>
+                  <td className="py-3 px-4 text-center text-sm">
+                    {dividentEarned}
+                  </td>
                 </tr>
               );
             })}

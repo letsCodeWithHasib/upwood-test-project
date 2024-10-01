@@ -47,7 +47,7 @@ const Header = ({ showSideBar, setShowSideBar }) => {
 
   return (
     <header
-      className={`flex z-10 bg-white justify-between items-center p-5 fixed w-full top-0 transition-transform duration-300 ${
+      className={`flex z-10 bg-white justify-between items-center px-10 fixed w-full top-0 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >

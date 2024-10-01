@@ -63,15 +63,15 @@ const InvestmentProject = ({ item, openPopup }) => {
             to={`/user/investment-portfolio/${id}`}
             className="w-full md:w-auto"
           >
-            <button className="py-2 px-4 text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px] w-full md:w-auto">
-              View details {/* Button to view project details */}
+            <button className="py-2 uppercase px-4 text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px] w-full md:w-auto">
+              sell shares {/* Button to view project details */}
             </button>
           </Link>
           <button
             onClick={() => openPopup(item)}
-            className="py-2 px-4 text-sm font-bold rounded-lg bg-[#0FB404] text-white"
+            className="py-2 px-4 text-sm font-bold rounded-lg uppercase bg-[#0FB404] text-white"
           >
-            Invest {/* Button to initiate investment */}
+            Invest more {/* Button to initiate investment */}
           </button>
         </div>
       </div>
