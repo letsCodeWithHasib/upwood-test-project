@@ -22,7 +22,7 @@ const ViewProjectDetail = ({ item }) => {
   } = activeProjects[id];
 
   return (
-    <div className="shadow-custom rounded-xl mx-5 sm:mx-10 lg:mt-[120px]">
+    <div className="shadow-custom rounded-xl mx-5 sm:mx-10 lg:mt-[120px] mb-7">
       {/* Container for the project item */}
       <div className="bg-gray-50">
         {/* Image container */}

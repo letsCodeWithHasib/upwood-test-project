@@ -4,11 +4,12 @@ import { useState } from "react";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
   const navigate = useNavigate();
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    navigate("/auth/mail-sent");
+    setEmailSent(true);
   };
   return (
     <div>
@@ -18,7 +19,7 @@ const ForgotPassword = () => {
           <img className="md:w-[200px] w-[150px]" src={logo} alt="Logo" />
 
           {/* User login form section */}
-          <section className="w-full mt-7 border-t-[1px] border-[#999999]">
+          <section className="w-full mt-7 border-t-[1px]  border-[#999999]">
             <h2 className="text-[20px] font-[Lexend Deca] font-bold mt-7">
               Forgot password
             </h2>
@@ -47,13 +48,17 @@ const ForgotPassword = () => {
 
           {/* Invitation request section */}
           <section className="w-full mt-5">
-            <p className="text-[16px]">
-              If your email is recognized in the system, you will receive
-              further instructions to reset your password via email. If you
-              don’t see an email from Upwood, please check your spam folder. If
-              you haven’t received an email or have forgotten your email
-              address, please contact Upwood support.
-            </p>
+            {emailSent ? (
+              <p className="text-[16px]">Email has been sent</p>
+            ) : (
+              <p className="text-[16px]">
+                If your email is recognized in the system, you will receive
+                further instructions to reset your password via email. If you
+                don’t see an email from Upwood, please check your spam folder.
+                If you haven’t received an email or have forgotten your email
+                address, please contact Upwood support.
+              </p>
+            )}
             <div className="mt-5 flex flex-col gap-5">
               <button className="text-[#0FB404] text-[15px] font-[Roboto] rounded-lg p-2 px-5 border-[1px] border-[#0FB404] text-center w-[200px]">
                 Contact Support
