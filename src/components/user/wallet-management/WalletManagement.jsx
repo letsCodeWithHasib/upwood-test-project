@@ -10,7 +10,7 @@ const WalletManagement = () => {
         <h2 className="text-center md:relative md:z-30 font-lexend text-2xl text-[#333333] font-bold justify-items-center">
           Wallet management
         </h2>
-        <div className="flex justify-end mt-[-20px]">
+        <div className="flex lg:justify-end md:mt-[-20px] lg:relative z-10 mt-5 justify-center">
           <button className="text-[#0FB404] font-bold font-[Roboto] uppercase">
             Wallet management guides
           </button>

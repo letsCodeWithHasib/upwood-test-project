@@ -12,11 +12,11 @@ const ProfileSettings = () => {
             Profile Settings
           </h3>
           <img className="rounded-full mb-4" src={profile} alt="Profile" />
-          <Link>
-            <button className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
-              Change Profile Picture
-            </button>
-          </Link>
+
+          <button className="text-[#0FB404] text-[16px] font-bold font-[Roboto]">
+            Change Profile Picture
+          </button>
+
           <div className="gap-2 mt-5 flex flex-col items-center">
             <button className="font-[Roboto] font-bold text-[16px]">
               John Carter

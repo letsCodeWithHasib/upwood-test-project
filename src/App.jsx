@@ -24,6 +24,7 @@ import SingleContract from "./components/user/contracts/SingleContract";
 import ViewProjectDetails from "./components/user/common/ViewProjectDetails";
 import Popup from "./components/user/common/Popup";
 import ViewFundedProject from "./components/user/funded-projects/ViewFundedProject";
+import ViewPortfolioProject from "./components/user/Investment-portfolio/ViewPortfolioProject";
 
 import AuthRouteWrapper from "./routes/AuthRouteWrapper";
 import UserRouteWrapper from "./routes/UserRouteWrapper";
@@ -83,6 +84,10 @@ const App = () => {
             path="investment-portfolio"
             element={<InvestmentPortfolio />}
           />{" "}
+          <Route
+            path="investment-portfolio/:id"
+            element={<ViewPortfolioProject />}
+          />
           {/* Route for investment portfolio */}
           <Route path="contracts" element={<ContractList />} />
           <Route path="contracts/:id" element={<SingleContract />} />

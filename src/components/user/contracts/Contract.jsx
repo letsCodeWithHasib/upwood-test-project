@@ -56,15 +56,15 @@ const Contract = ({ contract }) => {
 
           {/* Action buttons for the user */}
           <div className="flex flex-col md:flex-row justify-end gap-2 pt-5">
-            <Link to={`/user/contracts/${id}`}>
-              <button className="text-[#0FB404] border-[1px] border-[#0FB404] font-[Roboto] font-bold text-[15px] px-5 py-3 rounded-lg">
+            <Link to={`/user/contracts/${id}`} className="w-full md:w-auto">
+              <button className="w-full text-[#0FB404] border-[1px] border-[#0FB404] font-[Roboto] font-bold text-[15px] px-5 py-3 rounded-lg">
                 See preview
               </button>
             </Link>
-            <button className="bg-[#0FB404] font-[Roboto] font-bold text-[15px] text-white px-5 py-3 rounded-lg">
+            <button className="bg-[#0FB404] font-[Roboto] font-bold text-[15px] text-white px-5 py-3 rounded-lg w-full md:w-auto">
               Download EDOC
             </button>
-            <button className="bg-[#0FB404] font-[Roboto] font-bold text-[15px] text-white px-5 py-3 rounded-lg">
+            <button className="bg-[#0FB404] font-[Roboto] font-bold text-[15px] text-white px-5 py-3 rounded-lg w-full md:w-auto">
               Download PDF
             </button>
           </div>

@@ -23,9 +23,6 @@ const ContractList = () => {
 
       {/* Buttons Section */}
       <div className="flex flex-col items-center mt-5 space-y-3 md:flex-row md:justify-between md:space-y-0">
-        <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition duration-200">
-          Add Contract
-        </button>
         <button className="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 transition duration-200">
           View All Contracts
         </button>

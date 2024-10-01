@@ -231,6 +231,7 @@ export const usersPortfolio = [
     roi: 63,
     carbonCredits: 3509,
     image: FirstActiveProject,
+    id: 0,
   },
   {
     heading: "Preserve",
@@ -240,6 +241,7 @@ export const usersPortfolio = [
     roi: 61,
     carbonCredits: 509,
     image: SecondActiveProject,
+    id: 1,
   },
 ];
 

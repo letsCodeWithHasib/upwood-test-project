@@ -25,7 +25,7 @@ const TokenPortfolio = () => {
       </div>
 
       {/* Table to display the token portfolio data */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-scroll">
         <table className="w-full text-left table-auto">
           <thead>
             <tr className="border-t-[1px] border-[#808080] my-5">
