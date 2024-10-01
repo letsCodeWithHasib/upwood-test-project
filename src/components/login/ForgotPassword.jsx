@@ -49,9 +49,9 @@ const ForgotPassword = () => {
           <section className="w-full mt-5">
             <p className="text-[16px]">
               If your email will be recognized in the system, you will recieve
-              further instructions to reset your password in the email. If you
+              further instructions to reset your password via email. If you
               don’t see an email from Upwood, please check your spam folder. If
-              you haven’t recieved e-mail or forgot your e-mail address please
+              you haven’t recieved ab email or forgot your email address please
               contact Upwood support.
             </p>
             <div className="mt-5 flex flex-col gap-5">
