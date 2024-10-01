@@ -17,30 +17,33 @@ const AffiliateSettings = () => {
         </span>
       </p>
 
-      <table className="w-full text-center border-collapse">
-        <thead>
-          <tr className="border-t-[1px] border-[#333333] my-5">
-            <th className="py-2">Transaction Hash</th>
-            <th>Type</th>
-            <th>Sender</th>
-            <th>Amount</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Array(3)
-            .fill()
-            .map((_, index) => (
-              <tr key={index} className="border-t-[1px] border-[#333333]">
-                <td className="py-2">765192</td>
-                <td>Share Purchase</td>
-                <td>350JPZ</td>
-                <td>500 Euro</td>
-                <td>Successful</td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
+      <div className="overflow-x-auto">
+        {/* Add this div for horizontal scrolling */}
+        <table className="min-w-full text-center border-collapse">
+          <thead>
+            <tr className="border-t-[1px] border-[#fd6161] my-5">
+              <th className="py-2">Transaction Hash</th>
+              <th>Type</th>
+              <th>Sender</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Array(3)
+              .fill()
+              .map((_, index) => (
+                <tr key={index} className="border-t-[1px] border-[#333333]">
+                  <td className="py-2">765192</td>
+                  <td>Share Purchase</td>
+                  <td>350JPZ</td>
+                  <td>500 Euro</td>
+                  <td>Successful</td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
 
       <div className="flex flex-col sm:flex-row justify-between items-center gap-5">
         <button className="text-[rgb(15,180,4)] font-bold text-sm font-[Roboto]">
@@ -54,4 +57,4 @@ const AffiliateSettings = () => {
   );
 };
 
-export default AffiliateSettings; // Exporting the component for use in other parts of the application
+export default AffiliateSettings;

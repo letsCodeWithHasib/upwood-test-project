@@ -23,7 +23,7 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
     <aside
       className={`md:w-[250px] fixed px-5 md:top-[100px] ${
         showSideBar ? "block" : "hidden"
-      } md:block md:z-0 rounded-t-lg bg-white h-screen top-0 flex flex-col items-center z-40 md:justify-between w-full justify-center`}
+      } md:block md:z-0 rounded-t-lg items-start h-screen top-0 flex flex-col bg-white z-40 md:justify-between w-full justify-center`}
     >
       {/* Navigation container with vertical layout and spacing */}
       <nav className="flex justify-center items-center">

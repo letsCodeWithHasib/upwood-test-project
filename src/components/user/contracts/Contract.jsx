@@ -7,14 +7,14 @@ const Contract = ({ contract }) => {
 
   return (
     // Main container for each contract with rounded corners and shadow
-    <div className="rounded-lg shadow-custom">
+    <div className="rounded-lg shadow-custom overflow-hidden">
       {/* Header displaying the contract name and signed date */}
       <p className="bg-[#EBEBEB] text-sm rounded-t-lg text-[#6B6B6B] font-[Roboto] font-bold p-2 text-center">
         Subscription agreement {contractName} {signedDate}
       </p>
 
       {/* Content area with a fixed height for visual consistency */}
-      <div className="h-[250px] bg-blue-200 overflow-hidden text-center">
+      <div className="h-[250px] bg-blue-200 overflow-hidden text-center p-4">
         {/* Placeholder text; replace with relevant content as necessary */}
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos voluptatum
         exercitationem explicabo, vero modi fugiat officia excepturi
@@ -34,12 +34,12 @@ const Contract = ({ contract }) => {
         <div className="p-5 space-y-2">
           {/* Contract title and registration number */}
           <h3 className="text-[#333333] text-lg font-bold">
-            "{contractName}" cadastar NR: {nr}
+            "{contractName}" cadastrar NR: {nr}
           </h3>
           <p className="text-sm font-[Roboto]">Subscription agreement</p>
 
           {/* Tokens and signed date display */}
-          <div className="flex gap-4">
+          <div className="flex flex-col md:flex-row gap-4">
             <p className="font-[Roboto] font-bold text-[#333333] flex gap-2 items-center">
               Tokens
               <span className="text-[#0FB404] font-[Roboto] text-lg">
@@ -55,7 +55,7 @@ const Contract = ({ contract }) => {
           </div>
 
           {/* Action buttons for the user */}
-          <div className="flex justify-end gap-2 pt-5">
+          <div className="flex flex-col md:flex-row justify-end gap-2 pt-5">
             <Link to={`/user/contracts/${id}`}>
               <button className="text-[#0FB404] border-[1px] border-[#0FB404] font-[Roboto] font-bold text-[15px] px-5 py-3 rounded-lg">
                 See preview
