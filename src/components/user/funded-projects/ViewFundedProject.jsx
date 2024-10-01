@@ -25,7 +25,7 @@ const ViewProjectDetail = ({ item }) => {
   return (
     <div className="shadow-custom rounded-xl m-4 sm:m-6 lg:m-10 mt-[120px] mb-7">
       {/* Container for the project item */}
-      <div className="bg-gray-50 flex justify-center">
+      <div className="bg-gray-50 flex justify-center w-full">
         {/* Image container */}
         <img
           className="rounded-t-lg w-full sm:w-3/4 lg:w-1/2 object-cover"

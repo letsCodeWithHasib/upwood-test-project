@@ -10,32 +10,8 @@ import NotifyPopup from "./NotifyPopup";
  * @returns {JSX.Element} - The rendered active projects list.
  */
 const FundedProjects = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [notified, setNotified] = useState(false);
-  const [notifiedProjects, setNotifiedProjects] = useState([]);
-  const openPopup = (item) => {
-    setIsOpen(true);
-    setSelectedProject(item);
-  };
-
-  const closePopup = (item) => {
-    setIsOpen(false);
-    setSelectedProject(null);
-  };
-
   return (
     <div className="mx-5 mt-[-20px]">
-      {isOpen && (
-        <NotifyPopup
-          closePopup={closePopup}
-          setNotified={setNotifiedProjects}
-          notified={notified}
-          selectedProject={selectedProject}
-          setNotifiedProjects={setNotifiedProjects}
-          notifiedProjects={notifiedProjects}
-        />
-      )}
       {/* Container for the active projects section */}
       <h2 className="text-center md:relative md:z-30 font-lexend text-2xl text-[#333333] font-bold">
         Funded Projects {/* Section heading */}
@@ -43,16 +19,8 @@ const FundedProjects = () => {
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 my-5">
         {/* Grid layout for project items */}
         {fundedProjects.map((fundedProject, index) => {
-          const isNotified = notifiedProjects.includes(index);
-          console.log(isNotified);
           return (
-            <FundedProject
-              openPopup={openPopup}
-              key={index}
-              item={fundedProject}
-              isNotified={isNotified}
-              index={index}
-            />
+            <FundedProject key={index} item={fundedProject} index={index} />
           );
         })}
       </div>

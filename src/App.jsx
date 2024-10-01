@@ -21,7 +21,7 @@ import Settings from "./components/user/settings/Settings";
 import Support from "./components/user/support/Support";
 import WalletManagement from "./components/user/wallet-management/WalletManagement";
 import SingleContract from "./components/user/contracts/SingleContract";
-import ViewProjectDetails from "./components/user/common/ViewProjectDetails";
+import ViewActiveDetails from "./components/user/active-projects/ViewActiveDetails";
 import Popup from "./components/user/common/Popup";
 import ViewFundedProject from "./components/user/funded-projects/ViewFundedProject";
 import ViewPortfolioProject from "./components/user/Investment-portfolio/ViewPortfolioProject";
@@ -71,7 +71,7 @@ const App = () => {
           }
         >
           <Route index element={<ActiveProjects />} />
-          <Route path="active-project/:id" element={<ViewProjectDetails />} />
+          <Route path="active-project/:id" element={<ViewActiveDetails />} />
           <Route
             path="testing"
             element={<h1 className="bg-orange-300">Helo</h1>}

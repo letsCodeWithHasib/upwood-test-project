@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import notifyImage from "../../../assets/notify.png";
 import greenTick from "../../../assets/check-green.png";
+import NotifyPopup from "./NotifyPopup";
+import { useState } from "react";
 
 /**
  * FundedProject Component
@@ -9,13 +11,39 @@ import greenTick from "../../../assets/check-green.png";
  * @param {Object} item - The project item details. Currently not used but can be utilized for dynamic content.
  * @returns {JSX.Element} - The rendered project item.
  */
-const FundedProject = ({ item, openPopup, isNotified }) => {
+const FundedProject = ({ item, index }) => {
   const { heading, title, description, roi, carbonCredits, image, area, id } =
     item;
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [notified, setNotified] = useState(false);
+  const [notifiedProjects, setNotifiedProjects] = useState([]);
+  const openPopup = (item) => {
+    setIsOpen(true);
+    setSelectedProject(item);
+  };
+
+  const closePopup = (item) => {
+    setIsOpen(false);
+    setSelectedProject(null);
+  };
+
+  const isNotified = notifiedProjects.includes(index);
 
   return (
     <div className="shadow-lg rounded-xl overflow-hidden">
       {/* Container for the project item */}
+      {isOpen && (
+        <NotifyPopup
+          closePopup={closePopup}
+          setNotified={setNotifiedProjects}
+          notified={notified}
+          selectedProject={selectedProject}
+          setNotifiedProjects={setNotifiedProjects}
+          notifiedProjects={notifiedProjects}
+        />
+      )}
       <div className="h-[200px] md:h-[250px] bg-gray-50 flex justify-center">
         {/* Image container */}
         <img

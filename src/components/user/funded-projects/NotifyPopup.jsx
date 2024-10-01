@@ -26,7 +26,7 @@ const Popup = ({
     }
   };
   return (
-    <div className="fixed inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
+    <div className="fixed z-40 inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
       <div className="bg-white rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
         {notified ? (
           <div>
