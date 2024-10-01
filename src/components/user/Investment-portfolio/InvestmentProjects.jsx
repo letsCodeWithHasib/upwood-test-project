@@ -2,14 +2,18 @@ import { usersPortfolio } from "../../../assets/data"; // Importing user portfol
 import InvestmentProject from "./InvestmentProject"; // Importing the InvestmentProject component
 
 // InvestmentProjects component to display a grid of individual investment projects
-const InvestmentProjects = () => {
+const InvestmentProjects = ({ openPopup }) => {
   return (
     // Main container for the investment projects with responsive grid layout
     <div className="rounded-lg  grid grid-cols-1 sm:grid-cols-2 gap-5 my-5">
       {/* Mapping through usersPortfolio to render each InvestmentProject */}
       {usersPortfolio.map((portfolioProject) => (
         // Providing a unique key for each item to help React identify changes
-        <InvestmentProject key={portfolioProject.id} item={portfolioProject} />
+        <InvestmentProject
+          openPopup={openPopup}
+          key={portfolioProject.id}
+          item={portfolioProject}
+        />
       ))}
     </div>
   );

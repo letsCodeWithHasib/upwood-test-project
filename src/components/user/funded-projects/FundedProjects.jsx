@@ -12,6 +12,8 @@ import NotifyPopup from "./NotifyPopup";
 const FundedProjects = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [notified, setNotified] = useState(false);
+  const [notifiedProjects, setNotifiedProjects] = useState([]);
   const openPopup = (item) => {
     setIsOpen(true);
     setSelectedProject(item);
@@ -27,7 +29,11 @@ const FundedProjects = () => {
       {isOpen && (
         <NotifyPopup
           closePopup={closePopup}
+          setNotified={setNotifiedProjects}
+          notified={notified}
           selectedProject={selectedProject}
+          setNotifiedProjects={setNotifiedProjects}
+          notifiedProjects={notifiedProjects}
         />
       )}
       {/* Container for the active projects section */}
@@ -36,13 +42,19 @@ const FundedProjects = () => {
       </h2>
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 my-5">
         {/* Grid layout for project items */}
-        {fundedProjects.map((fundedProject, index) => (
-          <FundedProject
-            openPopup={openPopup}
-            key={index}
-            item={fundedProject}
-          />
-        ))}
+        {fundedProjects.map((fundedProject, index) => {
+          const isNotified = notifiedProjects.includes(index);
+          console.log(isNotified);
+          return (
+            <FundedProject
+              openPopup={openPopup}
+              key={index}
+              item={fundedProject}
+              isNotified={isNotified}
+              index={index}
+            />
+          );
+        })}
       </div>
     </div>
   );

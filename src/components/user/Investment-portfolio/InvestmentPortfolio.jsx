@@ -2,12 +2,33 @@ import PortfolioDetails from "./PortfolioDetails"; // Importing the PortfolioDet
 import { investmentPortfolio } from "../../../assets/data"; // Importing investment portfolio data
 import InvestmentProjects from "./InvestmentProjects"; // Importing InvestmentProjects component
 import InvestmentGraph from "./InvestmentGraph"; // Importing InvestmentGraph component
+import InvestmentPopup from "./InvestmentPopup";
+import { useState } from "react";
 
 // InvestmentPortfolio component to display the user's investment portfolio overview
 const InvestmentPortfolio = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openPopup = (item) => {
+    setIsOpen(true);
+    setSelectedProject(item);
+  };
+
+  const closePopup = () => {
+    setIsOpen(false);
+    setSelectedProject(null);
+  };
+
   return (
     // Main container for the investment portfolio with responsive margin for spacing
     <div className="mx-4 md:mx-5 mb-10 mt-[-20px]">
+      {isOpen && (
+        <InvestmentPopup
+          selectedProject={selectedProject}
+          closePopup={closePopup}
+        />
+      )}
       {/* Section heading for the investment portfolio */}
       <h2 className="text-center font-lexend text-xl md:text-2xl text-[#333333] font-bold">
         Investment Portfolio
@@ -20,7 +41,7 @@ const InvestmentPortfolio = () => {
       <InvestmentGraph />
 
       {/* Displaying the investment projects */}
-      <InvestmentProjects />
+      <InvestmentProjects openPopup={openPopup} />
     </div>
   );
 };

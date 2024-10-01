@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import notifyImage from "../../../assets/notify.png";
+import greenTick from "../../../assets/check-green.png";
 
 /**
  * FundedProject Component
@@ -8,7 +9,7 @@ import notifyImage from "../../../assets/notify.png";
  * @param {Object} item - The project item details. Currently not used but can be utilized for dynamic content.
  * @returns {JSX.Element} - The rendered project item.
  */
-const FundedProject = ({ item, openPopup }) => {
+const FundedProject = ({ item, openPopup, isNotified }) => {
   const { heading, title, description, roi, carbonCredits, image, area, id } =
     item;
 
@@ -64,7 +65,11 @@ const FundedProject = ({ item, openPopup }) => {
             onClick={() => openPopup(item)}
             className="text-[15px] font-bold text-sm text-[#0FB404] flex gap-2 items-center"
           >
-            <img src={notifyImage} alt="Notify Icon" className="w-4 h-4" />{" "}
+            <img
+              src={isNotified ? greenTick : notifyImage}
+              alt="Notify Icon"
+              className="w-4 h-4"
+            />{" "}
             Notify
           </button>
           <Link to={`${id}`}>

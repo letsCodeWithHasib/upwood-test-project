@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
  * @param {Object} item - The project item details. Currently not used but can be utilized for dynamic content.
  * @returns {JSX.Element} - The rendered project item.
  */
-const ProjectItem = ({ item, openPopup }) => {
+const InvestmentProject = ({ item, openPopup }) => {
   const { heading, title, description, roi, carbonCredits, image, area, id } =
     item;
 
@@ -59,7 +59,10 @@ const ProjectItem = ({ item, openPopup }) => {
         </div>
         <div className="flex flex-col md:flex-row justify-end gap-3 mt-4">
           {/* Action buttons container */}
-          <Link to={`active-project/${id}`} className="w-full md:w-auto">
+          <Link
+            to={`/user/investment-portfolio/${id}`}
+            className="w-full md:w-auto"
+          >
             <button className="py-2 px-4 text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px] w-full md:w-auto">
               View details {/* Button to view project details */}
             </button>
@@ -76,4 +79,4 @@ const ProjectItem = ({ item, openPopup }) => {
   );
 };
 
-export default ProjectItem; // Exporting the component for use in other parts of the application
+export default InvestmentProject; // Exporting the component for use in other parts of the application
