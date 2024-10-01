@@ -30,6 +30,7 @@ const FundedProject = ({ item, index }) => {
   };
 
   const isNotified = notifiedProjects.includes(index);
+  console.log(isNotified, "ye", notifiedProjects);
 
   return (
     <div className="shadow-lg rounded-xl overflow-hidden">
@@ -42,6 +43,7 @@ const FundedProject = ({ item, index }) => {
           selectedProject={selectedProject}
           setNotifiedProjects={setNotifiedProjects}
           notifiedProjects={notifiedProjects}
+          index={index}
         />
       )}
       <div className="h-[200px] md:h-[250px] bg-gray-50 flex justify-center">
