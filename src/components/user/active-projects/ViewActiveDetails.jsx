@@ -1,5 +1,7 @@
 import { activeProjects } from "../../../assets/data";
 import { useParams, Link } from "react-router-dom";
+import Popup from "./ActivePopup";
+import { useState } from "react";
 
 /**
  * ProjectItem Component
@@ -8,8 +10,21 @@ import { useParams, Link } from "react-router-dom";
  * @param {Object} item - The project item details. Currently not used but can be utilized for dynamic content.
  * @returns {JSX.Element} - The rendered project item.
  */
-const ViewProjectDetail = ({ item }) => {
+const ViewProjectDetail = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
   const { id } = useParams();
+
+  const openPopup = (item) => {
+    setIsOpen(true);
+    setSelectedProject(item);
+  };
+
+  const closePopup = () => {
+    setIsOpen(false);
+    setSelectedProject(null);
+  };
+
   const {
     heading,
     title,
@@ -23,6 +38,9 @@ const ViewProjectDetail = ({ item }) => {
 
   return (
     <div className="shadow-custom rounded-xl mx-5 sm:mx-10 lg:mt-[100px] mb-7">
+      {isOpen && (
+        <Popup closePopup={closePopup} selectedProject={selectedProject} />
+      )}
       {/* Container for the project item */}
       <div className="bg-gray-50">
         {/* Image container */}
@@ -113,7 +131,12 @@ const ViewProjectDetail = ({ item }) => {
           >
             Back to projects
           </Link>
-          <button className="uppercase p-2 rounded-lg text-sm text-[white] bg-[#0FB404] font-bold font-[Roboto]">
+          <button
+            onClick={() => {
+              openPopup(activeProjects[id]);
+            }}
+            className="uppercase p-2 rounded-lg text-sm text-[white] bg-[#0FB404] font-bold font-[Roboto]"
+          >
             Invest
           </button>
         </div>
