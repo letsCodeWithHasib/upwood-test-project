@@ -227,11 +227,13 @@ export const usersPortfolio = [
     heading: "Grow",
     title: "Latgale forest portfolio",
     description: "Portfolio of 7 forest plantations in Latgale region.",
-    area: 30.4,
+    area: 30.44,
     roi: 63,
     carbonCredits: 3509,
     image: FirstActiveProject,
     id: 0,
+    price: 108,
+    available: 200,
   },
   {
     heading: "Preserve",
@@ -242,6 +244,8 @@ export const usersPortfolio = [
     carbonCredits: 509,
     image: SecondActiveProject,
     id: 1,
+    price: 108,
+    available: 200,
   },
 ];
 

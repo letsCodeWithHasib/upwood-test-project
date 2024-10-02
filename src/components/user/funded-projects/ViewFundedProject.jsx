@@ -1,6 +1,8 @@
 import { fundedProjects } from "../../../assets/data";
 import { useParams, Link } from "react-router-dom";
+import { useState } from "react";
 import notifyImage from "../../../assets/notify.png";
+import NotifyPopup from "./NotifyPopup";
 
 /**
  * ProjectItem Component
@@ -10,6 +12,21 @@ import notifyImage from "../../../assets/notify.png";
  * @returns {JSX.Element} - The rendered project item.
  */
 const ViewProjectDetail = ({ item }) => {
+  // beore
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openPopup = (item) => {
+    setIsOpen(true);
+    setSelectedProject(item);
+  };
+
+  const closePopup = () => {
+    setIsOpen(false);
+    setSelectedProject(null);
+  };
+  // after
+
   const { id } = useParams();
   const {
     heading,
@@ -25,10 +42,21 @@ const ViewProjectDetail = ({ item }) => {
   return (
     <div className="shadow-custom rounded-xl m-4 sm:m-6 lg:m-10 mt-[120px] mb-7">
       {/* Container for the project item */}
-      <div className="bg-gray-50 flex justify-center w-full">
+      {isOpen && (
+        <NotifyPopup
+          closePopup={closePopup}
+          setNotified={setNotifiedProjects}
+          notified={notified}
+          selectedProject={selectedProject}
+          setNotifiedProjects={setNotifiedProjects}
+          notifiedProjects={notifiedProjects}
+          index={index}
+        />
+      )}
+      <div className="bg-gray-50 w-full">
         {/* Image container */}
         <img
-          className="rounded-t-lg w-full sm:w-3/4 lg:w-1/2 object-cover"
+          className="rounded-t-lg w-full h-auto object-cover" // Ensuring 100% width and maintaining aspect ratio
           src={image}
           alt="Project Illustration"
         />
@@ -42,8 +70,7 @@ const ViewProjectDetail = ({ item }) => {
           {title} {/* Project title */}
         </h3>
         <p className="text-[#333333] text-[14px] sm:text-[16px] lg:text-[18px] font-[Roboto] pt-2">
-          {description}
-          {/* Project description */}
+          {description} {/* Project description */}
         </p>
         <div className="flex flex-wrap gap-3 items-center mt-3">
           {/* Stats container */}
@@ -77,7 +104,10 @@ const ViewProjectDetail = ({ item }) => {
 
         <div className="flex flex-wrap justify-between items-center gap-3 mt-5">
           {/* Notify and Back to Projects buttons */}
-          <button className="text-[13px] sm:text-[15px] gap-2 flex items-center font-bold rounded-lg text-[#0FB404] uppercase">
+          <button
+            onClick={openPopup}
+            className="text-[13px] sm:text-[15px] gap-2 flex items-center font-bold rounded-lg text-[#0FB404] uppercase"
+          >
             <img src={notifyImage} alt="notify icon" className="w-5 h-5" />{" "}
             Notify
           </button>

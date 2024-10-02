@@ -16,14 +16,11 @@ const InvestmentGraph = () => {
       </div>
 
       {/* Summary of investment performance for the month */}
-      <div className="flex items-center">
+      <div className="flex items-center justify-between md:justify-start space-x-2 md:space-x-4">
         <p className="text-[#333333] text-[12px] md:text-[14px] font-[Roboto] font-bold flex items-center">
           {/* Indicator for the monthly performance */}
-          <span className="text-[80px] md:text-[100px] text-[#0FB404] font-normal">
-            .
-          </span>
           This month
-          <span className="text-[#0FB404] text-[16px] md:text-[18px] ml-2">
+          <span className="text-[black] text-[16px] md:text-[18px] ml-2">
             +104€
           </span>
         </p>

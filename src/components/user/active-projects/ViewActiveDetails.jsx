@@ -4,10 +4,9 @@ import Popup from "./ActivePopup";
 import { useState } from "react";
 
 /**
- * ProjectItem Component
- * Displays information about a specific project related to forest plantations.
+ * ViewProjectDetail Component
+ * Displays detailed information about a specific project related to forest plantations.
  *
- * @param {Object} item - The project item details. Currently not used but can be utilized for dynamic content.
  * @returns {JSX.Element} - The rendered project item.
  */
 const ViewProjectDetail = () => {
@@ -42,10 +41,10 @@ const ViewProjectDetail = () => {
         <Popup closePopup={closePopup} selectedProject={selectedProject} />
       )}
       {/* Container for the project item */}
-      <div className="bg-gray-50">
-        {/* Image container */}
+      <div className="w-full bg-gray-50 p-0 m-0">
+        {/* Image container with full width and no padding or margins */}
         <img
-          className="rounded-t-lg w-full h-auto object-cover"
+          className="rounded-t-lg w-full h-auto object-cover block"
           src={image}
           alt="Project Illustration"
         />

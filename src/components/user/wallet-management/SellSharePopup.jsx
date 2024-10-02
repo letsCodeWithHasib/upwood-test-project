@@ -2,11 +2,11 @@ import { useState } from "react";
 import check from "../../../assets/check-green.png";
 import { Link } from "react-router-dom";
 
-const Popup = ({ selectedInvestProject, closePopup }) => {
+const SellSharePopup = ({ closePopup, selectedSellShareProject }) => {
   const [price, setPrice] = useState(0);
   const [invested, setInvested] = useState(false);
   const [failed, setFailed] = useState(false);
-  const { available, price: itemPrice } = selectedInvestProject;
+  const { available, price: itemPrice } = selectedSellShareProject;
 
   const investNow = () => {
     if (price > 0) {
@@ -18,15 +18,15 @@ const Popup = ({ selectedInvestProject, closePopup }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
+    <div className="fixed z-40 inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
       {invested ? (
         <div className="bg-white rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
           <h3 className="font-bold text-lexend text-[20px]">
             Congratulations!
           </h3>
           <h4 className="font-bold text-lexend text-[16px] mt-3">
-            You successfully purchased{" "}
-            <span className="text-[#0FB404] text-2xl">5</span> shares
+            You successfully sold{" "}
+            <span className="text-[#0FB404] text-2xl">{price}</span> shares
           </h4>
           <div className="flex justify-center mt-5">
             <img className="w-[50px]" src={check} alt="" />
@@ -51,25 +51,34 @@ const Popup = ({ selectedInvestProject, closePopup }) => {
       ) : (
         <div className="bg-white rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
           <h2 className="text-[#333333] font-lexend font-bold text-[20px]">
-            Type amount of shares you want to buy
+            Sell your shares
           </h2>
           <div className="mt-5 space-y-2">
-            <p className="text-[Roboto] font-bold">
+            <p className="text-[Roboto] font-bold text-[#6B6B6B]">
               Shares available :{" "}
-              <span className="text-[#0FB404] text-[20px]">{available}</span>
+              <span className="text-[20px] font-bold text-black">
+                {available}
+              </span>
             </p>
-            <p className="text-[Roboto] font-bold">
+            <p className="text-[Roboto] font-bold text-[#6B6B6B]">
               Price per share :{" "}
-              <span className="text-[#0FB404] text-[20px]">{itemPrice}€</span>
+              <span className="text-[20px] font-bold text-black">
+                {itemPrice} EUROe
+              </span>
             </p>
-            <input
-              className={`p-4 border-[1px] rounded-md ${
-                failed ? "border-[#ff0000]" : "border-black"
-              }`}
-              type="number"
-              placeholder="Type the amount€"
-              onChange={(e) => setPrice(e.target.value)}
-            />
+
+            <div>
+              <p className="text-[#333333] text-sm font-[Roboto]">
+                Type amount of shares you want to sell
+              </p>
+              <input
+                className={`p-2 border-[1px] rounded-md ${
+                  failed ? "border-[#ff0000]" : "border-black"
+                } mt-3 outline-[#0FB404] outline-[1px]`}
+                type="number"
+                onChange={(e) => setPrice(e.target.value)}
+              />
+            </div>
             {failed && (
               <div className="flex justify-center">
                 <p className="w-[300px] text-center text-sm text-[#ff0000]">
@@ -78,12 +87,13 @@ const Popup = ({ selectedInvestProject, closePopup }) => {
                 </p>
               </div>
             )}
-            <p className="text-[Roboto] font-bold mt-5">
-              I understand, let’s continue
-            </p>
-            <div className="flex flex-col items-center gap-3">
+
+            <div className="flex flex-col items-center gap-5  my-5">
+              <p className="text-[Roboto] font-bold">
+                I understand, let’s continue
+              </p>
               <button
-                className="text-[Roboto] text-sm font-bold mt-3 uppercase bg-[#0FB404] py-[14px] px-[24px]  rounded-lg text-white"
+                className="text-[Roboto] text-sm font-bold  uppercase bg-[#0FB404] py-[14px] px-[24px]  rounded-lg text-white"
                 onClick={investNow}
               >
                 Sell
@@ -102,4 +112,4 @@ const Popup = ({ selectedInvestProject, closePopup }) => {
   );
 };
 
-export default Popup;
+export default SellSharePopup;

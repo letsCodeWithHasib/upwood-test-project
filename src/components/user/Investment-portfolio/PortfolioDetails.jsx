@@ -11,40 +11,38 @@ const PortfolioDetails = ({ investmentPortfolio }) => {
       <div className="flex flex-wrap justify-around">
         {/* Portfolio Value */}
         <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
-          <h4 className="text-[#333333] font-[Roboto] font-bold text-lg sm:text-xl">
+          <h4 className="text-[#6B6B6B] font-bold text-sm sm:text-[15px]">
             Portfolio Value
           </h4>
-          <p className="text-[#0FB404] font-bold text-[18px] sm:text-[20px]">
+          <p className=" font-bold text-[18px] sm:text-[20px]">
             {portfolioValue}
           </p>
         </div>
 
         {/* Yearly Portfolio Growth */}
         <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
-          <h4 className="text-[#333333] font-[Roboto] font-bold text-lg sm:text-xl">
+          <h4 className="text-[#6B6B6B] font-bold font-[Roboto] text-sm sm:text-[15px]">
             Yearly Portfolio Growth
           </h4>
-          <p className="text-[#0FB404] font-bold text-[18px] sm:text-[20px]">
+          <p className=" font-bold text-[18px] sm:text-[20px]">
             {yearlyProfit}
           </p>
         </div>
 
         {/* Return on Investment */}
         <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
-          <h4 className="text-[#333333] font-[Roboto] font-bold text-lg sm:text-xl">
+          <h4 className="text-[#6B6B6B] font-bold font-[Roboto] text-sm sm:text-[15px]">
             Return on Investment
           </h4>
-          <p className="text-[#0FB404] font-bold text-[18px] sm:text-[20px]">
-            {roi}
-          </p>
+          <p className=" font-bold text-[18px] sm:text-[20px]">{roi}</p>
         </div>
 
         {/* Carbon Tons Offset */}
         <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
-          <h4 className="text-[#333333] font-[Roboto] font-bold text-lg sm:text-xl">
+          <h4 className="text-[#6B6B6B] font-bold font-[Roboto] text-sm sm:text-[15px]">
             Carbon Tons Offset
           </h4>
-          <p className="text-[#0FB404] font-bold text-[20px] sm:text-[22px]">
+          <p className=" font-bold text-[20px] sm:text-[22px]">
             {carbonTonsoffset}
           </p>
         </div>

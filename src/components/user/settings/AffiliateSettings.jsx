@@ -10,23 +10,33 @@ const AffiliateSettings = () => {
         </button>
       </div>
 
-      <p className="text-[#333333] text-sm text-[Roboto] text-[16px]">
-        Your unique link:{" "}
-        <span className="text-[#0FB404] text-lg font-bold">
-          upwood.io/jsdhdsjsdhc1234
-        </span>
-      </p>
+      <div className="flex items-center justify-between">
+        <p className="text-[#333333] text-sm font-[Roboto] text-[16px]">
+          Your unique link:{" "}
+          <span className="text-[#0FB404] text-lg font-bold">
+            upwood.io/jsdhdsjsdhc1234
+          </span>
+        </p>
+        <button
+          className="text-sm text-[#0FB404] font-bold"
+          onClick={() =>
+            navigator.clipboard.writeText("upwood.io/jsdhdsjsdhc1234")
+          }
+        >
+          Copy Link
+        </button>
+      </div>
 
       <div className="overflow-x-auto">
         {/* Add this div for horizontal scrolling */}
         <table className="min-w-full text-center border-collapse">
           <thead>
-            <tr className="border-t-[1px] border-[#fd6161] my-5">
-              <th className="py-2">Transaction Hash</th>
-              <th>Type</th>
-              <th>Sender</th>
-              <th>Amount</th>
-              <th>Status</th>
+            <tr className="border-t-[1px] border-[#333333] my-5">
+              <th className="py-2 px-3">Transaction Hash</th>
+              <th className="px-3">Type</th>
+              <th className="px-3">Sender</th>
+              <th className="px-3">Amount</th>
+              <th className="px-3">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -34,11 +44,11 @@ const AffiliateSettings = () => {
               .fill()
               .map((_, index) => (
                 <tr key={index} className="border-t-[1px] border-[#333333]">
-                  <td className="py-2">765192</td>
-                  <td>Share Purchase</td>
-                  <td>350JPZ</td>
-                  <td>500 Euro</td>
-                  <td>Successful</td>
+                  <td className="py-2 px-3">765192</td>
+                  <td className="px-3">Share Purchase</td>
+                  <td className="px-3">350JPZ</td>
+                  <td className="px-3">500 Euro</td>
+                  <td className="px-3 text-green-500 font-bold">Successful</td>
                 </tr>
               ))}
           </tbody>

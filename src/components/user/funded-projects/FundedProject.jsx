@@ -30,7 +30,6 @@ const FundedProject = ({ item, index }) => {
   };
 
   const isNotified = notifiedProjects.includes(index);
-  console.log(isNotified, "ye", notifiedProjects);
 
   return (
     <div className="shadow-lg rounded-xl overflow-hidden">
@@ -46,10 +45,10 @@ const FundedProject = ({ item, index }) => {
           index={index}
         />
       )}
-      <div className="h-[200px] md:h-[250px] bg-gray-50 flex justify-center">
-        {/* Image container */}
+      <div className="w-full h-[200px] md:h-[250px] bg-gray-50 flex justify-center p-0 m-0">
+        {/* Image container with no padding or margin */}
         <img
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover block"
           src={image}
           alt="Project Illustration"
         />

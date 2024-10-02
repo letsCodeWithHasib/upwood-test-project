@@ -15,11 +15,11 @@ const TransactionHistory = () => {
         <table className="min-w-full text-left">
           <thead>
             <tr className="border-t-[1px] border-[#333333] my-5 text-center">
-              <th className="py-2">Transaction Hash</th>
-              <th>Type</th>
-              <th>Sender</th>
-              <th>Amount</th>
-              <th>Status</th>
+              <th className="py-2 px-4">Transaction Hash</th>
+              <th className="px-4">Type</th>
+              <th className="px-4">Sender</th>
+              <th className="px-4">Amount</th>
+              <th className="px-4">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -28,11 +28,11 @@ const TransactionHistory = () => {
                 key={index}
                 className="border-t-[1px] text-center border-[#333333]"
               >
-                <td className="py-2">765192</td>
-                <td>Share Purchase</td>
-                <td>350JPZ</td>
-                <td>500 Euro</td>
-                <td>Successful</td>
+                <td className="py-3 px-4">765192</td>
+                <td className="px-4">Share Purchase</td>
+                <td className="px-4">350JPZ</td>
+                <td className="px-4">500 Euro</td>
+                <td className="text-green-500 font-bold px-4">Successful</td>
               </tr>
             ))}
           </tbody>

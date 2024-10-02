@@ -10,7 +10,7 @@ const Wallet = () => {
       {/* Container for wallet details, using flex layout for responsiveness */}
       <div className="flex flex-col md:flex-row gap-10 items-center ">
         {/* First two items */}
-        <div className="flex flex-col md:flex-row gap-10 items-center flex-[2]">
+        <div className="flex flex-col md:flex-row gap-10 items-start flex-[2]">
           <div className="space-y-2 text-center flex-1">
             <p className="text-[#6B6B6B] text-[14px] font-bold">Wallet</p>
             <h4 className="font-bold text-[#333333] mt-2">{walletId}</h4>
@@ -21,9 +21,6 @@ const Wallet = () => {
           <div className="space-y-2 text-center flex-1">
             <p className="text-[#6B6B6B] text-[14px] font-bold">Entity</p>
             <h4 className="font-bold text-[#333333] mt-2">{entity}</h4>
-            <button className="text-[#0FB404] font-bold font-[Roboto] uppercase">
-              Change
-            </button>
           </div>
         </div>
 
