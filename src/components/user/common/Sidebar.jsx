@@ -5,7 +5,7 @@ import { Link, useMatch, useLocation } from "react-router-dom"; // Importing rou
 import { style } from "../../../assets/style"; // Importing custom styles
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../../../redux/features/authSlice";
+import { signOut } from "../../../redux/features/authSlice";
 
 const Sidebar = ({ showSideBar, setShowSideBar }) => {
   const location = useLocation();
@@ -58,7 +58,7 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
           {/* Logout button with responsiveness */}
           <button
             className={`${style.sideLink} md:hidden flex items-center gap-2`}
-            onClick={() => dispatch(logout())}
+            onClick={() => dispatch(signOut())}
           >
             <img
               className="w-[20px] h-[20px]"

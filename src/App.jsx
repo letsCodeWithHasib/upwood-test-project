@@ -28,6 +28,7 @@ import ViewPortfolioProject from "./components/user/Investment-portfolio/ViewPor
 
 import AuthRouteWrapper from "./routes/AuthRouteWrapper";
 import UserRouteWrapper from "./routes/UserRouteWrapper";
+import Activate from "./components/login/Activate";
 
 /**
  * App Component
@@ -58,6 +59,7 @@ const App = () => {
           <Route path="register" element={<RegisterComponent />} />{" "}
           {/* Route for user registration */}
           <Route path="verification" element={<VerifyComponent />} />{" "}
+          <Route path="activate" element={<Activate />} />{" "}
           {/* Route for email verification */}
         </Route>
 

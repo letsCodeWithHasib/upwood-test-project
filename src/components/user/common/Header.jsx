@@ -3,7 +3,7 @@ import profile from "../../../assets/profile.png";
 import logo from "../../../assets/logo.png";
 import logoutImage from "../../../assets/logout.png";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../../../redux/features/authSlice";
+import { signOut } from "../../../redux/features/authSlice";
 import { useState } from "react";
 import menu from "../../../assets/menu-right.png";
 import close from "../../../assets/close.png";
@@ -84,7 +84,7 @@ const Header = ({ showSideBar, setShowSideBar }) => {
 
         <button
           className="flex items-center gap-2"
-          onClick={() => dispatch(logout())}
+          onClick={() => dispatch(signOut())}
         >
           <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] -ml-3">
             logout

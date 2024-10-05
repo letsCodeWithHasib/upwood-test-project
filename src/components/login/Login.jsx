@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useState } from "react";
-import { login } from "../../redux/features/authSlice";
+import { signIn } from "../../redux/features/authSlice";
 import { useDispatch } from "react-redux";
 
 const Login = () => {
@@ -41,7 +41,6 @@ const Login = () => {
 
   const onRequestHandler = (event) => {
     event.preventDefault();
-    navigate("/auth/mail-sent");
   };
 
   return (
