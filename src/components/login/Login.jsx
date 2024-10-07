@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { signIn } from "../../redux/features/authSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -22,14 +22,11 @@ const Login = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault();
     const { email, password } = formData;
-
-    // Replace this with an actual API call later
-    await dispatch(signIn({ email, password }));
-
-    // setFormData({
-    //   email: "",
-    //   password: "",
-    // });
+    const res = await dispatch(signIn({ email, password }));
+    console.log(res);
+    if (res.error) {
+      setLoginFailed(true);
+    }
   };
 
   const onRequestHandler = (event) => {

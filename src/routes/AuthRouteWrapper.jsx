@@ -5,7 +5,6 @@ import { useEffect } from "react";
 const AuthRouteWrapper = ({ children }) => {
   const navigate = useNavigate();
   const { authStatus } = useSelector((state) => state.auth);
-  console.log(authStatus);
 
   useEffect(() => {
     if (authStatus === "SignedIn") {

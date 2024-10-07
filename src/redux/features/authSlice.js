@@ -28,7 +28,6 @@ export const signIn = createAsyncThunk(
         // Add other necessary fields
       };
     } catch (error) {
-      console.log(error);
       return rejectWithValue(error.message);
     }
   }
