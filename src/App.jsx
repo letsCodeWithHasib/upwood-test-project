@@ -1,45 +1,55 @@
-import { Routes, Route, Navigate } from "react-router-dom"; // Importing routing components from React Router
+import React, { lazy, Suspense } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-// Importing pages for authentication
-import LoginPage from "./pages/Login";
-import UserPage from "./pages/User";
+// Lazy loading components
+const LoginPage = lazy(() => import("./pages/Login"));
+const LoginComponent = lazy(() => import("./components/login/Login"));
+const MailSentComponent = lazy(() => import("./components/login/MailSent"));
+const RegisterComponent = lazy(() => import("./components/login/Register"));
+const ForgotPasswordComponent = lazy(() =>
+  import("./components/login/ForgotPassword")
+);
+const VerifyComponent = lazy(() => import("./components/login/Verify"));
+const UserPage = lazy(() => import("./pages/User"));
+const ActiveProjects = lazy(() =>
+  import("./components/user/active-projects/ActiveProjects")
+);
+const ContractList = lazy(() =>
+  import("./components/user/contracts/ContractList")
+);
+const FundedProjects = lazy(() =>
+  import("./components/user/funded-projects/FundedProjects")
+);
+const InvestmentPortfolio = lazy(() =>
+  import("./components/user/Investment-portfolio/InvestmentPortfolio")
+);
+const NewsAndUpdates = lazy(() =>
+  import("./components/user/new-and-update/NewsAndUpdates")
+);
+const Settings = lazy(() => import("./components/user/settings/Settings"));
+const Support = lazy(() => import("./components/user/support/Support"));
+const WalletManagement = lazy(() =>
+  import("./components/user/wallet-management/WalletManagement")
+);
+const SingleContract = lazy(() =>
+  import("./components/user/contracts/SingleContract")
+);
+const ViewActiveDetails = lazy(() =>
+  import("./components/user/active-projects/ViewActiveDetails")
+);
+const ViewFundedProject = lazy(() =>
+  import("./components/user/funded-projects/ViewFundedProject")
+);
+const ViewPortfolioProject = lazy(() =>
+  import("./components/user/Investment-portfolio/ViewPortfolioProject")
+);
+const Activate = lazy(() => import("./components/login/Activate"));
+const AuthRouteWrapper = lazy(() => import("./routes/AuthRouteWrapper"));
+const UserRouteWrapper = lazy(() => import("./routes/UserRouteWrapper"));
 
-// Importing authentication components
-import LoginComponent from "./components/login/Login";
-import MailSentComponent from "./components/login/MailSent";
-import RegisterComponent from "./components/login/Register";
-import ForgotPasswordComponent from "./components/login/ForgotPassword";
-import VerifyComponent from "./components/login/Verify";
-
-// Importing user components for user-related functionalities
-import ActiveProjects from "./components/user/active-projects/ActiveProjects";
-import ContractList from "./components/user/contracts/ContractList";
-import FundedProjects from "./components/user/funded-projects/FundedProjects";
-import InvestmentPortfolio from "./components/user/Investment-portfolio/InvestmentPortfolio";
-import NewsAndUpdates from "./components/user/new-and-update/NewsAndUpdates";
-import Settings from "./components/user/settings/Settings";
-import Support from "./components/user/support/Support";
-import WalletManagement from "./components/user/wallet-management/WalletManagement";
-import SingleContract from "./components/user/contracts/SingleContract";
-import ViewActiveDetails from "./components/user/active-projects/ViewActiveDetails";
-import Popup from "./components/user/common/Popup";
-import ViewFundedProject from "./components/user/funded-projects/ViewFundedProject";
-import ViewPortfolioProject from "./components/user/Investment-portfolio/ViewPortfolioProject";
-
-import AuthRouteWrapper from "./routes/AuthRouteWrapper";
-import UserRouteWrapper from "./routes/UserRouteWrapper";
-import Activate from "./components/login/Activate";
-
-/**
- * App Component
- * The main application component that defines the routing structure for the application.
- * It includes routes for both authentication and user-related functionalities.
- *
- * @returns {JSX.Element} - The rendered application with routing.
- */
 const App = () => {
   return (
-    <div>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         {/* Authentication routes */}
         <Route
@@ -51,16 +61,11 @@ const App = () => {
           }
         >
           <Route index element={<LoginComponent />} />
-          {/* Default login component */}
           <Route path="forgot-password" element={<ForgotPasswordComponent />} />
-          {/* Route for password recovery */}
-          <Route path="mail-sent" element={<MailSentComponent />} />{" "}
-          {/* Route for mail sent confirmation */}
-          <Route path="register" element={<RegisterComponent />} />{" "}
-          {/* Route for user registration */}
-          <Route path="verification" element={<VerifyComponent />} />{" "}
-          <Route path="activate" element={<Activate />} />{" "}
-          {/* Route for email verification */}
+          <Route path="mail-sent" element={<MailSentComponent />} />
+          <Route path="register" element={<RegisterComponent />} />
+          <Route path="verification" element={<VerifyComponent />} />
+          <Route path="activate" element={<Activate />} />
         </Route>
 
         {/* User routes */}
@@ -74,39 +79,27 @@ const App = () => {
         >
           <Route index element={<ActiveProjects />} />
           <Route path="active-project/:id" element={<ViewActiveDetails />} />
-          <Route
-            path="testing"
-            element={<h1 className="bg-orange-300">Helo</h1>}
-          />
-          {/* Default user dashboard component */}
           <Route path="funded-projects" element={<FundedProjects />} />
           <Route path="funded-projects/:id" element={<ViewFundedProject />} />
-          {/* Route for funded projects */}
           <Route
             path="investment-portfolio"
             element={<InvestmentPortfolio />}
-          />{" "}
+          />
           <Route
             path="investment-portfolio/:id"
             element={<ViewPortfolioProject />}
           />
-          {/* Route for investment portfolio */}
           <Route path="contracts" element={<ContractList />} />
           <Route path="contracts/:id" element={<SingleContract />} />
-          {/* Route for user contracts */}
           <Route path="wallet-management" element={<WalletManagement />} />
-          {/* Route for wallet management */}
           <Route path="settings" element={<Settings />} />
-          {/* Route for user settings */}
           <Route path="news" element={<NewsAndUpdates />} />
-          {/* Route for news and updates */}
           <Route path="support" element={<Support />} />
-          {/* Route for user support */}
         </Route>
         <Route path="/" element={<Navigate to="/auth" />} />
       </Routes>
-    </div>
+    </Suspense>
   );
 };
 
-export default App; // Exporting the App component for use in other parts of the application
+export default App;
