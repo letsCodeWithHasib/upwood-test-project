@@ -163,7 +163,7 @@ const Register = () => {
 
             {registrationFailed && (
               <p className="text-[#ff0000] font-xs font-[Roboto]">
-                Password and confirm password should be same
+                Password and confirm passwords should be same
               </p>
             )}
 
