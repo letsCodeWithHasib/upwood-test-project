@@ -9,12 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "homepage": "./",
   "dependencies": {
     "@aws-amplify/ui-react": "^6.5.2",
     "@reduxjs/toolkit": "^2.2.7",
     "amazon-cognito-identity-js": "^6.3.12",
-    "aws-amplify": "^6.6.4",
     "aws-sdk": "^2.1691.0",
     "axios": "^1.7.7",
     "buffer": "^6.0.3",
