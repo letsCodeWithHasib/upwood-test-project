@@ -194,7 +194,6 @@ const Register = () => {
               </button>
             </label>
           </form>
-          <Link to="/auth/activate">Activate Account</Link>
         </section>
       </div>
     </div>

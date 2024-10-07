@@ -90,7 +90,6 @@ const Activate = () => {
               Verify
             </button>
           </form>
-          <Link to="/auth/register">Go Back</Link>
         </section>
       </div>
     </div>
