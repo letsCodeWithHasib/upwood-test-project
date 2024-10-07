@@ -3,13 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "./",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "homepage": "./",
   "dependencies": {
     "@aws-amplify/ui-react": "^6.5.2",
     "@reduxjs/toolkit": "^2.2.7",
