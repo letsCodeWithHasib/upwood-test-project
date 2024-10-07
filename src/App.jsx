@@ -48,6 +48,9 @@ const AuthRouteWrapper = lazy(() => import("./routes/AuthRouteWrapper"));
 const UserRouteWrapper = lazy(() => import("./routes/UserRouteWrapper"));
 
 const App = () => {
+  // console.log("Component props: ", props);
+  // console.log("State: ", state);
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
