@@ -9,7 +9,7 @@ import menu from "../../../assets/menu-right.png";
 import close from "../../../assets/close.png";
 
 const Header = ({ showSideBar, setShowSideBar }) => {
-  const username = useSelector((state) => state.username);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [selectedImage, setSelectedImage] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
@@ -78,7 +78,7 @@ const Header = ({ showSideBar, setShowSideBar }) => {
             onChange={handleImageChange}
           />
           <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] -ml-3">
-            {username}
+            {user.firstName} {user.lastName}
           </span>
         </button>
 

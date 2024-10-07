@@ -19,24 +19,17 @@ const Login = () => {
     if (loginFailed) setLoginFailed(false); // Reset the error state on input change
   };
 
-  const onSubmitHandler = (event) => {
+  const onSubmitHandler = async (event) => {
     event.preventDefault();
+    const { email, password } = formData;
 
     // Replace this with an actual API call later
-    if (
-      formData.email === "mohdhasib2001@gmail.com" &&
-      formData.password === "12345"
-    ) {
-      dispatch(login(formData));
-      // Optionally, navigate to a different page on successful login
-    } else {
-      setLoginFailed(true);
-    }
+    await dispatch(signIn({ email, password }));
 
-    setFormData({
-      email: "",
-      password: "",
-    });
+    // setFormData({
+    //   email: "",
+    //   password: "",
+    // });
   };
 
   const onRequestHandler = (event) => {

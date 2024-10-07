@@ -44,7 +44,7 @@ const Activate = () => {
       const user = await dispatch(verifyCode({ email, code }));
 
       // Optionally reset the form or show a success message here
-      console.log("Registration successful", user);
+      navigate("/auth");
     } catch (error) {
       // Handle any errors that occur during sign-up
       console.error("Registration failed:", error);
