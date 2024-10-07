@@ -4,7 +4,6 @@ import {
   CognitoUserAttribute,
   CognitoUserPool,
 } from "amazon-cognito-identity-js";
-import AWS from "aws-sdk";
 
 // Uncomment these lines to use environment variables for User Pool ID and Client ID
 // const userPoolId = process.env.REACT_APP_USERPOOL_ID;

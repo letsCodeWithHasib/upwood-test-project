@@ -1,16 +1,17 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { signOut } from "../../../redux/features/authSlice";
 import profile from "../../../assets/profile.png";
 import logo from "../../../assets/logo.png";
 import logoutImage from "../../../assets/logout.png";
-import { useSelector, useDispatch } from "react-redux";
-import { signOut } from "../../../redux/features/authSlice";
-import { useState } from "react";
 import menu from "../../../assets/menu-right.png";
 import close from "../../../assets/close.png";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ showSideBar, setShowSideBar }) => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
@@ -20,30 +21,31 @@ const Header = ({ showSideBar, setShowSideBar }) => {
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       setSelectedImage(imageUrl);
-      return () => URL.revokeObjectURL(imageUrl);
     }
   };
 
-  // Handle scroll events to show/hide the header
+  useEffect(() => {
+    if (selectedImage) {
+      return () => {
+        URL.revokeObjectURL(selectedImage);
+      };
+    }
+  }, [selectedImage]);
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY.current) {
-        // Scrolling down
-        setIsVisible(false);
-      } else {
-        // Scrolling up
-        setIsVisible(true);
-      }
+      setIsVisible(window.scrollY <= lastScrollY.current);
       lastScrollY.current = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLogout = () => {
+    dispatch(signOut());
+    navigate("/auth");
+  };
 
   return (
     <header
@@ -78,14 +80,11 @@ const Header = ({ showSideBar, setShowSideBar }) => {
             onChange={handleImageChange}
           />
           <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] -ml-3">
-            {user.firstName} {user.lastName}
+            {user?.firstName} {user?.lastName}
           </span>
         </button>
 
-        <button
-          className="flex items-center gap-2"
-          onClick={() => dispatch(signOut())}
-        >
+        <button className="flex items-center gap-2" onClick={handleLogout}>
           <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] -ml-3">
             logout
           </span>

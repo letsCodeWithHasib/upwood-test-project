@@ -1,5 +1,5 @@
-import { Link, useNavigate } from "react-router-dom"; // Link component for navigation
-import logo from "../../assets/logo.png"; // Importing the company logo
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signUp } from "../../redux/features/authSlice";
@@ -14,66 +14,63 @@ const Register = () => {
     desiredAmount: "",
   });
 
-  function isValidEmail(email) {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(String(email).toLowerCase());
-  }
-
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [registrationFailed, setRegistrationFailed] = useState(false);
 
   const onChangeHandler = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+    setError(""); // Clear error on change
+  };
+
+  const isValidEmail = (email) => {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(String(email).toLowerCase());
   };
 
   const onSubmitHandler = async (event) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
     const { email, password, confirmPassword, givenName, familyName } =
       formData;
 
     if (!isValidEmail(email)) {
-      setError("Invalid email format."); // Set error message
+      setError("Invalid email format.");
       return;
     }
 
-    // Check if the passwords match
-    if (password === confirmPassword) {
-      try {
-        // Dispatch the signUp action
-        const user = await dispatch(
-          signUp({ email, password, givenName, familyName })
-        );
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
+      return;
+    }
 
-        navigate("/auth/activate");
-      } catch (error) {
-        // Handle any errors that occur during sign-up
-        console.error("Registration failed:", error);
-        setRegistrationFailed(true); // Set the flag to indicate registration failure
-      }
-    } else {
-      // If passwords don't match, set the registration failed state
-      setRegistrationFailed(true);
-      console.error("Passwords do not match");
+    try {
+      const user = await dispatch(
+        signUp({ email, password, givenName, familyName })
+      );
+      setFormData({
+        givenName: "",
+        familyName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        desiredAmount: "",
+      }); // Reset form after successful registration
+      navigate("/auth/activate");
+    } catch (err) {
+      setError("Registration failed. Please try again.");
     }
   };
 
   return (
     <div className="flex justify-center min-h-screen">
-      {/* Container for the registration form */}
       <div className="md:w-[450px] w-[300px] font-[Lexend Deca] flex flex-col items-center">
-        {/* Displaying the logo at the top of the form */}
         <img className="md:w-[200px] w-[150px]" src={logo} alt="Logo" />
 
-        {/* Section for user registration form */}
         <section className="w-full mt-7 border-t-[1px] border-[#999999]">
-          {/* Registration heading */}
-          <h2 className="text-[20px] font-bold mt-7">User Registration</h2>
+          <h2 className="text-[20px] font-bold mt-5">User Registration</h2>
 
-          {/* Registration form */}
-          <form onSubmit={onSubmitHandler} className="flex flex-col gap-5 mt-5">
-            {/* for name */}
+          <form onSubmit={onSubmitHandler} className="flex flex-col gap-5 mt-7">
             <div className="flex gap-5">
               <fieldset className="w-full">
                 <input
@@ -84,6 +81,8 @@ const Register = () => {
                   placeholder="First Name"
                   value={formData.givenName}
                   onChange={onChangeHandler}
+                  aria-label="First Name"
+                  required
                 />
               </fieldset>
               <fieldset className="w-full">
@@ -95,10 +94,12 @@ const Register = () => {
                   placeholder="Last Name"
                   value={formData.familyName}
                   onChange={onChangeHandler}
+                  aria-label="Last Name"
+                  required
                 />
               </fieldset>
             </div>
-            {/* Input field for email */}
+
             <fieldset>
               <input
                 className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
@@ -108,10 +109,10 @@ const Register = () => {
                 onChange={onChangeHandler}
                 name="email"
                 value={formData.email}
+                aria-label="Email"
               />
             </fieldset>
 
-            {/* Input field for password */}
             <fieldset>
               <input
                 className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
@@ -121,10 +122,10 @@ const Register = () => {
                 onChange={onChangeHandler}
                 name="password"
                 value={formData.password}
+                aria-label="Password"
               />
             </fieldset>
 
-            {/* Input field to confirm password */}
             <fieldset>
               <input
                 className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
@@ -134,10 +135,10 @@ const Register = () => {
                 onChange={onChangeHandler}
                 name="confirmPassword"
                 value={formData.confirmPassword}
+                aria-label="Confirm Password"
               />
             </fieldset>
 
-            {/* Input field for investment amount */}
             <label>
               <p className="text-xs font-[Roboto] font-bold text-[#333333]">
                 Desired investment amount $
@@ -150,24 +151,23 @@ const Register = () => {
                 name="desiredAmount"
                 onChange={onChangeHandler}
                 value={formData.desiredAmount}
+                aria-label="Investment Amount"
               />
             </label>
 
-            {/* Checkbox for accepting terms and conditions */}
             <fieldset className="flex items-center gap-2 mt-5">
-              <input type="checkbox" required />
+              <input
+                type="checkbox"
+                required
+                aria-label="Terms and Conditions"
+              />
               <span className="font-[Roboto] text-[#6B6B6B] text-[14px]">
                 I accept Terms & conditions...
               </span>
             </fieldset>
 
-            {registrationFailed && (
-              <p className="text-[#ff0000] font-xs font-[Roboto]">
-                Password and confirm passwords should be same
-              </p>
-            )}
+            {error && <p className="text-[#ff0000] text-sm">{error}</p>}
 
-            {/* Submit button to continue with wallet creation */}
             <fieldset>
               <button
                 type="submit"
@@ -177,22 +177,18 @@ const Register = () => {
               </button>
             </fieldset>
 
-            {/* Divider with "OR" for alternate wallet connection */}
-            <div className="h-[1px] bg-[#999999] relative w-1/2">
+            <div className="h-[1px] bg-[#999999] relative w-1/2 mt-5">
               <p className="absolute top-[-10px] left-[45%] bg-white px-2">
                 OR
               </p>
             </div>
 
-            {/* Button for users who already have a Concordium wallet */}
-            <label>
-              <button
-                type="button"
-                className="text-[#0FB404] uppercase font-[Roboto] text-sm font-bold"
-              >
-                Connect if you have Concordium wallet
-              </button>
-            </label>
+            <button
+              type="button"
+              className="text-[#0FB404] uppercase font-[Roboto] text-sm font-bold text-left"
+            >
+              Connect if you have Concordium wallet
+            </button>
           </form>
         </section>
       </div>
