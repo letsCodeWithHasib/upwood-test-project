@@ -9,6 +9,11 @@ const Settings = () => {
       <h2 className="text-center font-lexend text-2xl text-[#333333] font-bold mb-5">
         Settings {/* Section heading */}
       </h2>
+      <div className="flex lg:justify-end md:mt-[-20px] lg:relative z-10 mt-5 justify-center">
+        <button className="text-[#0FB404] font-bold font-[Roboto] uppercase">
+          Update Account
+        </button>
+      </div>
       <div className="space-y-5">
         <ProfileSettings />
         <TransactionHistory />

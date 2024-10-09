@@ -26,7 +26,7 @@ const Popup = ({ selectedInvestProject, closePopup }) => {
           </h3>
           <h4 className="font-bold text-lexend text-[16px] mt-3">
             You successfully purchased{" "}
-            <span className="text-[#0FB404] text-2xl">5</span> shares
+            <span className="text-[#0FB404] text-2xl">{price}</span> shares
           </h4>
           <div className="flex justify-center mt-5">
             <img className="w-[50px]" src={check} alt="" />
@@ -86,7 +86,7 @@ const Popup = ({ selectedInvestProject, closePopup }) => {
                 className="text-[Roboto] text-sm font-bold mt-3 uppercase bg-[#0FB404] py-[14px] px-[24px]  rounded-lg text-white"
                 onClick={investNow}
               >
-                Sell
+                Invest
               </button>
             </div>
             <button
