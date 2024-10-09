@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { signUp, verifyCode } from "../../redux/features/authSlice";
 
 const Register = () => {
@@ -16,10 +16,9 @@ const Register = () => {
   });
 
   const [registered, setRegistered] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { authStatus } = useSelector((state) => state.auth);
 
   //for controlled input
   const onChangeHandler = (event) => {
@@ -46,7 +45,7 @@ const Register = () => {
       // Dispatch the signUp action
       const user = await dispatch(verifyCode({ email, code }));
       if (user?.error) {
-        setError(true);
+        setError("Invalid Code");
       } else {
         navigate("/auth/verification");
       }
@@ -77,7 +76,7 @@ const Register = () => {
         signUp({ email, password, givenName, familyName })
       );
       if (user?.error) {
-        setError(true);
+        setError(user?.payload || "Registration failed. Please try again.");
       } else {
         setRegistered(true);
       }
@@ -120,7 +119,7 @@ const Register = () => {
                 name="verifyCode"
                 value={formData.verifyCode}
               />
-              {error && <p className="text-[#ff0000] text-sm">Invalid Code</p>}
+              {error && <p className="text-[#ff0000] text-sm">{error}</p>}
               <button className="font-[Roboto] rounded-md text-white font-bold py-2 text-sm bg-green-500">
                 Verify
               </button>
@@ -219,11 +218,7 @@ const Register = () => {
                   I accept Terms & conditions...
                 </span>
               </fieldset>
-              {error && (
-                <p className="text-[#ff0000] text-sm">
-                  Registeration Failed!! Please try again
-                </p>
-              )}
+              {error && <p className="text-[#ff0000] text-sm">{error}</p>}
               <fieldset>
                 <button
                   type="submit"
@@ -233,10 +228,11 @@ const Register = () => {
                 </button>
               </fieldset>
               <div className="h-[1px] bg-[#999999] relative w-1/2">
-                <p className="absolute top-[-10px] left-[45%] bg-white px-2">
+                <p className="absolute top-[-10px] left-[50%] transform -translate-x-1/2 bg-white px-2">
                   OR
                 </p>
               </div>
+
               <button
                 type="button"
                 className="text-[#0FB404] uppercase font-[Roboto] text-sm font-bold text-left"
