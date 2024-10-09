@@ -68,7 +68,6 @@ const App = () => {
           <Route path="mail-sent" element={<MailSentComponent />} />
           <Route path="register" element={<RegisterComponent />} />
           <Route path="verification" element={<VerifyComponent />} />
-          <Route path="activate" element={<Activate />} />
         </Route>
 
         {/* User routes */}

@@ -44,7 +44,9 @@ export const signUp = createAsyncThunk(
         givenName,
         familyName
       );
-      return response;
+      return {
+        authStatus: "Registered",
+      };
     } catch (error) {
       return rejectWithValue(error.message);
     }

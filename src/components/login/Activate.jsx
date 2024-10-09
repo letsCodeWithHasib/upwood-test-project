@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom"; // Link component for navi
 import logo from "../../assets/logo.png"; // Importing the company logo
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { verifyCode } from "../../redux/features/authSlice";
+import {} from "../../redux/features/authSlice";
 
 const Activate = () => {
   const dispatch = useDispatch();
@@ -30,28 +30,6 @@ const Activate = () => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const onSubmitHandler = async (event) => {
-    event.preventDefault(); // Prevent default form submission
-
-    const { email, code } = formData;
-
-    if (!isValidEmail(email)) {
-      setError("Invalid email format."); // Set error message
-      return;
-    }
-    try {
-      // Dispatch the signUp action
-      const user = await dispatch(verifyCode({ email, code }));
-
-      // Optionally reset the form or show a success message here
-      navigate("/auth");
-    } catch (error) {
-      // Handle any errors that occur during sign-up
-      console.error("Registration failed:", error);
-      setRegistrationFailed(true); // Set the flag to indicate registration failure
-    }
-  };
-
   return (
     <div className="flex justify-center min-h-screen">
       {/* Container for the registration form */}
@@ -65,31 +43,6 @@ const Activate = () => {
           <h2 className="text-[20px] font-bold mt-7">User Validation</h2>
 
           {/* Registration form */}
-          <form onSubmit={onSubmitHandler} className="flex flex-col gap-5 mt-5">
-            {/* Input field for email */}
-
-            <input
-              className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
-              type="email"
-              placeholder="Registered Email"
-              required
-              onChange={onChangeHandler}
-              name="email"
-              value={formData.email}
-            />
-            <input
-              className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
-              type="text"
-              placeholder="Validation Code"
-              required
-              onChange={onChangeHandler}
-              name="code"
-              value={formData.code}
-            />
-            <button className="font-[Roboto] rounded-md text-white font-bold py-2 text-sm bg-green-500">
-              Verify
-            </button>
-          </form>
         </section>
       </div>
     </div>
