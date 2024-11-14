@@ -30,7 +30,7 @@ const NewsArticle = ({ article }) => {
 
         {/* Read full article button, aligned to the right */}
         <div className="flex justify-end mt-5">
-          <button className="font-[Roboto] text-sm text-[#0FB404] font-bold">
+          <button className="font-[Roboto] text-sm uppercase text-[#0FB404] font-bold">
             Read full article
           </button>
         </div>

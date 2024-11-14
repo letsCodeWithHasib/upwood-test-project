@@ -292,7 +292,7 @@ export const sidebarItems = [
     title: "Active Project",
     white: activeProjectWhite,
     normal: activeProjectNormal,
-    path: ".",
+    path: "active-projects",
   },
   {
     title: "Funded Project",

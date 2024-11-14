@@ -82,13 +82,17 @@ const App = () => {
         >
           <Route
             index
+            element={<Navigate to="/user/active-projects"></Navigate>}
+          />
+          <Route
+            path="active-projects"
             element={
               <Suspense fallback={<div>Active page loading</div>}>
                 <ActiveProjects />
               </Suspense>
             }
           />
-          <Route path="active-project/:id" element={<ViewActiveDetails />} />
+          <Route path="active-projects/:id" element={<ViewActiveDetails />} />
           <Route path="funded-projects" element={<FundedProjects />} />
           <Route path="funded-projects/:id" element={<ViewFundedProject />} />
           <Route

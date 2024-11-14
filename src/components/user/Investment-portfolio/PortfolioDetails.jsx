@@ -6,11 +6,19 @@ const PortfolioDetails = ({ investmentPortfolio }) => {
 
   return (
     // Main container with shadow and padding for styling
-    <div className="shadow-custom rounded-lg p-5 md:p-10 space-y-5 mt-5">
+    <div className="shadow-custom  rounded-lg p-5 justify-between flex mt-5">
       {/* Flex container to arrange the metrics evenly and wrap on smaller screens */}
-      <div className="flex flex-wrap justify-around">
+      <div className="flex md:flex-row flex-col items-center  md:justify-between  w-full">
+        {/* Locked Value */}
+        <div className="text-center flex md:flex-col items-center gap-3 justify-center w-full p-2">
+          <h4 className="text-[#6B6B6B] font-bold text-sm sm:text-[15px]">
+            Locked token value
+          </h4>
+          <p className=" font-bold text-[18px] sm:text-[20px]">99 000 €</p>
+        </div>
+
         {/* Portfolio Value */}
-        <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
+        <div className="text-center flex md:flex-col items-center gap-3 justify-center w-full  p-2">
           <h4 className="text-[#6B6B6B] font-bold text-sm sm:text-[15px]">
             Portfolio Value
           </h4>
@@ -20,7 +28,7 @@ const PortfolioDetails = ({ investmentPortfolio }) => {
         </div>
 
         {/* Yearly Portfolio Growth */}
-        <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
+        <div className="text-center flex md:flex-col items-center gap-3 justify-center w-full  p-2">
           <h4 className="text-[#6B6B6B] font-bold font-[Roboto] text-sm sm:text-[15px]">
             Yearly Portfolio Growth
           </h4>
@@ -30,7 +38,7 @@ const PortfolioDetails = ({ investmentPortfolio }) => {
         </div>
 
         {/* Return on Investment */}
-        <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
+        <div className="text-center flex md:flex-col items-center gap-3 justify-center w-full  p-2">
           <h4 className="text-[#6B6B6B] font-bold font-[Roboto] text-sm sm:text-[15px]">
             Return on Investment
           </h4>
@@ -38,7 +46,7 @@ const PortfolioDetails = ({ investmentPortfolio }) => {
         </div>
 
         {/* Carbon Tons Offset */}
-        <div className="text-center w-full sm:w-1/2 md:w-1/4 p-2">
+        <div className="text-center flex md:flex-col  items-center gap-3 justify-center w-full p-2">
           <h4 className="text-[#6B6B6B] font-bold font-[Roboto] text-sm sm:text-[15px]">
             Carbon Tons Offset
           </h4>

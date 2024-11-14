@@ -59,7 +59,7 @@ const ProjectItem = ({ item, openPopup }) => {
         </div>
         <div className="text-right space-x-5 mt-5">
           {/* Action buttons container */}
-          <Link to={`active-project/${id}`} className=" w-full md:w-auto">
+          <Link to={`${id}`} className=" w-full md:w-auto">
             <button className="py-2  uppercase px-4 text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px]">
               View details {/* Button to view project details */}
             </button>

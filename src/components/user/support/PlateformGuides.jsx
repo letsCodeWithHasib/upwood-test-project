@@ -45,7 +45,7 @@ const PlatformGuides = () => {
         />
       </div>
       <div className="flex justify-end mt-5">
-        <button className="text-[#0FB404] font-bold text-[15px]">
+        <button className="text-[#0FB404] uppercase font-bold text-[15px]">
           See All
         </button>
       </div>

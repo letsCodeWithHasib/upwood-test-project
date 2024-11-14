@@ -56,8 +56,8 @@ const Contract = ({ contract }) => {
           </div>
 
           {/* Action buttons for the user */}
-          <div className="flex flex-col md:flex-row justify-center gap-2 pt-5 ">
-            <Link to={`/user/contracts/${id}`} className="w-full md:w-auto">
+          <div className="flex md:justify-center justify-between  gap-5 pt-5 ">
+            <Link to={`/user/contracts/${id}`} className="">
               <button className="w-full text-[#0FB404] uppercase  font-[Roboto] font-bold text-[15px] rounded-lg ">
                 See preview
               </button>

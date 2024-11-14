@@ -32,19 +32,19 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
           {sidebarItems.map((sidebarItem, index) => {
             const { title, white, normal, path } = sidebarItem;
             const isActive = useMatch("user");
+
             return (
               <Link key={index} to={path} className="flex items-center">
                 <button
                   className={`${style.sideLink} ${
-                    (contains(path) ||
-                      (isActive && title === "Active Project")) &&
-                    style.sideLinkSelected
+                    contains(path) && style.sideLinkSelected
                   }`}
                 >
                   <img
                     className="w-[22px]"
                     src={
-                      contains(path) || (isActive && title === "Active Project")
+                      (contains(path) && path !== "/user") ||
+                      (isActive && title === "Active Project")
                         ? white
                         : normal
                     }

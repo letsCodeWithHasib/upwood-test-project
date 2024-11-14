@@ -57,12 +57,12 @@ const InvestmentProject = ({ item, openPopup, openSellPopup }) => {
             </span>
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-end gap-3 mt-4">
+        <div className="flex  justify-end gap-3 my-7">
           {/* Action buttons container */}
 
           <button
             onClick={() => openSellPopup(item)}
-            className="py-2 uppercase px-4 text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px] w-full md:w-auto"
+            className="py-2 uppercase px-4 text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px]"
           >
             sell shares {/* Button to view project details */}
           </button>

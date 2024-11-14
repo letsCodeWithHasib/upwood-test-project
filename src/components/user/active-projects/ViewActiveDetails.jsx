@@ -63,67 +63,36 @@ const ViewProjectDetail = () => {
         </p>
 
         {/* Responsive stats container */}
-        <div className="flex flex-col sm:flex-row gap-5 mt-5 items-start sm:items-center">
+        <div className="flex justify-center flex-col text-lg font-semibold sm:flex-row gap-5 mt-5 items-start sm:items-center">
           <p className="text-[#6B6B6B]">
             Area:
-            <span className="text-[#333333] text-2xl font-semibold ml-1">
+            <span className="text-[#333333] text-xl font-bold ml-1">
               {area}
               {area === "TBA" ? "" : " ha"}
             </span>
           </p>
           <p className="text-[#6B6B6B]">
             ROI:
-            <span className="text-[#333333] text-2xl font-semibold ml-1">
+            <span className="text-[#333333] text-xl font-bold ml-1">
               {roi}
               {roi === "TBA" ? "" : "%"}
             </span>
           </p>
           <p className="text-[#6B6B6B]">
             Carbon Credits:
-            <span className="text-[#333333] text-2xl font-semibold ml-1">
+            <span className="text-[#333333] text-xl font-bold ml-1">
               {carbonCredits}
             </span>
           </p>
           <p className="text-[#6B6B6B]">
             Shares Reserved:
-            <span className="text-[#333333] text-2xl font-semibold ml-1">
+            <span className="text-[#333333] text-xl font-bold ml-1">
               {reserved}
             </span>
           </p>
         </div>
 
-        {/* Responsive button container */}
-        <div className="flex flex-col sm:flex-row gap-3 mt-5 justify-start">
-          <button className="py-2 sm:py-3 text-[14px] sm:text-[15px] font-bold rounded-lg text-[#0FB404] uppercase flex-1">
-            Offering documentation
-          </button>
-          <button className="py-2 sm:py-3 text-[14px] sm:text-[15px] font-bold rounded-lg text-[#0FB404] uppercase flex-1">
-            Financial projections
-          </button>
-          <button className="py-2 sm:py-3 text-[14px] sm:text-[15px] font-bold rounded-lg text-[#0FB404] uppercase flex-1">
-            Property media
-          </button>
-          <button className="py-2 sm:py-3 text-[14px] sm:text-[15px] font-bold rounded-lg text-[#0FB404] uppercase flex-1">
-            Geospatial data
-          </button>
-        </div>
-
-        <div className="mt-5">
-          <h3 className="font-lexend font-bold text-[20px]">Property media</h3>
-          <p className="text-[#333333] font-[Roboto] text-[16px] mt-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-7 mt-5">
-          <div className="h-[144px] bg-gray-200 rounded-sm"></div>
-          <div className="h-[144px] bg-gray-200 rounded-sm"></div>
-          <div className="h-[144px] bg-gray-200 rounded-sm"></div>
-          <div className="h-[144px] bg-gray-200 rounded-sm"></div>
-        </div>
-
-        <div className="mt-5 flex flex-col gap-5 sm:flex-row justify-between">
+        <div className="mt-10 flex items-center gap-5 sm:flex-row justify-end">
           <Link
             to="/user"
             className="uppercase text-[#6B6B6B] text-sm font-bold font-[Roboto]"
@@ -138,6 +107,37 @@ const ViewProjectDetail = () => {
           >
             Invest
           </button>
+        </div>
+
+        {/* Responsive button container */}
+        <div className="flex flex-col sm:flex-row gap-3  mt-10 justify-start">
+          <button className="py-2 sm:py-3 text-[14px] sm:text-[15px] font-bold rounded-lg text-[#0FB404] uppercase flex-1 text-left">
+            Offering documentation
+          </button>
+          <button className="py-2 text-left sm:py-3 text-[14px] sm:text-[15px] font-bold rounded-lg text-[#0FB404] uppercase flex-1">
+            Financial projections
+          </button>
+          <button className="py-2 text-left sm:py-3 text-[14px] sm:text-[15px] font-bold rounded-lg text-[#0FB404] uppercase flex-1">
+            Property media
+          </button>
+          <button className="py-2 text-left sm:py-3 text-[14px] sm:text-[15px] font-bold rounded-lg text-[#0FB404] uppercase flex-1">
+            Geospatial data
+          </button>
+        </div>
+
+        <div className="mt-5">
+          <h3 className="font-lexend font-bold text-[20px]">Property media</h3>
+          <p className="text-[#333333] font-[Roboto] text-[16px] mt-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-7 mt-5">
+          <div className="h-[300px] bg-gray-200 rounded-sm"></div>
+          <div className="h-[300px] bg-gray-200 rounded-sm"></div>
+          <div className="h-[300px] bg-gray-200 rounded-sm"></div>
+          <div className="h-[300px] bg-gray-200 rounded-sm"></div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 // Importing the QueryBox component and platform updates data
-import QueryBox from "../common/QueryBox";
+import QueryBox from "./UpdateBox";
 import { platformUpdates } from "../../../assets/data";
 
 const PlatformUpdates = () => {

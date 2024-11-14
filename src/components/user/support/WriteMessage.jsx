@@ -13,7 +13,7 @@ const WriteMessage = () => {
         className="w-full h-[300px] border-[1px] border-[#6B6B6B] p-5 rounded-lg"
       ></textarea>
       <div className="flex justify-end">
-        <button className="px-[24px] py-[14px] text-xs bg-[#0FB404] text-white font-bold rounded-lg">
+        <button className="px-[24px] py-[14px] uppercase text-xs bg-[#0FB404] text-white font-bold rounded-lg">
           Submit
         </button>
       </div>

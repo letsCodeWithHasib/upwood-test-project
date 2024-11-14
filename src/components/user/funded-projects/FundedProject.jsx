@@ -88,21 +88,21 @@ const FundedProject = ({ item, index }) => {
             </span>
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-between gap-5 mt-4">
+        <div className="flex flex-col md:flex-row md:justify-between  text-right gap-5 mt-4">
           {/* Action buttons container */}
           <button
             onClick={() => openPopup(item)}
-            className="text-[15px] font-bold text-sm text-[#0FB404] flex gap-2 items-center"
+            className="text-[15px] hidden sm:flex font-bold text-sm uppercase text-[#0FB404] gap-2 items-center"
           >
             <img
               src={isNotified ? greenTick : notifyImage}
               alt="Notify Icon"
               className="w-4 h-4"
             />{" "}
-            Notify
+            Notify me
           </button>
           <Link to={`${id}`}>
-            <button className="text-[15px] font-bold text-sm text-[#0FB404]">
+            <button className="text-[15px] py-2 px-3 rounded-lg uppercase font-bold border-[#0FB404] border text-sm text-[#0FB404]">
               View details {/* Button to view project details */}
             </button>
           </Link>
