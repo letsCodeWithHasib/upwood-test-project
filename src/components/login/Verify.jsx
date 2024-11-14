@@ -42,7 +42,7 @@ const Verify = () => {
 
           {/* Link to navigate back to the login page */}
           <Link
-            className="text-[#0FB404] uppercase mt-2 text-center text-[14px] font-[Roboto] font-semibold"
+            className="text-[#0FB404] uppercase mb-20 mt-2 text-center text-[14px] font-[Roboto] font-semibold"
             to="/" // Adjusted path to root for navigation
           >
             I unsertand, let's continue

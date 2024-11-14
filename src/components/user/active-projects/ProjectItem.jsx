@@ -57,16 +57,16 @@ const ProjectItem = ({ item, openPopup }) => {
             </span>
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-end gap-3 mt-4">
+        <div className="text-right space-x-5 mt-5">
           {/* Action buttons container */}
-          <Link to={`active-project/${id}`} className="w-full md:w-auto">
-            <button className="py-2 px-4 text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px] w-full md:w-auto">
+          <Link to={`active-project/${id}`} className=" w-full md:w-auto">
+            <button className="py-2  uppercase px-4 text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px]">
               View details {/* Button to view project details */}
             </button>
           </Link>
           <button
             onClick={() => openPopup(item)}
-            className="py-2 px-4 text-sm font-bold rounded-lg bg-[#0FB404] text-white"
+            className="py-2  uppercase px-4 text-sm font-bold rounded-lg bg-[#0FB404] text-white"
           >
             Invest {/* Button to initiate investment */}
           </button>

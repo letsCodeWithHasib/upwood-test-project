@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <div className="">
-      <div className="lg:w-[450px] w-[300px] font-[Lexend Deca] flex flex-col items-center">
+      <div className="lg:w-[450px] w-[90vw] font-[Lexend Deca] flex flex-col items-center">
         {/* Logo at the top of the login form */}
         <img className="w-[150px] lg:w-[200px]" src={logo} alt="Logo" />
 
@@ -85,7 +85,7 @@ const Login = () => {
                 Login
               </button>
               <Link
-                className="text-[15px] text-[#6B6B6B] ml-3 font-semibold font-[Roboto]"
+                className="text-[15px] uppercase text-[#6B6B6B] ml-3 font-semibold font-[Roboto]"
                 to="forgot-password"
               >
                 Forgot your login details?
@@ -126,7 +126,7 @@ const Login = () => {
             {/* Button to submit the invitation request */}
             <button
               onClick={onRequestHandler}
-              className="bg-[#0FB404] cursor-pointer text-sm font-[Roboto] font-bold rounded-lg p-2 px-5 text-white mt-5"
+              className="bg-[#0FB404] mb-20 uppercase cursor-pointer text-sm font-[Roboto] font-bold rounded-lg p-2 px-5 text-white mt-5"
             >
               Request Invitation
             </button>

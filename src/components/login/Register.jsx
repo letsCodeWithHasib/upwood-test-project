@@ -87,7 +87,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center min-h-screen">
-      <div className="md:w-[450px] w-[300px] font-[Lexend Deca] flex flex-col items-center">
+      <div className="md:w-[450px] w-[90vw] font-[Lexend Deca] flex flex-col items-center">
         <img className="md:w-[200px] w-[150px]" src={logo} alt="Logo" />
 
         <section className="w-full mt-7 border-t-[1px] border-[#999999]">
@@ -129,34 +129,6 @@ const Register = () => {
               onSubmit={onSubmitHandlerForRegistration}
               className="flex flex-col gap-5 mt-7"
             >
-              <div className="flex gap-5">
-                <fieldset className="w-full">
-                  <input
-                    className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
-                    type="text"
-                    id="givenName"
-                    name="givenName"
-                    placeholder="First Name"
-                    value={formData.givenName}
-                    onChange={onChangeHandler}
-                    aria-label="First Name"
-                    required
-                  />
-                </fieldset>
-                <fieldset className="w-full">
-                  <input
-                    className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
-                    type="text"
-                    id="familyName"
-                    name="familyName"
-                    placeholder="Last Name"
-                    value={formData.familyName}
-                    onChange={onChangeHandler}
-                    aria-label="Last Name"
-                    required
-                  />
-                </fieldset>
-              </div>
               <fieldset>
                 <input
                   className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
@@ -185,7 +157,7 @@ const Register = () => {
                 <input
                   className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
                   type="password"
-                  placeholder="Confirm password"
+                  placeholder="Repeat your password"
                   required
                   onChange={onChangeHandler}
                   name="confirmPassword"
@@ -194,8 +166,8 @@ const Register = () => {
                 />
               </fieldset>
               <label>
-                <p className="text-xs font-[Roboto] font-bold text-[#333333]">
-                  Desired investment amount $
+                <p className="text-md font-[Roboto]  text-[#6B6B6B]">
+                  Desired investment amount € (optional)
                 </p>
                 <input
                   className="shadow-sm py-2 px-3 border-[1px] border-[#000] focus:outline-[#0FB404] focus:outline-[2px] rounded w-full"
@@ -214,7 +186,7 @@ const Register = () => {
                   required
                   aria-label="Terms and Conditions"
                 />
-                <span className="font-[Roboto] text-[#6B6B6B] text-[14px]">
+                <span className="font-[Roboto] text-[#333333] text-[14px]">
                   I accept Terms & conditions...
                 </span>
               </fieldset>

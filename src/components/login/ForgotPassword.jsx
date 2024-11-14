@@ -46,7 +46,7 @@ const ForgotPassword = () => {
   return (
     <div>
       <div>
-        <div className="w-[300px] lg:w-[450px] font-[Lexend Deca] flex flex-col items-center">
+        <div className="w-[90vw] lg:w-[450px] font-[Lexend Deca] flex flex-col items-center">
           {/* Logo at the top of the login form */}
           <img className="md:w-[200px] w-[150px]" src={logo} alt="Logo" />
 
@@ -119,7 +119,11 @@ const ForgotPassword = () => {
             )}
 
             {/* Error message section */}
-            {error && <p className="text-red-500 mt-2">{error}</p>}
+            {error && (
+              <p className="text-red-500 mt-2">
+                Email is not recognized in our system, please contact support!
+              </p>
+            )}
           </section>
 
           {/* Invitation request section */}
@@ -139,7 +143,7 @@ const ForgotPassword = () => {
               </p>
             )}
             <div className="mt-5 flex flex-col gap-5">
-              <button className="text-[#0FB404] text-[15px] font-[Roboto] rounded-lg p-2 px-5 border-[1px] border-[#0FB404] text-center w-[200px]">
+              <button className="text-[#0FB404] text-[15px] font-[Roboto] rounded-lg p-2 px-2 border-[1px] border-[#0FB404] font-semibold uppercase text-center w-[200px]">
                 Contact Support
               </button>
               <Link
