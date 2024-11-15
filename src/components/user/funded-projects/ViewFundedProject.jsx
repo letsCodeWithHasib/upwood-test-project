@@ -80,31 +80,31 @@ const ViewProjectDetail = ({ item }) => {
             {/* Stats container */}
             <p className="text-[#6B6B6B] flex items-center gap-2">
               Area:
-              <span className="text-[#333333] text-xl font-bold sm:text-2xl">
+              <span className="text-[#333333] text-xl font-bold sm:text-2xl font-[Roboto]">
                 {area}
                 {area === "TBA" ? "" : " ha"}
               </span>
             </p>
             <p className="text-[#6B6B6B] flex items-center gap-2">
               ROI:
-              <span className="text-[#333333] text-xl font-bold sm:text-2xl">
+              <span className="text-[#333333] text-xl font-bold sm:text-2xl font-[Roboto]">
                 {roi}
                 {roi === "TBA" ? "" : "%"}
               </span>
             </p>
-            <p className="text-[#6B6B6B] flex items-center gap-2">
+            <p className="text-[#6B6B6B] flex items-center gap-2 font-[Roboto]">
               Carbon Credits:
               <span className="text-[#333333] text-xl font-bold sm:text-2xl">
                 {carbonCredits}
               </span>
             </p>
-            <p className="text-[#6B6B6B] flex items-center gap-2">
+            <p className="text-[#6B6B6B] flex items-center gap-2 font-[Roboto]">
               Shares available:
               <span className="text-[#333333] text-xl font-bold sm:text-2xl">
                 {reserved}
               </span>
             </p>
-            <p className="text-[#6B6B6B] flex items-center gap-2">
+            <p className="text-[#6B6B6B] flex items-center gap-2 font-[Roboto]">
               Shares Reserved:
               <span className="text-[#333333] text-lg sm:text-2xl font-semibold">
                 {reserved}
