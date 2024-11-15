@@ -39,7 +39,7 @@ const InvestmentPortfolio = () => {
 
   return (
     // Main container for the investment portfolio with responsive margin for spacing
-    <div className="mx-4 md:mx-5 mb-10 mt-[-20px]">
+    <div className="mx-4 md:mx-5 mb-10">
       {isInvestMentOpen && (
         <InvestmentPopup
           selectedInvestProject={selectedInvestProject}

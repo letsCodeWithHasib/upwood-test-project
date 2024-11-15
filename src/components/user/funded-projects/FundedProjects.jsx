@@ -11,7 +11,7 @@ import NotifyPopup from "./NotifyPopup";
  */
 const FundedProjects = () => {
   return (
-    <div className="mx-5 mt-[-20px]">
+    <div className="mx-5">
       {/* Container for the active projects section */}
       <h2 className="text-center md:relative md:z-30 font-lexend text-2xl text-[#333333] font-bold">
         Funded Projects {/* Section heading */}

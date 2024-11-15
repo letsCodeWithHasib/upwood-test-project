@@ -3,7 +3,7 @@ import Contract from "./Contract";
 
 const ContractList = () => {
   return (
-    <div className="mx-5 mt-[-20px] mb-10">
+    <div className="mx-5 mb-10">
       <h2 className="text-center md:relative md:z-30 font-lexend text-2xl text-[#333333] font-bold">
         Contracts
       </h2>

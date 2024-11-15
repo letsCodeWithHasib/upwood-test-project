@@ -24,7 +24,7 @@ const ActiveProjects = () => {
   };
 
   return (
-    <div className="mx-5 mt-[-25px]">
+    <div className="mx-5">
       {isOpen && (
         <Popup closePopup={closePopup} selectedProject={selectedProject} />
       )}

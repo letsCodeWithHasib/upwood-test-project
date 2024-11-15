@@ -21,7 +21,7 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
   return (
     // Sidebar container with fixed positioning and custom width
     <aside
-      className={`md:w-[250px] fixed px-5 md:top-[100px] ${
+      className={`md:w-[250px] fixed px-5 md:top-[135px] ${
         showSideBar ? "block" : "hidden"
       } md:block md:z-0 rounded-t-lg items-start h-screen top-0 flex flex-col bg-white z-40 md:justify-between w-full justify-center md:ml-5`}
     >

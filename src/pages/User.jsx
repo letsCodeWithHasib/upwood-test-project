@@ -19,7 +19,7 @@ const User = () => {
         {/* Render the Sidebar for navigation links */}
         {/* Outlet to render child routes, positioned beside the Sidebar */}
       </div>
-      <div className="md:ml-[280px] pt-10 md:pt-0">
+      <div className="md:ml-[280px] mt-[80px] pt-10 md:pt-0">
         {/* Margin to align content next to Sidebar */}
         <Outlet /> {/* Renders the matching child route component */}
       </div>

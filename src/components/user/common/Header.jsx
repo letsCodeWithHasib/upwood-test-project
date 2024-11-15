@@ -36,7 +36,7 @@ const Header = ({ showSideBar, setShowSideBar }) => {
   };
 
   return (
-    <header className="flex z-[1000] bg-white justify-between items-center lg:px-10 px-5 fixed w-full top-0">
+    <header className="flex h-[80px] z-[1000]  bg-white justify-between items-center lg:px-10 px-5 fixed w-full top-0">
       {/* Logo section */}
       <section className="logo">
         <img className="w-[120px]" src={logo} alt="Company Logo" />

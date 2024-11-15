@@ -34,16 +34,16 @@ const ProjectItem = ({ item, openPopup }) => {
           {description}
           {/* Project description */}
         </p>
-        <div className="flex flex-col md:flex-row gap-3 items-start mt-2">
+        <div className="flex flex-col md:flex-row gap-3 items-start mt-2 font-[Roboto]">
           {/* Stats container */}
-          <p className="text-[#6B6B6B] flex items-center gap-2 font-bold">
+          <p className="text-[#6B6B6B] flex items-center gap-2 font-bold font-[Roboto]">
             Area:
-            <span className="text-[#333333] text-xl font-bold">
+            <span className="text-[#333333] text-xl font-bold font-[Roboto]">
               {area}
               {area === "TBA" ? "" : " ha"}
             </span>
           </p>
-          <p className="text-[#6B6B6B] flex items-center gap-2 font-bold">
+          <p className="text-[#6B6B6B] flex items-center gap-2 font-bold font-[Roboto]">
             ROI:
             <span className="text-[#333333] text-xl font-bold">
               {roi}
