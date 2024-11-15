@@ -64,7 +64,7 @@ const Header = ({ showSideBar, setShowSideBar }) => {
             onChange={handleImageChange}
           />
           <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] -ml-3">
-            {user?.firstName} {user?.lastName}
+            {user?.firstName || "CRE"} {user?.lastName || "Source"}
           </span>
         </button>
 

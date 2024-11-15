@@ -3,31 +3,82 @@ import logoutImage from "../../../assets/logout.png";
 import { sidebarItems } from "../../../assets/data";
 import { Link, useMatch, useLocation } from "react-router-dom"; // Importing routing components
 import { style } from "../../../assets/style"; // Importing custom styles
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { signOut } from "../../../redux/features/authSlice";
+import profile from "../../../assets/profile.png";
 
 const Sidebar = ({ showSideBar, setShowSideBar }) => {
   const location = useLocation();
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
   const contains = (route) => {
     return location.pathname.includes(route);
   };
 
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (e) => {
+    console.log("Ex");
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setSelectedImage(imageUrl);
+    }
+    console.log(file, selectedImage);
+  };
+
+  useEffect(() => {
+    if (selectedImage) {
+      return () => {
+        URL.revokeObjectURL(selectedImage);
+      };
+    }
+  }, [selectedImage]);
+
   useEffect(() => {
     setShowSideBar(false);
   }, [location]);
+
+  console.log(selectedImage);
 
   return (
     // Sidebar container with fixed positioning and custom width
     <aside
       className={`md:w-[250px] fixed px-5 md:top-[135px] ${
         showSideBar ? "block" : "hidden"
-      } md:block md:z-0 rounded-t-lg items-start h-screen top-0 flex flex-col bg-white z-40 md:justify-between w-full justify-center md:ml-5`}
+      } md:block  md:z-0 rounded-t-lg items-start h-screen top-0 flex flex-col bg-white z-40 md:justify-between w-full justify-center md:ml-5`}
     >
       {/* Navigation container with vertical layout and spacing */}
-      <nav className="flex justify-center items-center">
-        <div className="flex flex-col gap-1">
+      <nav className="flex justify-center items-center  w-full">
+        <div className="flex flex-col gap-1 md:[w-300px] w-full">
+          <button className={`${style.sideLink}`}>
+            <label
+              htmlFor="fileInput"
+              className={`${
+                selectedImage
+                  ? "h-[40px] w-[40px] shadow-custom"
+                  : "h-[100px] w-[100px]"
+              } cursor-pointer rounded-full -ml-7 -mb-6`}
+            >
+              <img
+                className="w-full "
+                src={selectedImage || profile}
+                alt="Profile"
+              />
+            </label>
+            <input
+              type="file"
+              id="fileInput"
+              className="hidden"
+              accept="image/*"
+              onChange={handleImageChange}
+            />
+            <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] -ml-3">
+              {user?.firstName || "CRE"} {user?.lastName || "Source"}
+            </span>
+          </button>
+
           {/* Link to Active Projects */}
           {sidebarItems.map((sidebarItem, index) => {
             const { title, white, normal, path } = sidebarItem;
