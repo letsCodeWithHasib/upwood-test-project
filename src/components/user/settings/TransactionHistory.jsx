@@ -26,13 +26,15 @@ const TransactionHistory = () => {
             {[1, 2, 3].map((_, index) => (
               <tr
                 key={index}
-                className="border-t-[1px] text-center border-[#333333]"
+                className="border-t-[1px] text-center border-[#333333] font-[Roboto]"
               >
                 <td className="py-3 px-4">765192</td>
                 <td className="px-4">Share Purchase</td>
                 <td className="px-4">350JPZ</td>
                 <td className="px-4">500 Euro</td>
-                <td className="text-green-500 font-bold px-4">Successful</td>
+                <td className="text-green-500 font-bold px-4 font-[Roboto]">
+                  Successful
+                </td>
               </tr>
             ))}
           </tbody>
@@ -40,8 +42,8 @@ const TransactionHistory = () => {
       </div>
 
       <div className="flex justify-end">
-        <button className="text-[rgb(15,180,4)] text-sm font-bold font-[Roboto]">
-          See Full Transactions
+        <button className="text-[rgb(15,180,4)] uppercase text-sm font-bold font-[Roboto]">
+          See Full Transaction History
         </button>
       </div>
     </div>

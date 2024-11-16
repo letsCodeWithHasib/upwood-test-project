@@ -15,13 +15,17 @@ const NewsAndUpdates = () => {
       <div className="shadow-custom rounded-lg p-5 space-y-2 mt-5">
         {/* Sub-heading for platform guides */}
         <h3 className="text-lg font-bold font-lexend">
-          Platform how to guides
+          Planned platform maintenance
         </h3>
 
         {/* Support information text */}
         <p className="text-[#333333] text-[15px]">
-          Our support hours are 10:00 to 16:00 (UTC +2) Mon to Fri. Please
-          expect an answer during those times.
+          Next planned platform maintenance is going to happen at 22.07.2024 22
+          : 00 (CET), please be aware that there may be short time frame when
+          platform may show service maintenance. We are constantly working on
+          platform improvements, updates and new features to provide better
+          investment experience. Your funds are in your digital wallet, thereby,
+          always safe!
         </p>
       </div>
 

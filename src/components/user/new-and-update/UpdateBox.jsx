@@ -9,7 +9,7 @@ const UpdateBox = ({ boxData }) => {
 
       {/* Content section with padding and centered text */}
       <div>
-        <p className="p-5 text-[#333333] text-[16px] text-center font-semibold">
+        <p className="py-[16px] px-[32px] text-[#333333] font-[Roboto] text-[16px] text-center">
           {boxData.query} {/* Displaying the query text */}
         </p>
       </div>

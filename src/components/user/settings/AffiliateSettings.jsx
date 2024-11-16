@@ -43,7 +43,10 @@ const AffiliateSettings = () => {
             {Array(3)
               .fill()
               .map((_, index) => (
-                <tr key={index} className="border-t-[1px] border-[#333333]">
+                <tr
+                  key={index}
+                  className="border-t-[1px] border-[#333333] font-[Roboto]"
+                >
                   <td className="py-2 px-3">765192</td>
                   <td className="px-3">Share Purchase</td>
                   <td className="px-3">350JPZ</td>
@@ -55,8 +58,8 @@ const AffiliateSettings = () => {
         </table>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-5">
-        <button className="text-[rgb(15,180,4)] font-bold text-sm font-[Roboto]">
+      <div className="flex flex-col sm:flex-row justify-end items-center gap-5">
+        <button className="text-[rgb(15,180,4)] font-bold text-sm font-[Roboto] uppercase">
           Export Affiliate Earning Table
         </button>
         <button className="bg-[#0FB404] uppercase text-sm font-bold rounded-2xl font-[Roboto] text-white py-[14px] px-[24px]">

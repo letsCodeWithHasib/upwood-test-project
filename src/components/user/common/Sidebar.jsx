@@ -45,14 +45,14 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
   return (
     // Sidebar container with fixed positioning and custom width
     <aside
-      className={`md:w-[250px] fixed px-5 md:top-[135px] ${
+      className={`md:w-[250px] fixed  md:top-[135px] ${
         showSideBar ? "block" : "hidden"
       } md:block  md:z-0 rounded-t-lg items-start h-screen top-0 flex flex-col bg-white z-40 md:justify-between w-full justify-center md:ml-5`}
     >
       {/* Navigation container with vertical layout and spacing */}
-      <nav className="flex justify-center items-center  w-full">
+      <nav className="flex justify-center items-center w-full">
         <div className="flex flex-col gap-1 md:[w-300px] w-full">
-          <button className={`${style.sideLink}`}>
+          <button className={`${style.sideLink} md:hidden`}>
             <label
               htmlFor="fileInput"
               className={`${

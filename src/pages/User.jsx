@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const User = () => {
   const [showSideBar, setShowSideBar] = useState(false);
   return (
-    <div>
+    <div className="">
       {/* Render the Header component for user navigation */}
       <Header showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
       {/* Main content area with Sidebar and Outlet for nested routes */}

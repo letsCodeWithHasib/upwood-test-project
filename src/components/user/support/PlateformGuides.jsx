@@ -3,7 +3,7 @@ import QueryBox from "../common/QueryBox";
 const PlatformGuides = () => {
   return (
     <div className="shadow-2xl rounded-2xl p-5 sm:p-7">
-      <h3 className="text-lg font-bold font-lexend text-center sm:text-left">
+      <h3 className="text-lg font-bold font-lexend text-left sm:text-left">
         Platform How-To Guides
       </h3>
       <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">

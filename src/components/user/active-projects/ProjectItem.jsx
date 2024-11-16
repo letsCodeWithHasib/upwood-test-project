@@ -30,7 +30,7 @@ const ProjectItem = ({ item, openPopup }) => {
         <h3 className="text-[#333333] font-bold text-[18px] md:text-[20px] font-lexend">
           {title} {/* Project title */}
         </h3>
-        <p className="text-[#333333] text-[14px] md:text-[16px] pt-2">
+        <p className="text-[#333333] font-[Roboto] text-[14px] md:text-[16px] pt-2">
           {description}
           {/* Project description */}
         </p>
@@ -47,7 +47,7 @@ const ProjectItem = ({ item, openPopup }) => {
             ROI:
             <span className="text-[#333333] text-xl font-bold">
               {roi}
-              {roi === "TBA" ? "" : " %"}
+              {roi === "TBA" ? "" : "%"}
             </span>
           </p>
           <p className="text-[#6B6B6B] flex items-center gap-2 font-bold">
@@ -60,13 +60,13 @@ const ProjectItem = ({ item, openPopup }) => {
         <div className="text-right space-x-5 mt-5">
           {/* Action buttons container */}
           <Link to={`${id}`} className=" w-full md:w-auto">
-            <button className="py-2  uppercase px-4 text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px]">
+            <button className="py-[14px] px-[24px] uppercase text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px]">
               View details {/* Button to view project details */}
             </button>
           </Link>
           <button
             onClick={() => openPopup(item)}
-            className="py-2  uppercase px-4 text-sm font-bold rounded-lg bg-[#0FB404] text-white"
+            className="py-[14px] px-[24px]  uppercase text-sm font-bold rounded-lg bg-[#0FB404] text-white"
           >
             Invest {/* Button to initiate investment */}
           </button>

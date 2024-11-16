@@ -20,9 +20,9 @@ const ActivePopup = ({ selectedProject, closePopup }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
+    <div className="fixed  inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
       {invested ? (
-        <div className="bg-white rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
+        <div className="bg-white mx-10 md:mx-0 rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
           <h3 className="font-bold text-lexend text-[20px]">
             Congratulations!
           </h3>
@@ -48,36 +48,38 @@ const ActivePopup = ({ selectedProject, closePopup }) => {
           </div>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
+        <div className=" bg-white mx-10 md:mx-0 rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
           <h2 className="text-[#333333] font-lexend font-bold text-[20px]">
             Type amount of shares you want to buy
           </h2>
-          <div className="mt-5 space-y-2">
-            <p className="text-[Roboto] font-bold">
+          <div className="mt-5 space-y-3">
+            <p className="font-[Roboto] font-bold text-[#333333]">
               Shares available :{" "}
               <span className="text-[#0FB404] text-[20px]">{available}</span>
             </p>
-            <p className="text-[Roboto] font-bold">
+            <p className="font-[Roboto] font-bold text-[#333333]">
               Price per share :{" "}
               <span className="text-[#0FB404] text-[20px]">
                 {itemPrice || 0}€
               </span>
             </p>
+
             <input
-              className={`p-4 border-[1px] rounded-md ${
+              className={`py-[12px] px-[16px] text-[16px] border-[1px] rounded-md ${
                 failed ? "border-[#ff0000]" : "border-black"
               }`}
               type="number"
               placeholder="Type the amount€"
               onChange={(e) => setPrice(e.target.value)}
             />
-            <p className="text-[Roboto] font-bold">
+
+            <p className="font-[Roboto] font-bold text-[#333333] flex items-center justify-center gap-2">
               Total payment :{" "}
               <span className="text-[#0FB404] text-[20px]">
                 {itemPrice * price || 0} EUROe
               </span>
             </p>
-            <div className="flex flex-col items-center py-7 gap-3">
+            <div className="flex flex-col items-center gap-5">
               {agreementSigned ? (
                 <div className="flex gap-2 items-center">
                   <img className="w-[30px]" src={greenTick} alt="" />

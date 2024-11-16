@@ -5,7 +5,7 @@ import profile from "../../../assets/profile.png";
 import logo from "../../../assets/logo.png";
 import logoutImage from "../../../assets/logout.png";
 import menu from "../../../assets/menu-green.png";
-import close from "../../../assets/close.png";
+import close from "../../../assets/green-close.png";
 import { useNavigate } from "react-router-dom";
 
 const Header = ({ showSideBar, setShowSideBar }) => {
@@ -85,7 +85,11 @@ const Header = ({ showSideBar, setShowSideBar }) => {
           onClick={() => setShowSideBar(!showSideBar)}
           className="p-2 w-[40px] rounded-full"
         >
-          <img className="w-6" src={showSideBar ? close : menu} alt="" />
+          <img
+            className="w-[32px] h-[32px]"
+            src={showSideBar ? close : menu}
+            alt=""
+          />
         </button>
       </div>
     </header>

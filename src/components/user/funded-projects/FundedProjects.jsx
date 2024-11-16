@@ -16,7 +16,7 @@ const FundedProjects = () => {
       <h2 className="text-center md:relative md:z-30 font-lexend text-2xl text-[#333333] font-bold">
         Funded Projects {/* Section heading */}
       </h2>
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 my-5">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 gap-y-10 my-5">
         {/* Grid layout for project items */}
         {fundedProjects.map((fundedProject, index) => {
           return (

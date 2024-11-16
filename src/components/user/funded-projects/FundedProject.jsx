@@ -102,7 +102,7 @@ const FundedProject = ({ item, index }) => {
             Notify me
           </button>
           <Link to={`${id}`}>
-            <button className="text-[15px] py-2 px-3 rounded-lg uppercase font-bold border-[#0FB404] border text-sm text-[#0FB404]">
+            <button className="text-[15px] py-[14px] px-[24px] rounded-lg uppercase font-bold border-[#0FB404] border text-sm text-[#0FB404]">
               View details {/* Button to view project details */}
             </button>
           </Link>

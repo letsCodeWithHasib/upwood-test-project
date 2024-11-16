@@ -78,16 +78,16 @@ const ViewProjectDetail = ({ item }) => {
           </p>
           <div className="flex flex-col  sm:flex-row flex-wrap gap-3 sm:items-center mt-3 font-semibold text-lg">
             {/* Stats container */}
-            <p className="text-[#6B6B6B] flex items-center gap-2">
+            <p className="text-[#6B6B6B] flex items-center gap-2 font-[Roboto]">
               Area:
-              <span className="text-[#333333] text-xl font-bold sm:text-2xl font-[Roboto]">
+              <span className="text-[#333333] text-xl font-semibold sm:text-2xl">
                 {area}
                 {area === "TBA" ? "" : " ha"}
               </span>
             </p>
-            <p className="text-[#6B6B6B] flex items-center gap-2">
+            <p className="text-[#6B6B6B] flex items-center gap-2 font-[Roboto]">
               ROI:
-              <span className="text-[#333333] text-xl font-bold sm:text-2xl font-[Roboto]">
+              <span className="text-[#333333] text-xl font-bold sm:text-2xl ">
                 {roi}
                 {roi === "TBA" ? "" : "%"}
               </span>
