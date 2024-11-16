@@ -32,7 +32,7 @@ const SingleContract = () => {
       shadow */}
       <div className="rounded-lg shadow-custom mt-10 mx-4 mb-10 md:mx-10">
         {/* Header displaying the contract name and signed date */}
-        <p className="bg-[#ffe5e5] rounded-t-lg text-[#6B6B6B] font-[Roboto] font-bold p-2 text-center">
+        <p className="bg-[#EBEBEB] rounded-t-lg text-[#6B6B6B] font-[Roboto] font-bold p-2 text-center">
           Subscription Agreement: {contractName} | Signed Date: {signedDate}
         </p>
 
@@ -70,7 +70,7 @@ const SingleContract = () => {
             </div>
 
             {/* Navigation and action buttons */}
-            <div className="flex justify-between items-start pt-5">
+            <div className="flex font-[Roboto] justify-between items-start pt-5">
               {/* Link to navigate back to the contracts list */}
               <Link
                 className="text-[#6B6B6B] items-center uppercase font-[Roboto] font-bold text-[15px] text-center"
@@ -79,7 +79,7 @@ const SingleContract = () => {
               >
                 Back to Contracts
               </Link>
-              <div className="flex gap-3 items-center ">
+              <div className="flex  gap-10 items-center ">
                 {/* Buttons for downloading the contract in different formats */}
                 <button
                   className="font-[Roboto] justify-center flex items-center gap-3 font-bold text-[15px]   text-[#0FB404] rounded-lg w-full  mb-3"

@@ -12,7 +12,7 @@ const TokenPortfolio = () => {
         <h3 className="font-lexend font-bold text-[20px] text-[#333333] mb-2 sm:mb-0">
           Token Portfolio List
         </h3>
-        <div className="flex md:flex-row flex-col gap-3 mt-5">
+        <div className="flex md:flex-row flex-col gap-3">
           {/* Button to export transaction history */}
           <button className="text-[#0FB404] uppercase text-sm font-bold font-[Roboto]">
             Export Transaction History

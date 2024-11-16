@@ -34,7 +34,7 @@ const Contract = ({ contract }) => {
       <div className="border-t-8 border-[rgb(235,235,235)]">
         <div className="p-5 space-y-2">
           {/* Contract title and registration number */}
-          <h3 className="text-[#333333] text-lg font-bold">
+          <h3 className="text-[#333333] font-lexend text-lg font-bold">
             "{contractName}" cadastrar NR: {nr}
           </h3>
           <p className="text-sm font-[Roboto]">Subscription agreement</p>
@@ -56,7 +56,7 @@ const Contract = ({ contract }) => {
           </div>
 
           {/* Action buttons for the user */}
-          <div className="flex md:justify-center justify-between  gap-5 pt-5 ">
+          <div className="flex md:justify-center justify-between  gap-10 pt-5 ">
             <Link to={`/user/contracts/${id}`} className="">
               <button className="w-full text-[#0FB404] uppercase  font-[Roboto] font-bold text-[15px] rounded-lg ">
                 See preview

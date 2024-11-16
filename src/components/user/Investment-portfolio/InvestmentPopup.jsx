@@ -20,7 +20,7 @@ const Popup = ({ selectedInvestProject, closePopup }) => {
   return (
     <div className="fixed inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
       {invested ? (
-        <div className="bg-white rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
+        <div className="bg-white mx-10 rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
           <h3 className="font-bold text-lexend text-[20px]">
             Congratulations!
           </h3>
@@ -49,7 +49,7 @@ const Popup = ({ selectedInvestProject, closePopup }) => {
           </div>
         </div>
       ) : (
-        <div className="bg-white rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
+        <div className="bg-white mx-10 rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
           <h2 className="text-[#333333] font-lexend font-bold text-[20px]">
             Type amount of shares you want to buy
           </h2>
