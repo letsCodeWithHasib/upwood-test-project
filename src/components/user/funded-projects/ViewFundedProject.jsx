@@ -2,7 +2,7 @@ import { fundedProjects } from "../../../assets/data";
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import notifyImage from "../../../assets/notify.png";
-import NotifyPopup from "./NotifyPopup";
+import NotifyPopup from "./ViewNotifyPopup";
 
 /**
  * ProjectItem Component
@@ -17,6 +17,7 @@ const ViewProjectDetail = ({ item }) => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const openPopup = (item) => {
+    console.log(item);
     setIsOpen(true);
     setSelectedProject(item);
   };
@@ -49,18 +50,13 @@ const ViewProjectDetail = ({ item }) => {
         {isOpen && (
           <NotifyPopup
             closePopup={closePopup}
-            setNotified={setNotifiedProjects}
-            notified={notified}
             selectedProject={selectedProject}
-            setNotifiedProjects={setNotifiedProjects}
-            notifiedProjects={notifiedProjects}
-            index={index}
           />
         )}
         <div className="bg-gray-50 w-full">
           {/* Image container */}
           <img
-            className="rounded-t-lg w-full h-auto object-cover" // Ensuring 100% width and maintaining aspect ratio
+            className="rounded-t-lg w-full h-[300px] object-cover" // Ensuring 100% width and maintaining aspect ratio
             src={image}
             alt="Project Illustration"
           />
@@ -115,7 +111,9 @@ const ViewProjectDetail = ({ item }) => {
           <div className="flex flex-wrap justify-between items-center gap-3 mt-5">
             {/* Notify and Back to Projects buttons */}
             <button
-              onClick={openPopup}
+              onClick={() => {
+                openPopup(fundedProjects[id]);
+              }}
               className="text-lg gap-2 flex items-center font-bold rounded-lg text-[#0FB404] uppercase"
             >
               <img src={notifyImage} alt="notify icon" className="w-5 h-5" />{" "}

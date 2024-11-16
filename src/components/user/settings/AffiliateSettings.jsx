@@ -17,14 +17,6 @@ const AffiliateSettings = () => {
             upwood.io/jsdhdsjsdhc1234
           </span>
         </p>
-        <button
-          className="text-sm text-[#0FB404] font-bold"
-          onClick={() =>
-            navigator.clipboard.writeText("upwood.io/jsdhdsjsdhc1234")
-          }
-        >
-          Copy Link
-        </button>
       </div>
 
       <div className="overflow-x-auto">

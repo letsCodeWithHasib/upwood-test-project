@@ -49,7 +49,7 @@ const ViewProjectDetail = () => {
         <div className="w-full bg-gray-50 p-0 m-0">
           {/* Image container with full width and no padding or margins */}
           <img
-            className="rounded-t-lg w-full h-auto object-cover block"
+            className="rounded-t-lg w-full h-[300px] object-cover block"
             src={image}
             alt="Project Illustration"
           />
@@ -87,6 +87,12 @@ const ViewProjectDetail = () => {
               Carbon Credits:
               <span className="text-[#333333] text-xl font-bold ml-1">
                 {carbonCredits}
+              </span>
+            </p>
+            <p className="text-[#6B6B6B] font-[Roboto]">
+              Shares available:
+              <span className="text-[#333333] text-xl font-bold ml-1">
+                {900}
               </span>
             </p>
             <p className="text-[#6B6B6B] font-[Roboto]">

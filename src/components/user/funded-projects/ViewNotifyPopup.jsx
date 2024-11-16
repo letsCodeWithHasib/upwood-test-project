@@ -1,17 +1,9 @@
 import { useState } from "react";
 
-const Popup = ({
-  selectedProject,
-  closePopup,
-  notified,
-  setNotified,
-  setNotifiedProjects,
-  notifiedProjects,
-  index,
-}) => {
+const Popup = ({ selectedProject, closePopup }) => {
   const [amount, setAmount] = useState(0);
   const [notifyFailed, setNotifyFailed] = useState(false);
-
+  const [notified, setNotified] = useState(false);
   const { available, price: itemPrice } = selectedProject;
 
   const handleNotifyMe = (event) => {

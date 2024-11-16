@@ -19,14 +19,14 @@ const SellSharePopup = ({ closePopup, selectedSellShareProject }) => {
   };
 
   return (
-    <div className="fixed z-40 inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
+    <div className="fixed z-[1000000] inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
       {invested ? (
         <div className="bg-white mx-10 rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
           <h3 className="font-bold text-lexend text-[20px]">
             Congratulations!
           </h3>
           <h4 className="font-bold text-lexend text-[16px] mt-3">
-            You successfully purchased{" "}
+            Your shares will be sold{" "}
             <span className="text-[#0FB404] text-2xl">5</span> shares
           </h4>
           <div className="flex justify-center mt-5">

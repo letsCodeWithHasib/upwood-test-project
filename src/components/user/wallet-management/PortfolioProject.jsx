@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import SellSharePopup from "./SellSharePopup";
+import InvestmentPopup from "./InvestmentPopup";
 
 /**
  * PortfolioProject Component
@@ -107,7 +108,7 @@ const PortfolioProject = ({ item, openPopup }) => {
             sell shares {/* Button to view project details */}
           </button>
           <button
-            onClick={() => openSellPopup(item)}
+            onClick={() => openInvestPopup(item)}
             className="py-2 px-4 uppercase text-sm font-bold rounded-lg bg-[#0FB404] text-white"
           >
             Invest more {/* Button to initiate investment */}
