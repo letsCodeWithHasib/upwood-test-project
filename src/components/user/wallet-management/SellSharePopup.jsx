@@ -18,7 +18,7 @@ const SellSharePopup = ({ closePopup, selectedSellShareProject }) => {
   };
 
   return (
-    <div className="fixed  z-40 inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
+    <div className="fixed z-[100000] inset-0 bg-[rgb(0,0,0,.5)] bg-opacity-30 backdrop-blur-lg flex justify-center items-center">
       {invested ? (
         <div className="bg-white mx-5 rounded-lg shadow-custom p-6 max-w-lg w-full text-center">
           <h3 className="font-bold text-lexend text-[20px]">

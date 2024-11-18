@@ -42,7 +42,6 @@ const Contract = ({ contract }) => {
           {/* Tokens and signed date display */}
           <div className="flex flex-col md:flex-row gap-4">
             <p className="font-[Roboto] font-bold text-[#333333] flex gap-2 items-center">
-              Signed date
               <span className="text-[#0FB404] font-[Roboto] text-lg">
                 {signedDate}
               </span>
