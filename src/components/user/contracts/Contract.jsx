@@ -49,17 +49,17 @@ const Contract = ({ contract }) => {
           </div>
 
           {/* Action buttons for the user */}
-          <div className="flex md:justify-center justify-between  gap-10 pt-5 ">
+          <div className="flex justify-center gap-10 pt-5 ">
             <Link to={`/user/contracts/${id}`} className="">
-              <button className="w-full text-[#0FB404] uppercase  font-[Roboto] font-bold text-[15px] rounded-lg ">
+              <button className="w-full text-[#0FB404] uppercase  font-[Roboto] font-bold text-[14px] rounded-lg ">
                 See preview
               </button>
             </Link>
-            <button className="text-[#0FB404] uppercase items-center font-[Roboto] font-bold text-[15px] rounded-lg flex gap-5">
+            <button className="text-[#0FB404] uppercase items-center font-[Roboto] font-bold text-[14px] rounded-lg flex gap-5">
               EDOC
               <img src={download} alt="" />
             </button>
-            <button className="text-[#0FB404] uppercase items-center font-[Roboto] font-bold text-[15px] rounded-lg flex gap-5">
+            <button className="text-[#0FB404] uppercase items-center font-[Roboto] font-bold text-[14px] rounded-lg flex gap-5">
               PDF
               <img src={download} alt="" />
             </button>

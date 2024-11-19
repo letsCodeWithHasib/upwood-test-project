@@ -6,7 +6,7 @@ const NewsArticle = ({ article }) => {
     // Main article container with shadow and rounded corners
     <div className="shadow-custom rounded-lg overflow-hidden">
       {/* Article heading section, centered with bold uppercase text */}
-      <p className="text-center bg-[#EBEBEB] text-xs font-[Roboto] font-bold uppercase text-[#333333] p-2">
+      <p className="text-center  text-xs font-[Roboto] font-bold uppercase text-[#333333] p-2">
         {heading}
       </p>
 

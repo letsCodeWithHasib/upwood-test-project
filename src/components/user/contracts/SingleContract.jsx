@@ -33,11 +33,11 @@ const SingleContract = () => {
       <div className="rounded-lg shadow-custom mt-10 mx-4 mb-10 md:mx-10">
         {/* Header displaying the contract name and signed date */}
         <p className="bg-[#EBEBEB] rounded-t-lg text-[#6B6B6B] font-[Roboto] font-bold p-2 text-center">
-          Subscription Agreement: {contractName} | Signed Date: {signedDate}
+          Subscription Agreement: {contractName} {signedDate}
         </p>
 
         {/* Content area with dynamic height for visual consistency */}
-        <div className="h-[400px] overflow-hidden text-center p-4 my-4">
+        <div className="h-[300px] overflow-hidden text-center p-4 my-4">
           <p className="text-gray-700">
             {/* Placeholder text; replace with relevant content as necessary */}
             Detailed contract information will be displayed here.
@@ -54,8 +54,8 @@ const SingleContract = () => {
             <p className="text-sm">Subscription Agreement</p>
 
             {/* Tokens and signed date display */}
-            <div className="flex flex-col gap-4 sm:flex-row sm:gap-5">
-              <p className="font-[Roboto] font-bold text-[#333333] flex gap-2 items-center">
+            <div className="flex-col gap-7 md:flex-row flex md:gap-5">
+              <p className="font-[Roboto] font-bold text-[#333333] hidden md:flex gap-2 items-center">
                 Tokens:
                 <span className="text-[#0FB404] font-[Roboto] text-[20px]">
                   {tokens}
@@ -63,7 +63,7 @@ const SingleContract = () => {
               </p>
               <p className="font-[Roboto] font-bold text-[#333333] flex gap-2 items-center">
                 Signed Date:
-                <span className="text-[#0FB404] font-[Roboto] text-[20px]">
+                <span className="text-[#525652] font-[Roboto] text-[20px]">
                   {signedDate}
                 </span>
               </p>

@@ -6,7 +6,7 @@ const PlatformUpdates = () => {
   return (
     // Grid layout with responsive column settings and custom shadow and padding
     <div className="shadow-custom rounded-lg p-5 mt-7">
-      <h3 className="text-lg font-bold font-lexend ">Plateform updates</h3>
+      <h3 className="text-lg font-bold font-lexend ">Platform updates</h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-5">
         {/* Mapping through platformUpdates array to render each update */}

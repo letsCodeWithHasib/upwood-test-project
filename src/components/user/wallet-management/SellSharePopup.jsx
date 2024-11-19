@@ -53,7 +53,7 @@ const SellSharePopup = ({ closePopup, selectedSellShareProject }) => {
           <h2 className="text-[#333333] font-lexend font-bold text-[20px]">
             Sell your shares
           </h2>
-          <div className="mt-5 space-y-2">
+          <div className="mt-5 space-y-5">
             <p className="text-[Roboto] font-bold text-[#6B6B6B]">
               Shares available :{" "}
               <span className="text-[20px] font-bold text-black">
@@ -74,7 +74,7 @@ const SellSharePopup = ({ closePopup, selectedSellShareProject }) => {
               <input
                 className={`p-2 border-[1px] rounded-md ${
                   failed ? "border-[#ff0000]" : "border-black"
-                } mt-3 outline-[#0FB404] outline-[1px]`}
+                } mt-1 outline-[#0FB404] outline-[1px]`}
                 type="number"
                 onChange={(e) => setPrice(e.target.value)}
               />

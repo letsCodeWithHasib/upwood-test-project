@@ -45,40 +45,33 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
   return (
     // Sidebar container with fixed positioning and custom width
     <aside
-      className={`md:w-[250px] fixed  md:top-[135px] ${
+      className={`md:w-[250px] fixed  md:top-[134px] ${
         showSideBar ? "block" : "hidden"
-      } md:block  md:z-0 rounded-t-lg items-start h-screen top-0 flex flex-col bg-white z-40 md:justify-between w-full justify-center md:ml-5`}
+      } md:block md:z-0 rounded-t-lg items-start h-screen top-0 flex flex-col bg-white z-40 md:justify-between w-full mt-[100px] md:mt-0 md:ml-5`}
     >
       {/* Navigation container with vertical layout and spacing */}
-      <nav className="flex justify-center items-center w-full">
-        <div className="flex flex-col gap-1 md:[w-300px] w-full">
-          <button className={`${style.sideLink} md:hidden`}>
-            <label
-              htmlFor="fileInput"
-              className={`${
-                selectedImage
-                  ? "h-[40px] w-[40px] shadow-custom"
-                  : "h-[100px] w-[100px]"
-              } cursor-pointer rounded-full -ml-7 -mb-6`}
-            >
-              <img
-                className="w-full "
-                src={selectedImage || profile}
-                alt="Profile"
-              />
-            </label>
-            <input
-              type="file"
-              id="fileInput"
-              className="hidden"
-              accept="image/*"
-              onChange={handleImageChange}
+      <nav className="flex flex-col justify-center items-center w-full">
+        <button className={`md:hidden  w-full flex items-center -mt-5`}>
+          <label htmlFor="fileInput" className={`cursor-pointer rounded-full `}>
+            <img
+              className="w-full"
+              src={selectedImage || profile}
+              alt="Profile"
             />
-            <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] -ml-3">
-              {user?.firstName || "CRE"} {user?.lastName || "Source"}
-            </span>
-          </button>
+          </label>
+          <input
+            type="file"
+            id="fileInput"
+            className="hidden"
+            accept="image/*"
+            onChange={handleImageChange}
+          />
+          <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B] -ml-3">
+            {user?.firstName || "CRE"} {user?.lastName || "Source"}
+          </span>
+        </button>
 
+        <div className="flex flex-col gap-1 md:[w-300px] w-full">
           {/* Link to Active Projects */}
           {sidebarItems.map((sidebarItem, index) => {
             const { title, white, normal, path } = sidebarItem;

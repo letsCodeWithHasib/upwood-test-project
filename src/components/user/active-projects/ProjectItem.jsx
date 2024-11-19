@@ -14,7 +14,7 @@ const ProjectItem = ({ item, openPopup }) => {
   return (
     <div className="shadow-custom rounded-xl overflow-hidden">
       {/* Container for the project item */}
-      <div className="h-[200px] md:h-[250px] bg-gray-50 flex justify-center">
+      <div className="h-[200px] md:h-[250px] bg-[#CCCCCC] flex justify-center">
         {/* Project image */}
         <img
           className="w-full h-full object-cover"
@@ -22,37 +22,74 @@ const ProjectItem = ({ item, openPopup }) => {
           alt="Project Illustration"
         />
       </div>
-      <p className="bg-[#EBEBEB] text-xs uppercase text-center font-bold text-[#6B6B6B]">
-        {heading} {/* Label for the project type */}
+      <p
+        className={`${
+          heading === "TBA" && "h-[15px]"
+        } bg-[#EBEBEB] text-xs uppercase text-center font-bold text-[#6B6B6B]`}
+      >
+        {heading === "TBA" ? "" : heading} {/* Label for the project type */}
       </p>
       <div className="p-4 md:p-5">
         {/* Main content area */}
-        <h3 className="text-[#333333] font-bold text-[18px] md:text-[20px] font-lexend">
-          {title} {/* Project title */}
+        <h3
+          className={`${
+            title === "To be announced" ? "text-[#999999]" : "text-[#333333]"
+          }  font-bold text-[18px] md:text-[20px] font-lexend`}
+        >
+          {title}
+          {/* Project title */}
         </h3>
-        <p className="text-[#333333] font-[Roboto] text-[14px] md:text-[16px] pt-2">
+        <p
+          className={` ${
+            description === "TBA" ? "text-[#999999]" : "text-[#333333]"
+          }  font-[Roboto] text-[14px] md:text-[16px] pt-2`}
+        >
           {description}
           {/* Project description */}
         </p>
         <div className="flex flex-col md:flex-row gap-3 items-start mt-2 font-[Roboto]">
           {/* Stats container */}
-          <p className="text-[#6B6B6B] flex items-center gap-2 font-bold font-[Roboto]">
+          <p
+            className={`${
+              area === "TBA" ? "text-[#999999]" : "text-[#6B6B6B]"
+            } flex items-center gap-2 font-bold font-[Roboto]`}
+          >
             Area:
-            <span className="text-[#333333] text-xl font-bold font-[Roboto]">
+            <span
+              className={`${
+                area === "TBA" ? "text-inherit" : "text-[#333333]"
+              } text-xl font-bold font-[Roboto]`}
+            >
               {area}
               {area === "TBA" ? "" : " ha"}
             </span>
           </p>
-          <p className="text-[#6B6B6B] flex items-center gap-2 font-bold font-[Roboto]">
+          <p
+            className={`${
+              roi === "TBA" ? "text-[#999999]" : "text-[#6B6B6B]"
+            }  flex items-center gap-2 font-bold font-[Roboto]`}
+          >
             ROI:
-            <span className="text-[#333333] text-xl font-bold">
+            <span
+              className={`${
+                roi === "TBA" ? "text-inherit" : "text-[#333333]"
+              }  text-xl font-bold`}
+            >
               {roi}
               {roi === "TBA" ? "" : "%"}
             </span>
           </p>
-          <p className="text-[#6B6B6B] flex items-center gap-2 font-bold">
+          <p
+            className={`${
+              carbonCredits === "TBA" ? "text-[#999999]" : "text-[#6B6B6B]"
+            } text-[#6B6B6B] flex items-center gap-2 font-bold`}
+          >
             Carbon Credit:
-            <span className="text-[#333333] text-xl font-bold">
+            <span
+              className={`${
+                carbonCredits === "TBA" ? "text-inherit" : "text-[#333333]"
+              } text-[#333333] text-xl font-bold`}
+            >
               {carbonCredits}
             </span>
           </p>
@@ -60,13 +97,21 @@ const ProjectItem = ({ item, openPopup }) => {
         <div className="text-right space-x-5 mt-5">
           {/* Action buttons container */}
           <Link to={`${id}`} className=" w-full md:w-auto">
-            <button className="py-[14px] px-[24px] uppercase text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px]">
+            <button
+              className={`${
+                area === "TBA"
+                  ? "bg-[#EBEBEB] text-[#999999] border-[#999999]"
+                  : "bg-transparent"
+              } py-[14px] px-[24px] uppercase text-sm font-bold rounded-lg text-[#0FB404] bg-white border-[#0FB404] border-[1px]`}
+            >
               View details {/* Button to view project details */}
             </button>
           </Link>
           <button
             onClick={() => openPopup(item)}
-            className="py-[14px] px-[24px]  uppercase text-sm font-bold rounded-lg bg-[#0FB404] text-white"
+            className={`${
+              area === "TBA" ? "bg-[#999999]" : "bg-[#0FB404]"
+            } py-[14px] px-[24px]  uppercase text-sm font-bold rounded-lg  text-white`}
           >
             Invest {/* Button to initiate investment */}
           </button>

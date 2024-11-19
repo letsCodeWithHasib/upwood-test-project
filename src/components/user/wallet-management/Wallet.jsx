@@ -27,8 +27,8 @@ const Wallet = () => {
         {/* Last three items + claim button */}
         <div className="flex flex-col border rounded-2xl p-5 md:p-0 border-[#0FB404] md:border-none w-full md:w-auto flex-[3] ">
           {/* Container for Carbon Credits, Dividends, and E-Trees with underline */}
-          <div className="flex flex-col md:flex-row  md:border-b-[1px] border-[#0FB404] pb-2">
-            <div className="space-y-2  flex-1 text-center">
+          <div className="flex flex-col md:flex-row gap-7 md:border-b-[1px] border-[#0FB404] pb-2">
+            <div className="flex-1   text-center">
               <p className="text-[#6B6B6B] text-[14px] font-bold">
                 Carbon Credits
               </p>

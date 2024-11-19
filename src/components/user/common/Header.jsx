@@ -83,7 +83,7 @@ const Header = ({ showSideBar, setShowSideBar }) => {
       <div className="md:hidden">
         <button
           onClick={() => setShowSideBar(!showSideBar)}
-          className="p-2 w-[40px] rounded-full"
+          className="p-2 rounded-full"
         >
           <img
             className="w-[32px] h-[32px]"
