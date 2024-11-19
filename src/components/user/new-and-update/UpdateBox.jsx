@@ -1,9 +1,9 @@
 const UpdateBox = ({ boxData }) => {
   return (
     // Main container with rounded corners and a green border
-    <div className="rounded-xl border-[1px] border-[#333333] flex-1">
+    <div className="rounded-xl border-[1px] border-[#6B6B6B] flex-1">
       {/* Heading section with green background, white text, and top-rounded corners */}
-      <p className="p-2 rounded-t-xl text-xs text-[#333333] font-bold text-center">
+      <p className="p-2 rounded-t-xl bg-[#EBEBEB] text-xs text-[#333333] font-bold text-center">
         Update {boxData.heading} {/* Displaying the heading */}
       </p>
 

@@ -40,7 +40,49 @@ const SingleContract = () => {
         <div className="h-[300px] overflow-hidden text-center p-4 my-4">
           <p className="text-gray-700">
             {/* Placeholder text; replace with relevant content as necessary */}
-            Detailed contract information will be displayed here.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos
+            voluptatum exercitationem explicabo, vero modi fugiat officia
+            excepturi repudiandae. Nisi eveniet itaque quidem pariatur quis
+            excepturi necessitatibus at sequi totam dolore! Excepturi facere
+            veritatis accusantium nulla asperiores. Corrupti culpa dignissimos,
+            minus beatae officia, obcaecati magni expedita reiciendis eaque
+            quaerat consectetur iure dicta nam suscipit natus nesciunt aperiam
+            perspiciatis soluta sapiente accusantium. Ipsam enim porro, natus
+            ex, recusandae dolorem ipsum maxime libero alias aspernatur nam
+            autem! In reprehenderit nostrum est. Facere ipsum mollitia ut sunt
+            laudantium minus necessitatibus neque itaque.Lorem ipsum dolor sit
+            amet, consectetur adipisicing elit. Eos voluptatum exercitationem
+            explicabo, vero modi fugiat officia excepturi repudiandae. Nisi
+            eveniet itaque quidem pariatur quis excepturi necessitatibus at
+            sequi totam dolore! Excepturi facere veritatis accusantium nulla
+            asperiores. Corrupti culpa dignissimos, minus beatae officia,
+            obcaecati magni expedita reiciendis eaque quaerat consectetur iure
+            dicta nam suscipit natus nesciunt aperiam perspiciatis soluta
+            sapiente accusantium. Ipsam enim porro, natus ex, recusandae dolorem
+            ipsum maxime libero alias aspernatur nam autem! In reprehenderit
+            nostrum est. Facere ipsum mollitia ut sunt laudantium minus
+            necessitatibus neque itaque.Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Eos voluptatum exercitationem explicabo, vero modi
+            fugiat officia excepturi repudiandae. Nisi eveniet itaque quidem
+            pariatur quis excepturi necessitatibus at sequi totam dolore!
+            Excepturi facere veritatis accusantium nulla asperiores. Corrupti
+            culpa dignissimos, minus beatae officia, obcaecati magni expedita
+            reiciendis eaque quaerat consectetur iure dicta nam suscipit natus
+            nesciunt aperiam perspiciatis soluta sapiente accusantium. Ipsam
+            enim porro, natus ex, recusandae dolorem ipsum maxime libero alias
+            aspernatur nam autem! In reprehenderit nostrum est. Facere ipsum
+            mollitia ut sunt laudantium minus necessitatibus neque itaque.Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Eos voluptatum
+            exercitationem explicabo, vero modi fugiat officia excepturi
+            repudiandae. Nisi eveniet itaque quidem pariatur quis excepturi
+            necessitatibus at sequi totam dolore! Excepturi facere veritatis
+            accusantium nulla asperiores. Corrupti culpa dignissimos, minus
+            beatae officia, obcaecati magni expedita reiciendis eaque quaerat
+            consectetur iure dicta nam suscipit natus nesciunt aperiam
+            perspiciatis soluta sapiente accusantium. Ipsam enim porro, natus
+            ex, recusandae dolorem ipsum maxime libero alias aspernatur nam
+            autem! In reprehenderit nostrum est. Facere ipsum mollitia ut sunt
+            laudantium minus necessitatibus neque itaque.
           </p>
         </div>
 

@@ -53,7 +53,7 @@ const ForgotPassword = () => {
           {/* User forgot password section */}
           <section className="w-full mt-7 border-t-[1px] border-[#999999]">
             <h2 className="text-[20px] font-[Lexend Deca] font-bold mt-7">
-              Forgot your password
+              Forgot your password?
             </h2>
 
             {/* Form for sending reset code */}

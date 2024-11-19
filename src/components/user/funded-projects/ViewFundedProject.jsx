@@ -70,7 +70,12 @@ const ViewProjectDetail = ({ item }) => {
             {title} {/* Project title */}
           </h3>
           <p className="text-[#333333] text-[14px] sm:text-[16px] lg:text-[18px] font-[Roboto] pt-2">
-            {description} {/* Project description */}
+            Unique investment opportunity located in Gulbene parish, Latvia.This
+            forest plantation offers a sustainable and lucrative investment in
+            land that was uncultivated before and was not in use for past 17
+            years. The land is suitable for afforestation with spruce that can
+            reach its maturity in 40 years and generate 2810 tons CO2 offset
+            during 20 years. {/* Project description */}
           </p>
           <div className="flex flex-col  sm:flex-row flex-wrap gap-3 sm:items-center mt-3 font-semibold text-lg">
             {/* Stats container */}

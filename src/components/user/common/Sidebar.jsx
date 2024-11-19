@@ -12,47 +12,44 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
   const location = useLocation();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  const contains = (route) => {
-    return location.pathname.includes(route);
-  };
-
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // Handle file input change and set the selected image
   const handleImageChange = (e) => {
-    console.log("Ex");
     const file = e.target.files[0];
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       setSelectedImage(imageUrl);
     }
-    console.log(file, selectedImage);
   };
 
+  // Clean up object URL when selectedImage changes or component unmounts
   useEffect(() => {
-    if (selectedImage) {
-      return () => {
+    return () => {
+      if (selectedImage) {
         URL.revokeObjectURL(selectedImage);
-      };
-    }
+      }
+    };
   }, [selectedImage]);
 
+  // Hide the sidebar when the location changes
   useEffect(() => {
     setShowSideBar(false);
   }, [location]);
 
-  console.log(selectedImage);
+  // Helper to check if a route is active
+  const isRouteActive = (route) => location.pathname.includes(route);
 
   return (
-    // Sidebar container with fixed positioning and custom width
     <aside
-      className={`md:w-[250px] fixed  md:top-[134px] ${
+      className={`md:w-[250px] fixed md:top-[134px] ${
         showSideBar ? "block" : "hidden"
       } md:block md:z-0 rounded-t-lg items-start h-screen top-0 flex flex-col bg-white z-40 md:justify-between w-full mt-[100px] md:mt-0 md:ml-5`}
     >
-      {/* Navigation container with vertical layout and spacing */}
       <nav className="flex flex-col justify-center items-center w-full">
-        <button className={`md:hidden  w-full flex items-center -mt-5`}>
-          <label htmlFor="fileInput" className={`cursor-pointer rounded-full `}>
+        {/* Profile section with file input */}
+        <button className="md:hidden w-full flex items-center -mt-5">
+          <label htmlFor="fileInput" className="cursor-pointer rounded-full">
             <img
               className="w-full"
               src={selectedImage || profile}
@@ -71,27 +68,22 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
           </span>
         </button>
 
+        {/* Sidebar links */}
         <div className="flex flex-col gap-1 md:[w-300px] w-full">
-          {/* Link to Active Projects */}
           {sidebarItems.map((sidebarItem, index) => {
             const { title, white, normal, path } = sidebarItem;
-            const isActive = useMatch("user");
+            const isActive = isRouteActive(path);
 
             return (
               <Link key={index} to={path} className="flex items-center">
                 <button
                   className={`${style.sideLink} ${
-                    contains(path) && style.sideLinkSelected
+                    isActive && style.sideLinkSelected
                   }`}
                 >
                   <img
                     className="w-[22px]"
-                    src={
-                      (contains(path) && path !== "/user") ||
-                      (isActive && title === "Active Project")
-                        ? white
-                        : normal
-                    }
+                    src={isActive ? white : normal}
                     alt={title}
                   />
                   {title}
@@ -99,21 +91,22 @@ const Sidebar = ({ showSideBar, setShowSideBar }) => {
               </Link>
             );
           })}
-          {/* Logout button with responsiveness */}
-          <button
-            className={`${style.sideLink} md:hidden flex items-center gap-2`}
-            onClick={() => dispatch(signOut())}
-          >
-            <img
-              className="w-[20px] h-[20px]"
-              src={logoutImage}
-              alt="Logout Icon"
-            />
-            <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B]">
-              Logout
-            </span>
-          </button>
         </div>
+
+        {/* Logout button */}
+        <button
+          className={`${style.sideLink} md:hidden flex items-center gap-2`}
+          onClick={() => dispatch(signOut())}
+        >
+          <img
+            className="w-[20px] h-[20px]"
+            src={logoutImage}
+            alt="Logout Icon"
+          />
+          <span className="font-[Roboto] text-xs font-bold uppercase text-[#6B6B6B]">
+            Logout
+          </span>
+        </button>
       </nav>
     </aside>
   );
